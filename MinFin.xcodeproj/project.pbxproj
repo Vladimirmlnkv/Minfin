@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		7E2799CC211C6898003DE4FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2799CB211C6898003DE4FA /* AppDelegate.swift */; };
-		7E2799CE211C6898003DE4FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2799CD211C6898003DE4FA /* ViewController.swift */; };
 		7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799CF211C6898003DE4FA /* Main.storyboard */; };
 		7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799D2211C6898003DE4FA /* Assets.xcassets */; };
 		7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799D4211C6898003DE4FA /* LaunchScreen.storyboard */; };
+		7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799E1211C6C9E003DE4FA /* lazurski-cyrillic.ttf */; };
+		7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799E7211C6DA8003DE4FA /* Onboarding.storyboard */; };
+		7E2799EB211C7667003DE4FA /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2799EA211C7667003DE4FA /* OnboardingPageViewController.swift */; };
+		7E2799ED211C76D4003DE4FA /* FinalOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2799EC211C76D4003DE4FA /* FinalOnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E2799C8211C6898003DE4FA /* MinFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2799CB211C6898003DE4FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E2799CD211C6898003DE4FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E2799D0211C6898003DE4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E2799D2211C6898003DE4FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E2799D5211C6898003DE4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E2799D7211C6898003DE4FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E2799E1211C6C9E003DE4FA /* lazurski-cyrillic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lazurski-cyrillic.ttf"; sourceTree = "<group>"; };
+		7E2799E7211C6DA8003DE4FA /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		7E2799EA211C7667003DE4FA /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		7E2799EC211C76D4003DE4FA /* FinalOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalOnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,57 @@
 		7E2799CA211C6898003DE4FA /* MinFin */ = {
 			isa = PBXGroup;
 			children = (
+				7E2799E9211C7648003DE4FA /* OnboardingFlow */,
+				7E2799E5211C6D78003DE4FA /* Storyboards */,
+				7E2799DD211C6A49003DE4FA /* Helpers */,
+				7E2799E4211C6D51003DE4FA /* Support */,
 				7E2799CB211C6898003DE4FA /* AppDelegate.swift */,
-				7E2799CD211C6898003DE4FA /* ViewController.swift */,
-				7E2799CF211C6898003DE4FA /* Main.storyboard */,
-				7E2799D2211C6898003DE4FA /* Assets.xcassets */,
-				7E2799D4211C6898003DE4FA /* LaunchScreen.storyboard */,
 				7E2799D7211C6898003DE4FA /* Info.plist */,
+				7E2799DF211C6B94003DE4FA /* fonts */,
 			);
 			path = MinFin;
+			sourceTree = "<group>";
+		};
+		7E2799DD211C6A49003DE4FA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7E2799DF211C6B94003DE4FA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7E2799E1211C6C9E003DE4FA /* lazurski-cyrillic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		7E2799E4211C6D51003DE4FA /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				7E2799D2211C6898003DE4FA /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		7E2799E5211C6D78003DE4FA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7E2799D4211C6898003DE4FA /* LaunchScreen.storyboard */,
+				7E2799CF211C6898003DE4FA /* Main.storyboard */,
+				7E2799E7211C6DA8003DE4FA /* Onboarding.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7E2799E9211C7648003DE4FA /* OnboardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				7E2799EA211C7667003DE4FA /* OnboardingPageViewController.swift */,
+				7E2799EC211C76D4003DE4FA /* FinalOnboardingViewController.swift */,
+			);
+			path = OnboardingFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +172,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */,
+				7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */,
 				7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
 				7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */,
@@ -136,7 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E2799CE211C6898003DE4FA /* ViewController.swift in Sources */,
+				7E2799ED211C76D4003DE4FA /* FinalOnboardingViewController.swift in Sources */,
+				7E2799EB211C7667003DE4FA /* OnboardingPageViewController.swift in Sources */,
 				7E2799CC211C6898003DE4FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
