@@ -19,6 +19,19 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = UIColor.clear
+        navigationController?.navigationBar.backgroundColor = UIColor.clear
+        navigationController?.navigationBar.tintColor = Color.mainTextColor
+                navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationItem.title = "Назад"
+        headerTitleLabel.text = "МИНИСТЕРСТВО ФИНАНСОВ\nРОССИЙСКОЙ ФЕДЕРАЦИИ"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     @IBAction func historyButtonAction(_ sender: Any) {
@@ -26,7 +39,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func libraryButtonAction(_ sender: Any) {
-        
+        let libraryVC = storyboard?.instantiateViewController(withIdentifier: "LibraryViewController") as! LibraryViewController
+        navigationController?.pushViewController(libraryVC, animated: true)
     }
     
     @IBAction func aboutButtonAction(_ sender: Any) {

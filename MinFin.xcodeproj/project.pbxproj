@@ -19,6 +19,8 @@
 		7E374F8F212C1B7B007ACD98 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F8E212C1B7B007ACD98 /* LibraryViewController.swift */; };
 		7E374F91212C1BE4007ACD98 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F90212C1BE4007ACD98 /* BookCollectionViewCell.swift */; };
 		7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F93212C1D0A007ACD98 /* BookDetailsViewController.swift */; };
+		7E374F98212C244C007ACD98 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F97212C244C007ACD98 /* UIColorExtension.swift */; };
+		7E374F9A212C26F6007ACD98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F99212C26F6007ACD98 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		7E374F8E212C1B7B007ACD98 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		7E374F90212C1BE4007ACD98 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E374F93212C1D0A007ACD98 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
+		7E374F97212C244C007ACD98 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		7E374F99212C26F6007ACD98 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		7E2799DD211C6A49003DE4FA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7E374F97212C244C007ACD98 /* UIColorExtension.swift */,
+				7E374F99212C26F6007ACD98 /* Color.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -234,10 +240,12 @@
 				7E374F8C212C1AA7007ACD98 /* MainMenuViewController.swift in Sources */,
 				7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */,
 				7E374F8F212C1B7B007ACD98 /* LibraryViewController.swift in Sources */,
+				7E374F98212C244C007ACD98 /* UIColorExtension.swift in Sources */,
 				7E2799ED211C76D4003DE4FA /* FinalOnboardingViewController.swift in Sources */,
 				7E374F91212C1BE4007ACD98 /* BookCollectionViewCell.swift in Sources */,
 				7E2799EB211C7667003DE4FA /* OnboardingPageViewController.swift in Sources */,
 				7E2799CC211C6898003DE4FA /* AppDelegate.swift in Sources */,
+				7E374F9A212C26F6007ACD98 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -362,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
