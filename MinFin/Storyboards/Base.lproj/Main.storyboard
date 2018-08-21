@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="jgk-3N-IAv">
             <objects>
-                <viewController id="BtO-GY-4xU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" id="BtO-GY-4xU" customClass="MainMenuViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yj9-wp-cly">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,9 @@
                                 <state key="normal" title="Русский" image="lang">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="languageButtonAction:" destination="BtO-GY-4xU" eventType="touchUpInside" id="CvB-lv-WyD"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-LF-jie">
                                 <rect key="frame" x="40" y="405" width="688" height="214"/>
@@ -56,6 +59,9 @@
                                         <state key="normal" title="ИСТОРИЯ">
                                             <color key="titleColor" red="0.21176470588235294" green="0.27843137254901962" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="historyButtonAction:" destination="BtO-GY-4xU" eventType="touchUpInside" id="uqZ-m0-BiO"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDx-J6-OlF">
                                         <rect key="frame" x="0.0" y="64" width="688" height="1"/>
@@ -69,6 +75,9 @@
                                         <state key="normal" title="БИБЛИОТЕКА">
                                             <color key="titleColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="libraryButtonAction:" destination="BtO-GY-4xU" eventType="touchUpInside" id="ewN-sw-hVv"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2r-7J-VaT">
                                         <rect key="frame" x="0.0" y="149" width="688" height="1"/>
@@ -79,6 +88,9 @@
                                         <state key="normal" title="О МИНФИНЕ">
                                             <color key="titleColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="aboutButtonAction:" destination="BtO-GY-4xU" eventType="touchUpInside" id="AXa-3b-0LH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,6 +134,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v67-fe-gBD"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutButton" destination="Jo2-Um-cc0" id="XP2-wC-cKO"/>
+                        <outlet property="headerTitleLabel" destination="HZ0-lL-Gfi" id="vGj-f1-LyE"/>
+                        <outlet property="historyButton" destination="Zh4-oA-ede" id="8sO-dJ-xHa"/>
+                        <outlet property="languageButton" destination="ZNm-oW-r4a" id="1Rj-wi-lqr"/>
+                        <outlet property="libraryButton" destination="Pnr-JP-HrD" id="ZuP-Qm-d9J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cn-VC-KLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="-824.21875" y="-902.34374999999989"/>
         </scene>
-        <!--View Controller-->
+        <!--Library View Controller-->
         <scene sceneID="YSQ-nt-yF4">
             <objects>
-                <viewController id="ptu-dq-yuj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LibraryViewController" id="ptu-dq-yuj" customClass="LibraryViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CAP-72-FeQ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,7 +215,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cU6-ly-qSj">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCollectionViewCell" id="cU6-ly-qSj" customClass="BookCollectionViewCell" customModule="MinFin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="322" height="267"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -245,6 +264,9 @@
                                                     <state key="normal" title="ЗАГРУЗИТЬ">
                                                         <color key="titleColor" red="0.0078431372549019607" green="0.41176470588235292" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="downloadButtonAction:" destination="cU6-ly-qSj" eventType="touchUpInside" id="6fa-DI-vZk"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -273,6 +295,14 @@
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="r7J-d7-jw6" secondAttribute="trailing" constant="10" id="vvp-dw-ZXl"/>
                                             <constraint firstItem="0vH-2h-fra" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Vu5-yr-ov4" secondAttribute="trailing" constant="-10" id="yx8-Q3-Cjd"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="authorNameLabel" destination="J3D-o8-zWF" id="uyE-cZ-gCu"/>
+                                            <outlet property="bookNameLabel" destination="0vH-2h-fra" id="qh7-zs-edb"/>
+                                            <outlet property="dateLabel" destination="Y3i-Sj-UDJ" id="U86-SF-Ew2"/>
+                                            <outlet property="descriptionLabel" destination="cTh-Ic-NJ9" id="OfF-LO-eLT"/>
+                                            <outlet property="downloadButton" destination="m4w-Lf-QJ4" id="lji-zL-hk5"/>
+                                            <outlet property="mainTitleLabel" destination="r7J-d7-jw6" id="FxP-Om-Gbb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -295,15 +325,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t3R-WM-J2O"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="KfN-U7-YYz" id="zUN-QR-YjF"/>
+                        <outlet property="headerTitleLabel" destination="uyF-Rk-gpv" id="7ZR-x4-gv1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2Y-s5-KbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-824" y="-261"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Details View Controller-->
         <scene sceneID="9wZ-P4-uZU">
             <objects>
-                <viewController id="tlj-rT-ARJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookDetailsViewController" id="tlj-rT-ARJ" customClass="BookDetailsViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZOK-gB-xsb">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,6 +419,9 @@
                                                 <state key="normal" title="ЗАГРУЗИТЬ">
                                                     <color key="titleColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="downloadButtonAction:" destination="tlj-rT-ARJ" eventType="touchUpInside" id="Tdc-Wi-UDQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -439,6 +476,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oav-5d-7OX"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutDescriptionLabel" destination="RUE-qS-DZq" id="Ucc-hj-llo"/>
+                        <outlet property="aboutTitleLabel" destination="u3j-Sx-o6t" id="NvR-PW-J0N"/>
+                        <outlet property="authorDescriptionLabel" destination="JhU-7H-18o" id="b2V-jB-1V9"/>
+                        <outlet property="authorNameLabel" destination="F4E-N9-puP" id="tkt-Mu-5TF"/>
+                        <outlet property="bookNameLabel" destination="O9a-z7-cHW" id="lOB-n1-Rzj"/>
+                        <outlet property="downloadButton" destination="3Qa-sn-s9h" id="ndI-d9-yPy"/>
+                        <outlet property="mainTitleLabel" destination="qcR-ZB-nrs" id="A1l-il-lfD"/>
+                        <outlet property="scrollView" destination="PVF-U8-gzk" id="UZr-FH-BOV"/>
+                        <outlet property="tagsLabel" destination="pkK-Qt-PPh" id="w9u-eL-1Bi"/>
+                        <outlet property="yearDescriptionLabel" destination="FPw-Dh-gGX" id="jWB-yL-qY5"/>
+                        <outlet property="yearLabel" destination="qw2-Yn-NM2" id="cgh-MU-yEU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqI-bX-zDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
