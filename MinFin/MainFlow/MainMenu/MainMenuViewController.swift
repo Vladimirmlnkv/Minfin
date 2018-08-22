@@ -35,7 +35,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func historyButtonAction(_ sender: Any) {
-        
+        let historyVC = storyboard?.instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
+        navigationController?.pushViewController(historyVC, animated: true)
     }
     
     @IBAction func libraryButtonAction(_ sender: Any) {
