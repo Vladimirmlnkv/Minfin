@@ -11,7 +11,7 @@ import UIKit
 class TimeLineContentView: UIView {
 
     private let startDate = 1800
-    private let finalDate = 2000
+    private let finalDate = 2018
     private let spaceBetweenDateLines: CGFloat = 30.0
     private let dotRadius: CGFloat = 2
     private let bottomOffset: CGFloat = 50
@@ -24,10 +24,13 @@ class TimeLineContentView: UIView {
         return CGFloat(range) * spaceBetweenDateLines + bounds.minX + leftOffset + spaceBetweenDateLines * 2;
     }
     
+    var governers = [Person]()
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         frame = CGRect(x: frame.minX, y: frame.minY, width: maxWidth, height: bounds.height)
         drawDateLines()
+        addGovernerViews()
     }
     
     private func drawDateLines() {
@@ -58,7 +61,18 @@ class TimeLineContentView: UIView {
                 context.move(to: startPoint)
                 context.addLine(to: finalPoint)
                 context.strokePath()
+            }
         }
+    }
+    
+    private func addGovernerViews() {
+        for governer in governers {
+            let xCoordinate = bounds.minX + CGFloat(governer.startYear - startDate) * spaceBetweenDateLines + leftOffset;
+            let width = CGFloat(governer.endYear - governer.startYear) * spaceBetweenDateLines - 1;
+            let rect = CGRect(x: xCoordinate, y: bounds.minY, width: width, height: PersonView.viewHeight)
+            let personView = PersonView(frame: rect)
+            personView.nameLabel.text = governer.name
+            addSubview(personView)
         }
     }
 }
