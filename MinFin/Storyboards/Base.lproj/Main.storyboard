@@ -416,6 +416,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="Zf7-oj-p3c" id="mV6-JS-bkK"/>
+                        <outlet property="contentViewWidthConstraint" destination="DaN-Ec-psD" id="lfZ-eF-6Nz"/>
                         <outlet property="eventsLabel" destination="unx-Po-Vew" id="owV-Yl-MN5"/>
                         <outlet property="headsLabel" destination="wQa-U3-nwo" id="wWX-MH-uYU"/>
                         <outlet property="ministersLabel" destination="Z41-LE-BPE" id="Fr5-OB-6TP"/>

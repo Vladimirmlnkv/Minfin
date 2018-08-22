@@ -21,7 +21,7 @@ class TimeLineContentView: UIView {
     
     var maxWidth: CGFloat {
         let range = finalDate - startDate
-        return CGFloat(range) * spaceBetweenDateLines + bounds.minX + leftOffset;
+        return CGFloat(range) * spaceBetweenDateLines + bounds.minX + leftOffset + spaceBetweenDateLines * 2;
     }
     
     override func draw(_ rect: CGRect) {

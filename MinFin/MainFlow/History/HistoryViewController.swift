@@ -16,9 +16,11 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: TimeLineContentView!
+    @IBOutlet var contentViewWidthConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentViewWidthConstraint.constant = self.contentView.maxWidth
         headsLabel.text = "Главы\nгосударств"
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }
