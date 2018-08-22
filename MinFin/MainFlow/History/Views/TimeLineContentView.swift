@@ -24,13 +24,17 @@ class TimeLineContentView: UIView {
         return CGFloat(range) * spaceBetweenDateLines + bounds.minX + leftOffset + spaceBetweenDateLines * 2;
     }
     
+    var eventsMinYCoordinate: CGFloat!
+    
     var governers = [Person]()
+    var events = [Event]()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         frame = CGRect(x: frame.minX, y: frame.minY, width: maxWidth, height: bounds.height)
         drawDateLines()
         addGovernerViews()
+        addEvenentsViews()
     }
     
     private func drawDateLines() {
@@ -63,6 +67,28 @@ class TimeLineContentView: UIView {
                 context.strokePath()
             }
         }
+    }
+    
+    private func addEvenentsViews() {
+        
+        let eventRowHeight = ((bounds.maxY - bottomOffset - dotRadius) - eventsMinYCoordinate) / 5
+        
+        for event in events {
+            
+            //one year event
+            if event.endYear == nil || event.endYear == 0 {
+                let xCenterCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset;
+                let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
+    
+                let eventView = SingleEventView(frame: CGRect())
+                eventView.titleLabel.text = event.name
+                eventView.sizeToFit()
+                eventView.center = CGPoint(x: xCenterCoordinate, y: yCoordinate)
+                addSubview(eventView)
+            }
+            
+        }
+        
     }
     
     private func addGovernerViews() {

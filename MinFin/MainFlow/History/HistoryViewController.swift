@@ -18,6 +18,9 @@ class HistoryViewController: UIViewController {
     @IBOutlet var contentView: TimeLineContentView!
     @IBOutlet var contentViewWidthConstraint: NSLayoutConstraint!
     
+    private var governers = [Person]()
+    private var events = [Event]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         contentViewWidthConstraint.constant = self.contentView.maxWidth
@@ -25,8 +28,10 @@ class HistoryViewController: UIViewController {
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "ИСТОРИЯ МИНФИНА В СОБЫТИЯХ СТРАНЫ"
-        contentView.governers = getGovernors()
-
+        loadDataFromJson()
+        contentView.governers = governers
+        contentView.events = events
+        contentView.eventsMinYCoordinate = eventsLabel.frame.minY
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,8 +39,9 @@ class HistoryViewController: UIViewController {
         scrollView.contentSize = CGSize(width: contentView.maxWidth, height: view.bounds.height - 100)
     }
     
-    private func getGovernors() -> [Person] {
+    private func loadDataFromJson() {
         var governers = [Person]()
+        var events = [Event]()
         if let path = Bundle.main.path(forResource: "minfin", ofType: "json")
         {
             if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path))
@@ -47,9 +53,15 @@ class HistoryViewController: UIViewController {
                             governers.append(Person(json: g))
                         }
                     }
+                    if let eventsJson = jsonResult["events"] as? [Any] {
+                        for e in eventsJson {
+                            events.append(Event(json: e))
+                        }
+                    }
                 }
             }
         }
-        return governers
+//        self.governers = governers
+        self.events = events
     }
 }

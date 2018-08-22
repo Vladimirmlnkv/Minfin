@@ -28,6 +28,9 @@
 		7E4A04F8212DA1920065FD7A /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A04F7212DA1920065FD7A /* minfin.json */; };
 		7E4A04FB212DA1C20065FD7A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04FA212DA1C20065FD7A /* Person.swift */; };
 		7E4A04FD212DA4F80065FD7A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04FC212DA4F80065FD7A /* UIViewExtension.swift */; };
+		7E4A04FF212DAB3E0065FD7A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04FE212DAB3E0065FD7A /* Event.swift */; };
+		7E4A0502212DAC820065FD7A /* SingleEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A0501212DAC820065FD7A /* SingleEventView.xib */; };
+		7E4A0504212DAE650065FD7A /* SingleEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0503212DAE650065FD7A /* SingleEventView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		7E4A04F7212DA1920065FD7A /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 		7E4A04FA212DA1C20065FD7A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7E4A04FC212DA4F80065FD7A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		7E4A04FE212DAB3E0065FD7A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		7E4A0501212DAC820065FD7A /* SingleEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleEventView.xib; sourceTree = "<group>"; };
+		7E4A0503212DAE650065FD7A /* SingleEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEventView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,7 @@
 		7E4A04EF212D4D9D0065FD7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E4A0500212DAC700065FD7A /* SingleEventView */,
 				7E4A04F2212D9FAF0065FD7A /* RulerView */,
 				7E4A04F0212D52570065FD7A /* TimeLineContentView.swift */,
 			);
@@ -212,8 +219,18 @@
 			isa = PBXGroup;
 			children = (
 				7E4A04FA212DA1C20065FD7A /* Person.swift */,
+				7E4A04FE212DAB3E0065FD7A /* Event.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7E4A0500212DAC700065FD7A /* SingleEventView */ = {
+			isa = PBXGroup;
+			children = (
+				7E4A0501212DAC820065FD7A /* SingleEventView.xib */,
+				7E4A0503212DAE650065FD7A /* SingleEventView.swift */,
+			);
+			path = SingleEventView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +295,7 @@
 				7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */,
 				7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */,
 				7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */,
+				7E4A0502212DAC820065FD7A /* SingleEventView.xib in Resources */,
 				7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
 				7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */,
@@ -296,6 +314,7 @@
 				7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */,
 				7E374F8F212C1B7B007ACD98 /* LibraryViewController.swift in Sources */,
 				7E4A04EE212D4CF60065FD7A /* HistoryViewController.swift in Sources */,
+				7E4A04FF212DAB3E0065FD7A /* Event.swift in Sources */,
 				7E4A04FD212DA4F80065FD7A /* UIViewExtension.swift in Sources */,
 				7E374F98212C244C007ACD98 /* UIColorExtension.swift in Sources */,
 				7E4A04F1212D52570065FD7A /* TimeLineContentView.swift in Sources */,
@@ -306,6 +325,7 @@
 				7E4A04FB212DA1C20065FD7A /* Person.swift in Sources */,
 				7E2799CC211C6898003DE4FA /* AppDelegate.swift in Sources */,
 				7E374F9A212C26F6007ACD98 /* Color.swift in Sources */,
+				7E4A0504212DAE650065FD7A /* SingleEventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
