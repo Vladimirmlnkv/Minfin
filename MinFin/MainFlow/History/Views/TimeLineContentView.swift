@@ -11,13 +11,13 @@ import UIKit
 class TimeLineContentView: UIView {
 
     private let startDate = 1800
-    private let finalDate = 1885
-    private let spaceBetweenDateLines: CGFloat = 20.0
+    private let finalDate = 2000
+    private let spaceBetweenDateLines: CGFloat = 30.0
     private let dotRadius: CGFloat = 2
     private let bottomOffset: CGFloat = 50
     private let leftOffset: CGFloat = 20 + 110
     private let timeLabelHeight: CGFloat = 20
-    private let timeLabelWidth: CGFloat = 40
+    private let timeLabelWidth: CGFloat = 44
     
     var maxWidth: CGFloat {
         let range = finalDate - startDate

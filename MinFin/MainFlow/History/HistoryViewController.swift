@@ -23,6 +23,8 @@ class HistoryViewController: UIViewController {
         contentViewWidthConstraint.constant = self.contentView.maxWidth
         headsLabel.text = "Главы\nгосударств"
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.title = "ИСТОРИЯ МИНФИНА В СОБЫТИЯХ СТРАНЫ"
     }
     
     override func viewDidAppear(_ animated: Bool) {
