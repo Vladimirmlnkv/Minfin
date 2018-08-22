@@ -27,6 +27,6 @@ class HistoryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        scrollView.contentSize = CGSize(width: contentView.maxWidth, height: view.bounds.height)
+        scrollView.contentSize = CGSize(width: contentView.maxWidth, height: view.bounds.height - 100)
     }
 }
