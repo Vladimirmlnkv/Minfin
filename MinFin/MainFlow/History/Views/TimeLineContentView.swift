@@ -48,7 +48,8 @@ class TimeLineContentView: UIView {
     private func drawDateLines() {
         let rangeSize = finalDate - startDate
         if let context = UIGraphicsGetCurrentContext() {
-            context.setStrokeColor(UIColor.black.cgColor)
+            context.setStrokeColor(UIColor.white.cgColor)
+            context.setFillColor(UIColor.white.cgColor)
             context.setLineWidth(1.0)
             
             for i in 0...rangeSize {
@@ -65,6 +66,7 @@ class TimeLineContentView: UIView {
                     
                     let labelFrame = CGRect(x: xCoordinate - timeLabelWidth / 2, y: startPoint.y + dotRadius + 10, width: timeLabelWidth, height: timeLabelHeight)
                     let label = UILabel(frame: labelFrame)
+                    label.textColor = UIColor.white
                     label.center = CGPoint(x: xCoordinate, y: startPoint.y + dotRadius + 15)
                     label.text = "\(startDate + i)"
                     addSubview(label)
