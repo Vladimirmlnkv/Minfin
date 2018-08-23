@@ -16,6 +16,7 @@
                 <outlet property="dotView" destination="ESp-GA-ZNq" id="qqb-ci-EVh"/>
                 <outlet property="imageView" destination="TSb-Zm-7Ir" id="0X0-QC-ERV"/>
                 <outlet property="labelContainerView" destination="47i-9W-vMZ" id="6Vx-H1-gdV"/>
+                <outlet property="titleBlurView" destination="8XC-gK-5yJ" id="nbt-OQ-EzS"/>
                 <outlet property="titleLabel" destination="cCh-n1-66E" id="qC5-K7-qok"/>
             </connections>
         </placeholder>

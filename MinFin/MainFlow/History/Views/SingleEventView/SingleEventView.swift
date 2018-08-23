@@ -19,6 +19,7 @@ class SingleEventView: UIView {
     
     @IBOutlet var labelContainerView: UIView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleBlurView: UIVisualEffectView!
     
     @IBOutlet var dotView: UIView!
     
@@ -38,6 +39,8 @@ class SingleEventView: UIView {
         avatarBlurView.clipsToBounds = true
         avatarBlurView.layer.cornerRadius = avatarBlurView.bounds.width / 2
         dotView.layer.cornerRadius = dotView.bounds.width / 2
+        titleBlurView.clipsToBounds = true
+        titleBlurView.layer.cornerRadius = 10.0
         avatarContainerView.layer.cornerRadius = avatarContainerView.bounds.width / 2
         labelContainerView.layer.cornerRadius = labelContainerView.bounds.width / 2
     }

@@ -35,6 +35,10 @@ class HistoryViewController: UIViewController {
         contentView.governers = governers
         contentView.events = events
         contentView.eventsMinYCoordinate = eventsLabel.frame.minY + contentView.topOffset
+        let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gerbMinfinRuSmall"), landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
+        barButtonItem.isEnabled = false
+        barButtonItem.tintColor = nil
+        navigationItem.rightBarButtonItem = barButtonItem
     }
     
     override func viewDidAppear(_ animated: Bool) {
