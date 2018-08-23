@@ -116,18 +116,18 @@ class TimeLineContentView: UIView {
                 
             } else if !event.isTextOnLeft {
                 
-//                let eventView = LeftEventView(frame: CGRect())
-//                eventView.titleLabel.text = event.name
-//                
-//                let xCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset
-//                let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
-//                let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
-//                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + LeftEventView.horizontalSpace
-//                let finalWidth = max(eventViewWidth, timeLineViewWidth)
-//                let eventRect = CGRect(x: xCoordinate, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
-//                eventView.frame = eventRect
-//                eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
-//                addSubview(eventView)
+                let eventView = LeftEventView(frame: CGRect())
+                eventView.titleLabel.text = event.name
+                
+                let xCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset
+                let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
+                let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
+                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + LeftEventView.horizontalSpace
+                let finalWidth = max(eventViewWidth, timeLineViewWidth)
+                let eventRect = CGRect(x: xCoordinate, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
+                eventView.frame = eventRect
+                eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
+                addSubview(eventView)
             }
             
         }

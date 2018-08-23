@@ -33,8 +33,10 @@ class LeftEventView: UIView {
     }
     
     private func updateCornerRadiuses() {
+        clipsToBounds = true
         blurView.clipsToBounds = true
         blurView.layer.cornerRadius = blurView.bounds.width / 2
+        layer.cornerRadius = 10.0
     }
     
 }

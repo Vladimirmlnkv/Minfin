@@ -33,7 +33,8 @@ class RightEventView: UIView {
     }
     
     private func updateCornerRadiuses() {
-        layer.cornerRadius = bounds.width / 2
+        clipsToBounds = true
+        layer.cornerRadius = 10.0
         blurView.clipsToBounds = true
         blurView.layer.cornerRadius = blurView.bounds.width / 2
     }
