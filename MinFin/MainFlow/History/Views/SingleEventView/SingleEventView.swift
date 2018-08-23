@@ -10,6 +10,9 @@ import UIKit
 
 class SingleEventView: UIView {
     
+    static let viewHeight: CGFloat = 110.0
+    static let horizontalSpace: CGFloat = 16.0
+    
     @IBOutlet var avatarContainerView: UIView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var avatarBlurView: UIVisualEffectView!

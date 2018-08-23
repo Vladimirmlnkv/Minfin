@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension String {
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        return ceil(boundingBox.width)
+    }
+}
+
 class TimeLineContentView: UIView {
 
     private let startDate = 1800
@@ -79,11 +87,13 @@ class TimeLineContentView: UIView {
             if event.endYear == nil || event.endYear == 0 {
                 let xCenterCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset;
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
-    
+                
                 let eventView = SingleEventView(frame: CGRect())
                 eventView.titleLabel.text = event.name
-                eventView.sizeToFit()
-                eventView.center = CGPoint(x: xCenterCoordinate, y: yCoordinate)
+                
+                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + SingleEventView.horizontalSpace
+                let eventRect = CGRect(x: xCenterCoordinate - eventViewWidth / 2, y: yCoordinate, width: eventViewWidth, height: SingleEventView.viewHeight)
+                eventView.frame = eventRect
                 addSubview(eventView)
             }
             

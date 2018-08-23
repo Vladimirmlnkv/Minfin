@@ -88,7 +88,7 @@
                             <blurEffect style="light"/>
                         </visualEffectView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="8XC-gK-5yJ" firstAttribute="top" secondItem="47i-9W-vMZ" secondAttribute="top" id="8Sh-zx-ynx"/>
                         <constraint firstItem="8XC-gK-5yJ" firstAttribute="leading" secondItem="47i-9W-vMZ" secondAttribute="leading" id="Td2-jH-Lah"/>
