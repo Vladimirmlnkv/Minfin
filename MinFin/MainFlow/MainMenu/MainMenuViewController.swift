@@ -45,7 +45,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func aboutButtonAction(_ sender: Any) {
-        
+        let aboutVC = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+        navigationController?.pushViewController(aboutVC, animated: true)
     }
     
     @IBAction func languageButtonAction(_ sender: Any) {

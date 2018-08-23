@@ -134,6 +134,126 @@
             </objects>
             <point key="canvasLocation" x="-1720" y="-243"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="el1-hT-9Ip">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="Iqf-9W-O1f" customClass="AboutViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pih-9Z-1Pa"/>
+                        <viewControllerLayoutGuide type="bottom" id="m9Q-nN-ATa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TGT-6W-kUP">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a2P-WI-MCy">
+                                <rect key="frame" x="20" y="60" width="984" height="628"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutTableViewCell" rowHeight="187" id="QbK-o1-87r" customClass="AboutTableViewCell" customModule="MinFin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="984" height="187"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QbK-o1-87r" id="6iu-fi-xUw">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="187"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opi-qK-1XT">
+                                                    <rect key="frame" x="15" y="11" width="954" height="165"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VUJ-18-W6o">
+                                                        <rect key="frame" x="0.0" y="0.0" width="954" height="165"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Министерство финансов РФ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K78-lJ-iqU">
+                                                                <rect key="frame" x="10" y="10" width="294.5" height="26.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                                <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="109097, Москва, ул. Ильинка, 9" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAJ-K6-R6x">
+                                                                <rect key="frame" x="10" y="46.5" width="284" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qap-b8-2Om">
+                                                                <rect key="frame" x="10" y="80.5" width="61" height="74.5"/>
+                                                                <color key="tintColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="minfin.ru"/>
+                                                                <connections>
+                                                                    <action selector="linkButtonAction:" destination="QbK-o1-87r" eventType="touchUpInside" id="CvP-5J-m8v"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="qap-b8-2Om" firstAttribute="leading" secondItem="eAJ-K6-R6x" secondAttribute="leading" id="2Cm-mv-K4v"/>
+                                                            <constraint firstAttribute="bottom" secondItem="qap-b8-2Om" secondAttribute="bottom" constant="10" id="85N-ab-VMn"/>
+                                                            <constraint firstItem="K78-lJ-iqU" firstAttribute="leading" secondItem="VUJ-18-W6o" secondAttribute="leading" constant="10" id="J1e-lc-isJ"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eAJ-K6-R6x" secondAttribute="trailing" constant="10" id="J4p-sK-kbZ"/>
+                                                            <constraint firstItem="eAJ-K6-R6x" firstAttribute="leading" secondItem="K78-lJ-iqU" secondAttribute="leading" id="KQd-q4-eQM"/>
+                                                            <constraint firstItem="qap-b8-2Om" firstAttribute="top" secondItem="eAJ-K6-R6x" secondAttribute="bottom" constant="10" id="ZXY-r1-dEb"/>
+                                                            <constraint firstItem="K78-lJ-iqU" firstAttribute="top" secondItem="VUJ-18-W6o" secondAttribute="top" constant="10" id="gfa-O1-dtA"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qap-b8-2Om" secondAttribute="trailing" constant="10" id="nM5-OB-2c7"/>
+                                                            <constraint firstItem="eAJ-K6-R6x" firstAttribute="top" secondItem="K78-lJ-iqU" secondAttribute="bottom" constant="10" id="oiX-2P-M8f"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K78-lJ-iqU" secondAttribute="trailing" constant="10" id="wnh-FL-LeX"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <blurEffect style="light"/>
+                                                </visualEffectView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Opi-qK-1XT" secondAttribute="bottom" id="4y5-cZ-pjl"/>
+                                                <constraint firstItem="Opi-qK-1XT" firstAttribute="top" secondItem="6iu-fi-xUw" secondAttribute="topMargin" id="DHf-bR-2Vb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Opi-qK-1XT" secondAttribute="trailing" id="WkG-6n-3qA"/>
+                                                <constraint firstItem="Opi-qK-1XT" firstAttribute="leading" secondItem="6iu-fi-xUw" secondAttribute="leadingMargin" id="gdT-g9-7c9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="blurView" destination="Opi-qK-1XT" id="rmV-bf-rSq"/>
+                                            <outlet property="descriptionTitleLabel" destination="eAJ-K6-R6x" id="Byw-38-Vzh"/>
+                                            <outlet property="linkButton" destination="qap-b8-2Om" id="vWa-rU-Kcg"/>
+                                            <outlet property="mainTitleLabel" destination="K78-lJ-iqU" id="UOM-Bc-lV3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF2-oh-bra">
+                                <rect key="frame" x="60" y="708" width="904" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gyj-47-pSB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="НАПИСАТЬ НАМ">
+                                    <color key="titleColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="writeUsButtonAction:" destination="Iqf-9W-O1f" eventType="touchUpInside" id="CQp-m6-hWK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MF2-oh-bra" firstAttribute="leading" secondItem="TGT-6W-kUP" secondAttribute="leadingMargin" constant="40" id="TRS-ya-9s0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MF2-oh-bra" secondAttribute="trailing" constant="40" id="ZvT-ph-ekf"/>
+                            <constraint firstItem="MF2-oh-bra" firstAttribute="top" secondItem="a2P-WI-MCy" secondAttribute="bottom" constant="20" id="cV9-ne-dcY"/>
+                            <constraint firstItem="a2P-WI-MCy" firstAttribute="leading" secondItem="TGT-6W-kUP" secondAttribute="leadingMargin" id="cX4-N4-UWb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a2P-WI-MCy" secondAttribute="trailing" id="hef-DE-hUD"/>
+                            <constraint firstItem="m9Q-nN-ATa" firstAttribute="top" secondItem="MF2-oh-bra" secondAttribute="bottom" constant="20" id="hxD-wQ-CcB"/>
+                            <constraint firstItem="a2P-WI-MCy" firstAttribute="top" secondItem="Pih-9Z-1Pa" secondAttribute="bottom" constant="40" id="uhf-q9-q6t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="a2P-WI-MCy" id="2pX-Ig-Qxl"/>
+                        <outlet property="writeUsButton" destination="MF2-oh-bra" id="3oO-6s-EcL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFa-3Z-d5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1720.3125" y="477.34375"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="W9Y-Q8-qf2">
             <objects>
