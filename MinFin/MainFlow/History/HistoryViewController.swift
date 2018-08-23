@@ -31,7 +31,6 @@ class HistoryViewController: UIViewController {
         headsLabel.text = "Главы\nгосударств"
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title = "ИСТОРИЯ МИНФИНА В СОБЫТИЯХ СТРАНЫ"
         loadDataFromJson()
         contentView.governers = governers
         contentView.events = events
@@ -42,6 +41,11 @@ class HistoryViewController: UIViewController {
         navigationItem.rightBarButtonItem = barButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "ИСТОРИЯ МИНФИНА В СОБЫТИЯХ СТРАНЫ"
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.contentSize = CGSize(width: contentView.maxWidth, height: view.bounds.height - 100)
@@ -49,6 +53,7 @@ class HistoryViewController: UIViewController {
     
     func openDetails(for person: Person) {
         let personVC = storyboard?.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
+        navigationItem.title = "Назад"
         navigationController?.pushViewController(personVC, animated: true)
     }
     

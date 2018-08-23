@@ -12,6 +12,7 @@ class AboutViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var writeUsButton: UIButton!
+    @IBOutlet var addressTitleLabel: UILabel!
     
     private let aboutInfo = [
         AboutData(name: "Министерство финансов РФ", address: "109097, Москва, ул. Ильинка, 9"),
@@ -32,20 +33,10 @@ class AboutViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
         tableView.dataSource = self
-        tableView.delegate = self
     }
     
     @IBAction func writeUsButtonAction(_ sender: Any) {
         
-    }
-    
-}
-
-extension AboutViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let aboutView = AboutHeaderView(frame: CGRect())
-        return aboutView
     }
     
 }

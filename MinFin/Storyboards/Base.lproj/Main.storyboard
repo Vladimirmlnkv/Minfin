@@ -150,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a2P-WI-MCy">
-                                <rect key="frame" x="20" y="60" width="984" height="628"/>
+                                <rect key="frame" x="20" y="101.5" width="984" height="586.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -238,19 +238,28 @@
                                     <action selector="writeUsButtonAction:" destination="Iqf-9W-O1f" eventType="touchUpInside" id="CQp-m6-hWK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адреса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-bq-xzY">
+                                <rect key="frame" x="45" y="60" width="96" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MF2-oh-bra" firstAttribute="leading" secondItem="TGT-6W-kUP" secondAttribute="leadingMargin" constant="40" id="TRS-ya-9s0"/>
+                            <constraint firstItem="rYX-bq-xzY" firstAttribute="top" secondItem="Pih-9Z-1Pa" secondAttribute="bottom" constant="40" id="WGh-Fg-L8j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MF2-oh-bra" secondAttribute="trailing" constant="40" id="ZvT-ph-ekf"/>
                             <constraint firstItem="MF2-oh-bra" firstAttribute="top" secondItem="a2P-WI-MCy" secondAttribute="bottom" constant="20" id="cV9-ne-dcY"/>
                             <constraint firstItem="a2P-WI-MCy" firstAttribute="leading" secondItem="TGT-6W-kUP" secondAttribute="leadingMargin" id="cX4-N4-UWb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a2P-WI-MCy" secondAttribute="trailing" id="hef-DE-hUD"/>
                             <constraint firstItem="m9Q-nN-ATa" firstAttribute="top" secondItem="MF2-oh-bra" secondAttribute="bottom" constant="20" id="hxD-wQ-CcB"/>
-                            <constraint firstItem="a2P-WI-MCy" firstAttribute="top" secondItem="Pih-9Z-1Pa" secondAttribute="bottom" constant="40" id="uhf-q9-q6t"/>
+                            <constraint firstItem="a2P-WI-MCy" firstAttribute="top" secondItem="rYX-bq-xzY" secondAttribute="bottom" constant="10" id="ivY-Yk-jjG"/>
+                            <constraint firstItem="rYX-bq-xzY" firstAttribute="leading" secondItem="TGT-6W-kUP" secondAttribute="leadingMargin" constant="25" id="w5d-GR-CaO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressTitleLabel" destination="rYX-bq-xzY" id="D8D-we-OeI"/>
                         <outlet property="tableView" destination="a2P-WI-MCy" id="2pX-Ig-Qxl"/>
                         <outlet property="writeUsButton" destination="MF2-oh-bra" id="3oO-6s-EcL"/>
                     </connections>
