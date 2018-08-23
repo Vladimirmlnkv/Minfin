@@ -35,6 +35,7 @@
 		7E4A0509212E780F0065FD7A /* LeftEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0508212E780F0065FD7A /* LeftEventView.swift */; };
 		7E4A050C212E7CB90065FD7A /* RightEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A050B212E7CB90065FD7A /* RightEventView.xib */; };
 		7E4A050E212E7D0C0065FD7A /* RightEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A050D212E7D0C0065FD7A /* RightEventView.swift */; };
+		7E4A0510212EA3CF0065FD7A /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A050F212EA3CF0065FD7A /* PersonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		7E4A0508212E780F0065FD7A /* LeftEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftEventView.swift; sourceTree = "<group>"; };
 		7E4A050B212E7CB90065FD7A /* RightEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightEventView.xib; sourceTree = "<group>"; };
 		7E4A050D212E7D0C0065FD7A /* RightEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightEventView.swift; sourceTree = "<group>"; };
+		7E4A050F212EA3CF0065FD7A /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				7E4A04EF212D4D9D0065FD7A /* Views */,
 				7E4A04ED212D4CF60065FD7A /* HistoryViewController.swift */,
+				7E4A0511212EA3D60065FD7A /* PersonDetails */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -259,6 +262,14 @@
 				7E4A050D212E7D0C0065FD7A /* RightEventView.swift */,
 			);
 			path = RightEventView;
+			sourceTree = "<group>";
+		};
+		7E4A0511212EA3D60065FD7A /* PersonDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7E4A050F212EA3CF0065FD7A /* PersonDetailViewController.swift */,
+			);
+			path = PersonDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +359,7 @@
 				7E4A04FF212DAB3E0065FD7A /* Event.swift in Sources */,
 				7E4A0509212E780F0065FD7A /* LeftEventView.swift in Sources */,
 				7E4A04FD212DA4F80065FD7A /* UIViewExtension.swift in Sources */,
+				7E4A0510212EA3CF0065FD7A /* PersonDetailViewController.swift in Sources */,
 				7E374F98212C244C007ACD98 /* UIColorExtension.swift in Sources */,
 				7E4A04F1212D52570065FD7A /* TimeLineContentView.swift in Sources */,
 				7E2799ED211C76D4003DE4FA /* FinalOnboardingViewController.swift in Sources */,

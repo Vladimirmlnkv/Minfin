@@ -24,6 +24,7 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.delegate = self
         contentView.topOffset = navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 20
         topLabelTopConstraint.constant = contentView.topOffset
         contentViewWidthConstraint.constant = self.contentView.maxWidth
@@ -44,6 +45,11 @@ class HistoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.contentSize = CGSize(width: contentView.maxWidth, height: view.bounds.height - 100)
+    }
+    
+    func openDetails(for person: Person) {
+        let personVC = storyboard?.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
+        navigationController?.pushViewController(personVC, animated: true)
     }
     
     private func loadDataFromJson() {
@@ -71,4 +77,12 @@ class HistoryViewController: UIViewController {
         self.governers = governers
         self.events = events
     }
+}
+
+extension HistoryViewController: TimeLineContentViewDelegate {
+    
+    func didSelect(person: Person) {
+        openDetails(for: person)
+    }
+    
 }

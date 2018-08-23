@@ -15,6 +15,7 @@ class PersonView: UIView {
     @IBOutlet var blurView: UIVisualEffectView!
     
     static let viewHeight: CGFloat = 111.0
+    var person: Person!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -428,6 +428,137 @@
             </objects>
             <point key="canvasLocation" x="-272.4609375" y="-243.75"/>
         </scene>
+        <!--Person Detail View Controller-->
+        <scene sceneID="7cH-cN-03k">
+            <objects>
+                <viewController storyboardIdentifier="PersonDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="HNL-RP-hM3" customClass="PersonDetailViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U0f-O0-RCl"/>
+                        <viewControllerLayoutGuide type="bottom" id="rJm-dK-1a0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tdp-sq-BzZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBB-jU-QD9">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhV-8o-4b4">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="rK5-bY-5ha">
+                                        <rect key="frame" x="40" y="40" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="WWd-Id-FlF"/>
+                                            <constraint firstAttribute="height" constant="140" id="p4P-qK-iaF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21j-9P-PZe">
+                                        <rect key="frame" x="200" y="76.5" width="784" height="68"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7V-hK-kNi">
+                                                <rect key="frame" x="0.0" y="0.0" width="784" height="36"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1802 - 1825 года" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZID-Nu-AyT">
+                                                <rect key="frame" x="0.0" y="44" width="784" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.87843137250000003" green="0.87058823529999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="g7V-hK-kNi" firstAttribute="top" secondItem="21j-9P-PZe" secondAttribute="top" id="2bg-vM-fek"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZID-Nu-AyT" secondAttribute="bottom" id="9rO-Pl-3UE"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZID-Nu-AyT" secondAttribute="trailing" id="DHq-gk-48h"/>
+                                            <constraint firstItem="ZID-Nu-AyT" firstAttribute="top" secondItem="g7V-hK-kNi" secondAttribute="bottom" constant="8" id="gVi-rB-Ueq"/>
+                                            <constraint firstItem="ZID-Nu-AyT" firstAttribute="leading" secondItem="21j-9P-PZe" secondAttribute="leading" id="huG-lg-VEc"/>
+                                            <constraint firstAttribute="trailing" secondItem="g7V-hK-kNi" secondAttribute="trailing" id="ppY-U3-pa7"/>
+                                            <constraint firstItem="g7V-hK-kNi" firstAttribute="leading" secondItem="21j-9P-PZe" secondAttribute="leading" id="rO4-I8-gHl"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coA-fx-efD">
+                                        <rect key="frame" x="40" y="200" width="882" height="143.5"/>
+                                        <mutableString key="text">История российского Министерства финансов начинается 8 сентебря 1802 года. В этот день император Александр I подписал манифест об учреждении министерств.
+
+«Общим учреждением министерств» предусматривалась группа министерств и ведомств под названием «Государственная экономия», в которую входили Министерство финансов, Государственное казначейство, Ревизия государственных счетов.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha5-Ah-5kZ">
+                                        <rect key="frame" x="40" y="363.5" width="869" height="48"/>
+                                        <string key="text">«Управление частями, доставлящими Правительству доходу, должны быть основаны на таких правилах, чтобы, удаляя всякое отягощение народа, было столь же выгодно для казны.»</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-hd-scx">
+                                        <rect key="frame" x="866" y="431.5" width="118" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Из Манифеста императора Россйский империи." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55M-8L-XUR">
+                                        <rect key="frame" x="540.5" y="476" width="443.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="21j-9P-PZe" secondAttribute="trailing" constant="40" id="0ee-k0-CLf"/>
+                                    <constraint firstItem="LhV-8o-4b4" firstAttribute="centerY" secondItem="VBB-jU-QD9" secondAttribute="centerY" id="16x-Y3-BUk"/>
+                                    <constraint firstItem="coA-fx-efD" firstAttribute="top" secondItem="rK5-bY-5ha" secondAttribute="bottom" constant="20" id="24W-6T-UNn"/>
+                                    <constraint firstItem="ha5-Ah-5kZ" firstAttribute="top" secondItem="coA-fx-efD" secondAttribute="bottom" constant="20" id="27I-3S-SCs"/>
+                                    <constraint firstItem="LhV-8o-4b4" firstAttribute="leading" secondItem="VBB-jU-QD9" secondAttribute="leading" id="3td-vK-DGg"/>
+                                    <constraint firstItem="ha5-Ah-5kZ" firstAttribute="leading" secondItem="coA-fx-efD" secondAttribute="leading" id="4E1-3s-Mn1"/>
+                                    <constraint firstAttribute="bottom" secondItem="LhV-8o-4b4" secondAttribute="bottom" id="4WU-dH-dyv"/>
+                                    <constraint firstAttribute="trailing" secondItem="LhV-8o-4b4" secondAttribute="trailing" id="6wh-cv-TEx"/>
+                                    <constraint firstItem="21j-9P-PZe" firstAttribute="centerY" secondItem="rK5-bY-5ha" secondAttribute="centerY" id="78C-U1-D7M"/>
+                                    <constraint firstItem="LhV-8o-4b4" firstAttribute="centerX" secondItem="VBB-jU-QD9" secondAttribute="centerX" id="7SX-nz-vIF"/>
+                                    <constraint firstAttribute="trailing" secondItem="ph1-hd-scx" secondAttribute="trailing" constant="40" id="B6X-fp-16F"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ha5-Ah-5kZ" secondAttribute="trailing" constant="40" id="BrE-zD-gOk"/>
+                                    <constraint firstItem="55M-8L-XUR" firstAttribute="trailing" secondItem="ph1-hd-scx" secondAttribute="trailing" id="IuY-Zd-tbM"/>
+                                    <constraint firstItem="rK5-bY-5ha" firstAttribute="top" secondItem="VBB-jU-QD9" secondAttribute="top" constant="40" id="NKn-Sj-3bp"/>
+                                    <constraint firstItem="LhV-8o-4b4" firstAttribute="top" secondItem="VBB-jU-QD9" secondAttribute="top" id="Qnc-TS-pqc"/>
+                                    <constraint firstItem="coA-fx-efD" firstAttribute="leading" secondItem="rK5-bY-5ha" secondAttribute="leading" id="UNt-zj-Hdr"/>
+                                    <constraint firstItem="55M-8L-XUR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VBB-jU-QD9" secondAttribute="leading" constant="40" id="atY-YP-KXB"/>
+                                    <constraint firstItem="55M-8L-XUR" firstAttribute="top" secondItem="ph1-hd-scx" secondAttribute="bottom" constant="20" id="e5w-Tu-foN"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="55M-8L-XUR" secondAttribute="bottom" constant="20" id="gGi-sU-nic"/>
+                                    <constraint firstItem="rK5-bY-5ha" firstAttribute="leading" secondItem="VBB-jU-QD9" secondAttribute="leading" constant="40" id="iK3-0C-QI1"/>
+                                    <constraint firstItem="ph1-hd-scx" firstAttribute="top" secondItem="ha5-Ah-5kZ" secondAttribute="bottom" constant="20" id="ih1-P3-Thr"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="coA-fx-efD" secondAttribute="trailing" constant="40" id="mam-tA-L8E"/>
+                                    <constraint firstItem="21j-9P-PZe" firstAttribute="leading" secondItem="rK5-bY-5ha" secondAttribute="trailing" constant="20" id="tCG-Ek-9Ux"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VBB-jU-QD9" secondAttribute="trailing" id="CTE-fH-pLK"/>
+                            <constraint firstItem="VBB-jU-QD9" firstAttribute="leading" secondItem="Tdp-sq-BzZ" secondAttribute="leading" id="acb-vl-mDO"/>
+                            <constraint firstItem="VBB-jU-QD9" firstAttribute="top" secondItem="U0f-O0-RCl" secondAttribute="bottom" id="b7c-Xb-gU4"/>
+                            <constraint firstItem="rJm-dK-1a0" firstAttribute="top" secondItem="VBB-jU-QD9" secondAttribute="bottom" id="zNL-km-RfP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="ZID-Nu-AyT" id="qeB-Cg-c1u"/>
+                        <outlet property="descriptionTextLabel" destination="ha5-Ah-5kZ" id="g5r-bm-7ai"/>
+                        <outlet property="imageView" destination="rK5-bY-5ha" id="Q5A-gX-7tj"/>
+                        <outlet property="linkLabel" destination="55M-8L-XUR" id="eDA-57-fDs"/>
+                        <outlet property="mainNameLabel" destination="g7V-hK-kNi" id="OgT-fE-z4t"/>
+                        <outlet property="mainTextLabel" destination="coA-fx-efD" id="i33-r8-DNK"/>
+                        <outlet property="secondNameLabel" destination="ph1-hd-scx" id="sWz-Ou-MtR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ixp-ZM-g1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396.6796875" y="-244.53125"/>
+        </scene>
         <!--Book Details View Controller-->
         <scene sceneID="9wZ-P4-uZU">
             <objects>
@@ -616,5 +747,6 @@
         <image name="book" width="141" height="193"/>
         <image name="gerbMinfinRu" width="110" height="121"/>
         <image name="lang" width="18" height="18"/>
+        <image name="mask" width="50" height="50"/>
     </resources>
 </document>

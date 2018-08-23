@@ -16,6 +16,10 @@ extension String {
     }
 }
 
+protocol TimeLineContentViewDelegate: class {
+    func didSelect(person: Person)
+}
+
 class TimeLineContentView: UIView {
 
     private let startDate = 1800
@@ -36,6 +40,8 @@ class TimeLineContentView: UIView {
     var topOffset: CGFloat!
     var governers = [Person]()
     var events = [Event]()
+    
+    weak var delegate: TimeLineContentViewDelegate?
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -142,8 +148,17 @@ class TimeLineContentView: UIView {
             let width = CGFloat(governer.endYear - governer.startYear) * spaceBetweenDateLines - 1;
             let rect = CGRect(x: xCoordinate, y: bounds.minY + topOffset, width: width, height: PersonView.viewHeight)
             let personView = PersonView(frame: rect)
+            personView.person = governer
             personView.nameLabel.text = governer.name
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(personTapGestureAction))
+            personView.addGestureRecognizer(tapGestureRecognizer)
             addSubview(personView)
+        }
+    }
+    
+    @objc func personTapGestureAction(tapGesture: UITapGestureRecognizer) {
+        if let personView = tapGesture.view as? PersonView {
+            delegate?.didSelect(person: personView.person)
         }
     }
 }
