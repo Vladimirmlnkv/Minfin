@@ -25,7 +25,6 @@
 		7E4A04F1212D52570065FD7A /* TimeLineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04F0212D52570065FD7A /* TimeLineContentView.swift */; };
 		7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A04F3212D9FC80065FD7A /* PersonView.xib */; };
 		7E4A04F6212DA13B0065FD7A /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04F5212DA13B0065FD7A /* PersonView.swift */; };
-		7E4A04F8212DA1920065FD7A /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A04F7212DA1920065FD7A /* minfin.json */; };
 		7E4A04FB212DA1C20065FD7A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04FA212DA1C20065FD7A /* Person.swift */; };
 		7E4A04FD212DA4F80065FD7A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04FC212DA4F80065FD7A /* UIViewExtension.swift */; };
 		7E4A04FF212DAB3E0065FD7A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04FE212DAB3E0065FD7A /* Event.swift */; };
@@ -44,6 +43,7 @@
 		7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */; };
 		7E4A0522212EB2B00065FD7A /* MainBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */; };
 		7E4A0524212EB5620065FD7A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */; };
+		7E4A0526212EF9C10065FD7A /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A0525212EF9C10065FD7A /* minfin.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +67,6 @@
 		7E4A04F0212D52570065FD7A /* TimeLineContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineContentView.swift; sourceTree = "<group>"; };
 		7E4A04F3212D9FC80065FD7A /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
 		7E4A04F5212DA13B0065FD7A /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
-		7E4A04F7212DA1920065FD7A /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 		7E4A04FA212DA1C20065FD7A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7E4A04FC212DA4F80065FD7A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		7E4A04FE212DAB3E0065FD7A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainBackgroundView.xib; sourceTree = "<group>"; };
 		7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundView.swift; sourceTree = "<group>"; };
 		7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		7E4A0525212EF9C10065FD7A /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 		7E2799E4211C6D51003DE4FA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				7E4A04F7212DA1920065FD7A /* minfin.json */,
+				7E4A0525212EF9C10065FD7A /* minfin.json */,
 				7E2799D2211C6898003DE4FA /* Assets.xcassets */,
 			);
 			path = Support;
@@ -390,7 +390,7 @@
 				7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
 				7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */,
-				7E4A04F8212DA1920065FD7A /* minfin.json in Resources */,
+				7E4A0526212EF9C10065FD7A /* minfin.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

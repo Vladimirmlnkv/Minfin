@@ -33,16 +33,27 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejD-4k-rw6">
+                        <rect key="frame" x="0.0" y="107" width="492" height="4"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="4" id="qOG-6h-u1m"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ejD-4k-rw6" secondAttribute="bottom" id="6Ad-pZ-Fwl"/>
+                    <constraint firstItem="ejD-4k-rw6" firstAttribute="leading" secondItem="Gff-s9-ZBs" secondAttribute="leading" id="ILo-vJ-zVV"/>
                     <constraint firstAttribute="bottom" secondItem="tLQ-nS-6Pq" secondAttribute="bottom" constant="20" id="LZQ-ob-gPb"/>
                     <constraint firstItem="tLQ-nS-6Pq" firstAttribute="top" secondItem="CMf-tF-kES" secondAttribute="bottom" constant="10" id="O0Q-HT-3MC"/>
                     <constraint firstItem="tLQ-nS-6Pq" firstAttribute="centerX" secondItem="Gff-s9-ZBs" secondAttribute="centerX" id="RQP-6M-gzP"/>
                     <constraint firstItem="CMf-tF-kES" firstAttribute="top" secondItem="Gff-s9-ZBs" secondAttribute="top" constant="10" id="XZk-7k-RgB"/>
+                    <constraint firstAttribute="trailing" secondItem="ejD-4k-rw6" secondAttribute="trailing" id="ZFm-G8-Ybu"/>
                     <constraint firstItem="CMf-tF-kES" firstAttribute="centerX" secondItem="Gff-s9-ZBs" secondAttribute="centerX" id="rJt-cy-lYo"/>
                 </constraints>
             </view>
             <blurEffect style="light"/>
+            <point key="canvasLocation" x="34" y="53.5"/>
         </visualEffectView>
     </objects>
     <resources>

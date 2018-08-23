@@ -23,8 +23,8 @@ protocol TimeLineContentViewDelegate: class {
 class TimeLineContentView: UIView {
 
     private let startDate = 1800
-    private let finalDate = 2018
-    private let spaceBetweenDateLines: CGFloat = 30.0
+    private let finalDate = 2019
+    private let spaceBetweenDateLines: CGFloat = 40.0
     private let dotRadius: CGFloat = 2
     private let bottomOffset: CGFloat = 50
     private let leftOffset: CGFloat = 20 + 110
@@ -33,7 +33,7 @@ class TimeLineContentView: UIView {
     
     var maxWidth: CGFloat {
         let range = finalDate - startDate
-        return CGFloat(range) * spaceBetweenDateLines + bounds.minX + leftOffset + spaceBetweenDateLines * 2;
+        return CGFloat(range) * spaceBetweenDateLines + bounds.minX + leftOffset + spaceBetweenDateLines;
     }
     
     var eventsMinYCoordinate: CGFloat!
