@@ -31,6 +31,10 @@
 		7E4A04FF212DAB3E0065FD7A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04FE212DAB3E0065FD7A /* Event.swift */; };
 		7E4A0502212DAC820065FD7A /* SingleEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A0501212DAC820065FD7A /* SingleEventView.xib */; };
 		7E4A0504212DAE650065FD7A /* SingleEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0503212DAE650065FD7A /* SingleEventView.swift */; };
+		7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A0506212E750D0065FD7A /* LeftEventView.xib */; };
+		7E4A0509212E780F0065FD7A /* LeftEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0508212E780F0065FD7A /* LeftEventView.swift */; };
+		7E4A050C212E7CB90065FD7A /* RightEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A050B212E7CB90065FD7A /* RightEventView.xib */; };
+		7E4A050E212E7D0C0065FD7A /* RightEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A050D212E7D0C0065FD7A /* RightEventView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		7E4A04FE212DAB3E0065FD7A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		7E4A0501212DAC820065FD7A /* SingleEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleEventView.xib; sourceTree = "<group>"; };
 		7E4A0503212DAE650065FD7A /* SingleEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEventView.swift; sourceTree = "<group>"; };
+		7E4A0506212E750D0065FD7A /* LeftEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftEventView.xib; sourceTree = "<group>"; };
+		7E4A0508212E780F0065FD7A /* LeftEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftEventView.swift; sourceTree = "<group>"; };
+		7E4A050B212E7CB90065FD7A /* RightEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightEventView.xib; sourceTree = "<group>"; };
+		7E4A050D212E7D0C0065FD7A /* RightEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightEventView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +207,8 @@
 		7E4A04EF212D4D9D0065FD7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E4A050A212E7C820065FD7A /* RightEventView */,
+				7E4A0505212E74FD0065FD7A /* LeftEventView */,
 				7E4A0500212DAC700065FD7A /* SingleEventView */,
 				7E4A04F2212D9FAF0065FD7A /* RulerView */,
 				7E4A04F0212D52570065FD7A /* TimeLineContentView.swift */,
@@ -231,6 +241,24 @@
 				7E4A0503212DAE650065FD7A /* SingleEventView.swift */,
 			);
 			path = SingleEventView;
+			sourceTree = "<group>";
+		};
+		7E4A0505212E74FD0065FD7A /* LeftEventView */ = {
+			isa = PBXGroup;
+			children = (
+				7E4A0506212E750D0065FD7A /* LeftEventView.xib */,
+				7E4A0508212E780F0065FD7A /* LeftEventView.swift */,
+			);
+			path = LeftEventView;
+			sourceTree = "<group>";
+		};
+		7E4A050A212E7C820065FD7A /* RightEventView */ = {
+			isa = PBXGroup;
+			children = (
+				7E4A050B212E7CB90065FD7A /* RightEventView.xib */,
+				7E4A050D212E7D0C0065FD7A /* RightEventView.swift */,
+			);
+			path = RightEventView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,11 +320,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4A050C212E7CB90065FD7A /* RightEventView.xib in Resources */,
 				7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */,
 				7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */,
 				7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */,
 				7E4A0502212DAC820065FD7A /* SingleEventView.xib in Resources */,
 				7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */,
+				7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
 				7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */,
 				7E4A04F8212DA1920065FD7A /* minfin.json in Resources */,
@@ -312,9 +342,11 @@
 			files = (
 				7E374F8C212C1AA7007ACD98 /* MainMenuViewController.swift in Sources */,
 				7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */,
+				7E4A050E212E7D0C0065FD7A /* RightEventView.swift in Sources */,
 				7E374F8F212C1B7B007ACD98 /* LibraryViewController.swift in Sources */,
 				7E4A04EE212D4CF60065FD7A /* HistoryViewController.swift in Sources */,
 				7E4A04FF212DAB3E0065FD7A /* Event.swift in Sources */,
+				7E4A0509212E780F0065FD7A /* LeftEventView.swift in Sources */,
 				7E4A04FD212DA4F80065FD7A /* UIViewExtension.swift in Sources */,
 				7E374F98212C244C007ACD98 /* UIColorExtension.swift in Sources */,
 				7E4A04F1212D52570065FD7A /* TimeLineContentView.swift in Sources */,

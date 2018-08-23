@@ -72,7 +72,7 @@
   "events": [
     { "name": "Учреждение Госсовета", "startYear": 1810, "endYear": 0, "iconRes": "", "isTextOnLeft": false, "rowNumber": 0, "margin": 0, "needToCenterContent": false },
     { "name": "Русско-иранская война", "startYear": 1804, "endYear": 1813, "iconRes": "", "isTextOnLeft": false, "rowNumber": 0, "margin": 0, "needToCenterContent": false },
-    { "name": "Русско-шведская война", "startYear": 1808, "endYear": 1809, "iconRes": "", "isTextOnLeft": false, "rowNumber": 0, "margin": 0, "needToCenterContent": false },
+    { "name": "Русско-шведская война", "startYear": 1808, "endYear": 1809, "iconRes": "", "isTextOnLeft": true, "rowNumber": 1, "margin": 0, "needToCenterContent": false },
     { "name": "Русско-турецкая война", "startYear": 1806, "endYear": 1812, "iconRes": "", "isTextOnLeft": false, "rowNumber": 0, "margin": 0, "needToCenterContent": false },
     { "name": "\"План финансов\" М.М. Сперанского", "startYear": 1809, "endYear": 1810, "iconRes": "", "isTextOnLeft": false, "rowNumber": 0, "margin": 0, "needToCenterContent": false },
     { "name": "Отечественная война 1812 года", "startYear": 1812, "endYear": 1813, "iconRes": "", "isTextOnLeft": false, "rowNumber": 0, "margin": 0, "needToCenterContent": false },

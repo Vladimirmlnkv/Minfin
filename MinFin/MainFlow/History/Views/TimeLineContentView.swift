@@ -85,16 +85,49 @@ class TimeLineContentView: UIView {
             
             //one year event
             if event.endYear == nil || event.endYear == 0 {
-                let xCenterCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset;
-                let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
+//                let xCenterCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset
+//                let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
+//
+//                let eventView = SingleEventView(frame: CGRect())
+//                eventView.titleLabel.text = event.name
+//
+//                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + SingleEventView.horizontalSpace
+//                let eventRect = CGRect(x: xCenterCoordinate - eventViewWidth / 2, y: yCoordinate, width: eventViewWidth, height: SingleEventView.viewHeight)
+//                eventView.frame = eventRect
+//                addSubview(eventView)
+            } else if event.needToCenterContent {
                 
-                let eventView = SingleEventView(frame: CGRect())
+            } else if event.isTextOnLeft {
+                
+                
+                let eventView = RightEventView(frame: CGRect())
                 eventView.titleLabel.text = event.name
                 
-                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + SingleEventView.horizontalSpace
-                let eventRect = CGRect(x: xCenterCoordinate - eventViewWidth / 2, y: yCoordinate, width: eventViewWidth, height: SingleEventView.viewHeight)
+                let xEndCoordinate = bounds.minX + CGFloat(event.endYear! - startDate) * spaceBetweenDateLines + leftOffset
+                let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
+                let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
+                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + LeftEventView.horizontalSpace
+                let finalWidth = max(eventViewWidth, timeLineViewWidth)
+                let eventRect = CGRect(x: xEndCoordinate - finalWidth, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
                 eventView.frame = eventRect
+                eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
                 addSubview(eventView)
+                
+                
+            } else if !event.isTextOnLeft {
+                
+//                let eventView = LeftEventView(frame: CGRect())
+//                eventView.titleLabel.text = event.name
+//                
+//                let xCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset
+//                let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
+//                let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
+//                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + LeftEventView.horizontalSpace
+//                let finalWidth = max(eventViewWidth, timeLineViewWidth)
+//                let eventRect = CGRect(x: xCoordinate, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
+//                eventView.frame = eventRect
+//                eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
+//                addSubview(eventView)
             }
             
         }
