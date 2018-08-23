@@ -26,6 +26,8 @@ class BookDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBackgroundView()
+        downloadButton.layer.cornerRadius = 15.0
     }
 
     

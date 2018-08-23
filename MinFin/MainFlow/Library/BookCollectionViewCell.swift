@@ -18,6 +18,11 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var downloadButton: UIButton!
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        downloadButton.layer.cornerRadius = 15.0
+    }
+    
     
     @IBAction func downloadButtonAction(_ sender: Any) {
     }
