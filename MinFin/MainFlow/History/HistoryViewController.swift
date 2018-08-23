@@ -34,7 +34,7 @@ class HistoryViewController: UIViewController {
         loadDataFromJson()
         contentView.governers = governers
         contentView.events = events
-        contentView.eventsMinYCoordinate = eventsLabel.frame.minY
+        contentView.eventsMinYCoordinate = eventsLabel.frame.minY + contentView.topOffset
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +64,7 @@ class HistoryViewController: UIViewController {
                 }
             }
         }
-//        self.governers = governers
+        self.governers = governers
         self.events = events
     }
 }
