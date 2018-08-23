@@ -341,16 +341,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tg-ib-LQY">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-oj-p3c">
-                                        <rect key="frame" x="0.0" y="0.0" width="10000" height="748"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="10000" height="768"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="pC0-K4-VDE">
-                                                <rect key="frame" x="0.0" y="0.0" width="10000" height="748"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="10000" height="768"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-gl-60z" customClass="TimeLineContentView" customModule="MinFin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="10000" height="748"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="10000" height="768"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Главы государств" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-U3-nwo">
@@ -408,9 +408,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5tg-ib-LQY" firstAttribute="height" secondItem="aiJ-KW-fnf" secondAttribute="height" id="2bQ-FP-zkB"/>
                             <constraint firstItem="5tg-ib-LQY" firstAttribute="leading" secondItem="aiJ-KW-fnf" secondAttribute="leading" id="A3h-WH-CYC"/>
                             <constraint firstItem="63A-m3-Q8m" firstAttribute="top" secondItem="5tg-ib-LQY" secondAttribute="bottom" id="LYl-k1-Nu0"/>
-                            <constraint firstItem="5tg-ib-LQY" firstAttribute="top" secondItem="4ew-wy-t7H" secondAttribute="bottom" id="OF2-5O-bAb"/>
                             <constraint firstAttribute="trailing" secondItem="5tg-ib-LQY" secondAttribute="trailing" id="Sjv-9y-e7t"/>
                         </constraints>
                     </view>
@@ -421,6 +421,7 @@
                         <outlet property="headsLabel" destination="wQa-U3-nwo" id="wWX-MH-uYU"/>
                         <outlet property="ministersLabel" destination="Z41-LE-BPE" id="Fr5-OB-6TP"/>
                         <outlet property="scrollView" destination="5tg-ib-LQY" id="qJj-US-Vva"/>
+                        <outlet property="topLabelTopConstraint" destination="0vB-jp-v4Z" id="HCr-Ki-KpK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYS-vG-9Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>

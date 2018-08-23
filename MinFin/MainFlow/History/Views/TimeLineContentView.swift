@@ -33,7 +33,7 @@ class TimeLineContentView: UIView {
     }
     
     var eventsMinYCoordinate: CGFloat!
-    
+    var topOffset: CGFloat!
     var governers = [Person]()
     var events = [Event]()
     
@@ -55,7 +55,7 @@ class TimeLineContentView: UIView {
             for i in 0...rangeSize {
                 let xCoordinate = bounds.minX + spaceBetweenDateLines * CGFloat(i) + leftOffset;
                 let startPoint = CGPoint(x: xCoordinate, y: bounds.maxY - bottomOffset)
-                let finalPoint = CGPoint(x: xCoordinate, y: bounds.minY)
+                let finalPoint = CGPoint(x: xCoordinate, y: bounds.minY + topOffset)
                 
                 if i % 10 != 0 {
                     context.setLineDash(phase: 2.0, lengths: [5])

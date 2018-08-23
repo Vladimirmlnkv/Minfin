@@ -18,11 +18,14 @@ class HistoryViewController: UIViewController {
     @IBOutlet var contentView: TimeLineContentView!
     @IBOutlet var contentViewWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet var topLabelTopConstraint: NSLayoutConstraint!
     private var governers = [Person]()
     private var events = [Event]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.topOffset = navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 20
+        topLabelTopConstraint.constant = contentView.topOffset
         contentViewWidthConstraint.constant = self.contentView.maxWidth
         headsLabel.text = "Главы\nгосударств"
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
