@@ -41,6 +41,9 @@
 		7E4A0518212EABA40065FD7A /* AboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0517212EABA40065FD7A /* AboutData.swift */; };
 		7E4A051B212EADEF0065FD7A /* AboutHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A051A212EADEF0065FD7A /* AboutHeaderView.xib */; };
 		7E4A051D212EADFA0065FD7A /* AboutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A051C212EADFA0065FD7A /* AboutHeaderView.swift */; };
+		7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */; };
+		7E4A0522212EB2B00065FD7A /* MainBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */; };
+		7E4A0524212EB5620065FD7A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		7E4A0517212EABA40065FD7A /* AboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutData.swift; sourceTree = "<group>"; };
 		7E4A051A212EADEF0065FD7A /* AboutHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutHeaderView.xib; sourceTree = "<group>"; };
 		7E4A051C212EADFA0065FD7A /* AboutHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHeaderView.swift; sourceTree = "<group>"; };
+		7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainBackgroundView.xib; sourceTree = "<group>"; };
+		7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundView.swift; sourceTree = "<group>"; };
+		7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +134,11 @@
 		7E2799DD211C6A49003DE4FA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7E4A051E212EB2480065FD7A /* BackgroundView */,
 				7E374F97212C244C007ACD98 /* UIColorExtension.swift */,
 				7E374F99212C26F6007ACD98 /* Color.swift */,
 				7E4A04FC212DA4F80065FD7A /* UIViewExtension.swift */,
+				7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -303,6 +311,15 @@
 			path = AboutHeaderView;
 			sourceTree = "<group>";
 		};
+		7E4A051E212EB2480065FD7A /* BackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */,
+				7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */,
+			);
+			path = BackgroundView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,6 +386,7 @@
 				7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */,
 				7E4A0502212DAC820065FD7A /* SingleEventView.xib in Resources */,
 				7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */,
+				7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */,
 				7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
 				7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */,
@@ -385,6 +403,7 @@
 			files = (
 				7E374F8C212C1AA7007ACD98 /* MainMenuViewController.swift in Sources */,
 				7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */,
+				7E4A0524212EB5620065FD7A /* UIViewControllerExtension.swift in Sources */,
 				7E4A050E212E7D0C0065FD7A /* RightEventView.swift in Sources */,
 				7E374F8F212C1B7B007ACD98 /* LibraryViewController.swift in Sources */,
 				7E4A04EE212D4CF60065FD7A /* HistoryViewController.swift in Sources */,
@@ -394,6 +413,7 @@
 				7E4A0510212EA3CF0065FD7A /* PersonDetailViewController.swift in Sources */,
 				7E374F98212C244C007ACD98 /* UIColorExtension.swift in Sources */,
 				7E4A04F1212D52570065FD7A /* TimeLineContentView.swift in Sources */,
+				7E4A0522212EB2B00065FD7A /* MainBackgroundView.swift in Sources */,
 				7E2799ED211C76D4003DE4FA /* FinalOnboardingViewController.swift in Sources */,
 				7E4A04F6212DA13B0065FD7A /* PersonView.swift in Sources */,
 				7E374F91212C1BE4007ACD98 /* BookCollectionViewCell.swift in Sources */,

@@ -22,6 +22,7 @@ class PersonDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBackgroundView()
     }
 
 

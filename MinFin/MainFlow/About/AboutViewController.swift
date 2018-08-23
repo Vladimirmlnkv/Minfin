@@ -20,12 +20,16 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBackgroundView()
+        writeUsButton.layer.cornerRadius = 20.0
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "О МИНФИНЕ"
         let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gerbMinfinRuSmall"), landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil
         navigationItem.rightBarButtonItem = barButtonItem
+        tableView.estimatedRowHeight = 60.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
         tableView.dataSource = self
         tableView.delegate = self

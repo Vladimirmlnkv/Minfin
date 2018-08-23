@@ -15,10 +15,11 @@ class AboutTableViewCell: UITableViewCell {
     @IBOutlet var descriptionTitleLabel: UILabel!
     @IBOutlet var linkButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        blurView.layer.cornerRadius = blurView.bounds.width / 2
-        linkButton.layer.cornerRadius = 10.0
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        blurView.clipsToBounds = true
+        blurView.layer.cornerRadius = 10.0
+//        contentView.layer.cornerRadius = 10.0
     }
     
     @IBAction func linkButtonAction(_ sender: Any) {
