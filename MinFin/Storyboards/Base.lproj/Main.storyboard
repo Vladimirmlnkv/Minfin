@@ -391,7 +391,7 @@
                                                         <constraint firstAttribute="width" constant="120" id="k5t-vw-3cK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                    <state key="normal" title="ЗАГРУЗИТЬ">
+                                                    <state key="normal" title="ПОДРОБНЕЕ">
                                                         <color key="titleColor" red="0.0078431372549019607" green="0.41176470588235292" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>

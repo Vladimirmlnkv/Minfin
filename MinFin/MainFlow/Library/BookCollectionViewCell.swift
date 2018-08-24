@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol BookCollectionViewCellDelegate {
+    func didPressMore(on cell: BookCollectionViewCell)
+}
+
 class BookCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var bookNameLabel: UILabel!
@@ -17,6 +21,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet var mainTitleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var downloadButton: UIButton!
+    var delegate: BookCollectionViewCellDelegate!
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -25,6 +30,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func downloadButtonAction(_ sender: Any) {
+        delegate.didPressMore(on: self)
     }
     
 }

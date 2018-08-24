@@ -25,6 +25,11 @@ class LibraryViewController: UIViewController {
         barButtonItem.tintColor = nil
         navigationItem.rightBarButtonItem = barButtonItem
     }
+    
+    func openDetailBook() {
+        let bookDetailsVC = storyboard?.instantiateViewController(withIdentifier: "BookDetailsViewController") as! BookDetailsViewController
+        navigationController?.pushViewController(bookDetailsVC, animated: true)
+    }
 
 }
 
@@ -32,8 +37,7 @@ extension LibraryViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let bookDetailsVC = storyboard?.instantiateViewController(withIdentifier: "BookDetailsViewController") as! BookDetailsViewController
-        navigationController?.pushViewController(bookDetailsVC, animated: true)
+        openDetailBook()
     }
     
 }
@@ -46,6 +50,13 @@ extension LibraryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
+        cell.delegate = self
         return cell
+    }
+}
+
+extension LibraryViewController: BookCollectionViewCellDelegate {
+    func didPressMore(on cell: BookCollectionViewCell) {
+        openDetailBook()
     }
 }
