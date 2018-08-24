@@ -24,10 +24,22 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var tagsLabel: UILabel!
     @IBOutlet var scrollView: UIScrollView!
     
+    var book: Book!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundView()
         downloadButton.layer.cornerRadius = 15.0
+        
+        bookNameLabel.text = book.title
+        authorNameLabel.text = book.author
+        yearLabel.text = "\(book.year) год"
+        
+        mainTitleLabel.text = book.title
+        authorDescriptionLabel.text = book.author
+        yearDescriptionLabel.text = "\(book.year) год"
+        
+        aboutDescriptionLabel.text = book.longDescription
     }
 
     

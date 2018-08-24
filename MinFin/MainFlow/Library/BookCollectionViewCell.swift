@@ -21,6 +21,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet var mainTitleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var downloadButton: UIButton!
+    
     var delegate: BookCollectionViewCellDelegate!
     
     override func draw(_ rect: CGRect) {
@@ -28,6 +29,13 @@ class BookCollectionViewCell: UICollectionViewCell {
         downloadButton.layer.cornerRadius = 15.0
     }
     
+    func configure(with book: Book) {
+        bookNameLabel.text = book.title
+        authorNameLabel.text = book.author
+        mainTitleLabel.text = book.title
+        descriptionLabel.text = book.shortDescription
+        dateLabel.text = "\(book.year) год"
+    }
     
     @IBAction func downloadButtonAction(_ sender: Any) {
         delegate.didPressMore(on: self)
