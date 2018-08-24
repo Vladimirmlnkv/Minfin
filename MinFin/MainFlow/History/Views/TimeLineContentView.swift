@@ -147,30 +147,34 @@ class TimeLineContentView: UIView {
     }
     
     private func addMinistersViews() {
+        let yCoordinate = bounds.minY + topOffset + personsSectionHeight
         for minister in ministers {
-            let xCoordinate = bounds.minX + CGFloat(minister.startYear - startDate) * spaceBetweenDateLines + leftOffset;
-            let width = CGFloat(minister.endYear - minister.startYear) * spaceBetweenDateLines - 1;
-            let rect = CGRect(x: xCoordinate, y: bounds.minY + topOffset + personsSectionHeight, width: width, height: personsSectionHeight - verticalOffset)
-            let personView = PersonView(frame: rect)
-            personView.person = minister
-            personView.nameLabel.text = minister.name
+            addPersonView(for: minister, tapIsEnabled: true, yCoordinate: yCoordinate)
+        }
+    }
+    
+    private func addGovernerViews() {
+        let yCoordinate = bounds.minY + topOffset
+        for governer in governers {
+            addPersonView(for: governer, tapIsEnabled: false, yCoordinate: yCoordinate)
+        }
+    }
+    
+    private func addPersonView(for person: Person, tapIsEnabled: Bool, yCoordinate: CGFloat) {        
+        let xCoordinate = bounds.minX + CGFloat(person.startYear - startDate) * spaceBetweenDateLines + leftOffset
+        let width = CGFloat(person.endYear - person.startYear) * spaceBetweenDateLines - 1
+        let rect = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: personsSectionHeight - verticalOffset)
+        let personView = PersonView(frame: rect)
+        personView.person = person
+        personView.nameLabel.text = person.name
+        addSubview(personView)
+        if tapIsEnabled {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(personTapGestureAction))
             personView.addGestureRecognizer(tapGestureRecognizer)
             addSubview(personView)
         }
     }
     
-    private func addGovernerViews() {
-        for governer in governers {
-            let xCoordinate = bounds.minX + CGFloat(governer.startYear - startDate) * spaceBetweenDateLines + leftOffset;
-            let width = CGFloat(governer.endYear - governer.startYear) * spaceBetweenDateLines - 1;
-            let rect = CGRect(x: xCoordinate, y: bounds.minY + topOffset, width: width, height: personsSectionHeight - verticalOffset)
-            let personView = PersonView(frame: rect)
-            personView.person = governer
-            personView.nameLabel.text = governer.name
-            addSubview(personView)
-        }
-    }
     
     @objc func personTapGestureAction(tapGesture: UITapGestureRecognizer) {
         if let personView = tapGesture.view as? PersonView {
