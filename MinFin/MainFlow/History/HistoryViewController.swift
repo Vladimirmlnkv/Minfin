@@ -62,8 +62,9 @@ class HistoryViewController: UIViewController {
         scrollView.contentSize = CGSize(width: contentView.maxWidth, height: view.bounds.height - 100)
     }
     
-    func openDetails(for person: Person) {
+    func openDetails(for info: DetailInfo) {
         let personVC = storyboard?.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
+        personVC.detailInfo = info
         navigationItem.title = "Назад"
         navigationController?.pushViewController(personVC, animated: true)
     }
@@ -104,8 +105,7 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController: TimeLineContentViewDelegate {
     
-    func didSelect(person: Person) {
-        openDetails(for: person)
-    }
-    
+    func didSelect(detailInfo: DetailInfo) {
+        openDetails(for: detailInfo)
+    }    
 }

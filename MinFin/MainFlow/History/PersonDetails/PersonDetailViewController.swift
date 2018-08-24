@@ -20,9 +20,30 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet var secondNameLabel: UILabel!
     @IBOutlet var linkLabel: UILabel!
     
+    var detailInfo: DetailInfo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundView()
+        mainNameLabel.text = detailInfo.name
+        var dateText = ""
+        if let endYear = detailInfo.endYear, endYear != 0 {
+            dateText = "\(detailInfo.startYear) - \(endYear) года"
+        } else {
+            dateText = "\(detailInfo.startYear) год"
+        }
+        dateLabel.text = dateText
+        
+        mainTextLabel.text = detailInfo.longDescription
+        descriptionTextLabel.text = detailInfo.quote
+        if let source = detailInfo.quoteSource, source != "" {
+            let components = source.components(separatedBy: "\n")
+            secondNameLabel.text = components[0]
+            linkLabel.text = components[1]
+        } else {
+            secondNameLabel.text = nil
+            linkLabel.text = nil
+        }
     }
 
 

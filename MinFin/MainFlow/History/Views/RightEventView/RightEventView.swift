@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RightEventView: UIView {
+class RightEventView: UIView, EventView {
 
     static let imageSize: CGFloat = 50.0
     static let horizontalSpace: CGFloat = 24.0
@@ -19,6 +19,8 @@ class RightEventView: UIView {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var timeLineView: UIView!
     @IBOutlet var timeLineViewWidthConstraint: NSLayoutConstraint!
+    
+    var event: Event!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

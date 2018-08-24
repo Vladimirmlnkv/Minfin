@@ -17,7 +17,7 @@ extension String {
 }
 
 protocol TimeLineContentViewDelegate: class {
-    func didSelect(person: Person)
+    func didSelect(detailInfo: DetailInfo)
 }
 
 class TimeLineContentView: UIView {
@@ -103,12 +103,16 @@ class TimeLineContentView: UIView {
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
 
                 let eventView = SingleEventView(frame: CGRect())
+                eventView.event = event
                 eventView.titleLabel.text = event.name
 
                 let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + SingleEventView.horizontalSpace
-                let eventRect = CGRect(x: xCenterCoordinate - eventViewWidth / 2, y: yCoordinate, width: eventViewWidth, height: SingleEventView.viewHeight)
+                let eventRect = CGRect(x: xCenterCoordinate - eventViewWidth / 2, y: yCoordinate, width: eventViewWidth, height: eventRowHeight - 5)
                 eventView.frame = eventRect
                 addSubview(eventView)
+                eventView.updateCornerRadiuses()
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+                eventView.addGestureRecognizer(tapGestureRecognizer)
             } else if event.needToCenterContent {
                 
             } else if event.isTextOnLeft {
@@ -116,30 +120,35 @@ class TimeLineContentView: UIView {
                 
                 let eventView = RightEventView(frame: CGRect())
                 eventView.titleLabel.text = event.name
+                eventView.event = event
                 
                 let xEndCoordinate = bounds.minX + CGFloat(event.endYear! - startDate) * spaceBetweenDateLines + leftOffset
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
                 let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
                 let finalWidth = width(for: event, font: eventView.titleLabel.font, timeLineViewWidth: timeLineViewWidth)
-                let eventRect = CGRect(x: xEndCoordinate - finalWidth, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
+                let eventRect = CGRect(x: xEndCoordinate - finalWidth, y: yCoordinate, width: finalWidth, height: eventRowHeight - 20)
                 eventView.frame = eventRect
                 eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
                 addSubview(eventView)
-                
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+                eventView.addGestureRecognizer(tapGestureRecognizer)
                 
             } else if !event.isTextOnLeft {
                 
                 let eventView = LeftEventView(frame: CGRect())
                 eventView.titleLabel.text = event.name
+                eventView.event = event
                 
                 let xCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
                 let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
                 let finalWidth = width(for: event, font: eventView.titleLabel.font, timeLineViewWidth: timeLineViewWidth)
-                let eventRect = CGRect(x: xCoordinate, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
+                let eventRect = CGRect(x: xCoordinate, y: yCoordinate, width: finalWidth, height: eventRowHeight - 20)
                 eventView.frame = eventRect
                 eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
                 addSubview(eventView)
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+                eventView.addGestureRecognizer(tapGestureRecognizer)
             }
         }
     }
@@ -171,23 +180,25 @@ class TimeLineContentView: UIView {
     
     private func addPersonView(for person: Person, tapIsEnabled: Bool, yCoordinate: CGFloat) {
         let xCoordinate = bounds.minX + CGFloat(person.startYear - startDate) * spaceBetweenDateLines + leftOffset
-        let width = CGFloat(person.endYear - person.startYear) * spaceBetweenDateLines - 1
+        let width = CGFloat(person.endYear! - person.startYear) * spaceBetweenDateLines - 1
         let rect = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: personsSectionHeight - verticalOffset)
         let personView = PersonView(frame: rect)
         personView.person = person
         personView.nameLabel.text = person.name
         addSubview(personView)
         if tapIsEnabled {
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(personTapGestureAction))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
             personView.addGestureRecognizer(tapGestureRecognizer)
-            addSubview(personView)
         }
+        addSubview(personView)
     }
     
     
-    @objc func personTapGestureAction(tapGesture: UITapGestureRecognizer) {
+    @objc func tapGestureAction(tapGesture: UITapGestureRecognizer) {
         if let personView = tapGesture.view as? PersonView {
-            delegate?.didSelect(person: personView.person)
+            delegate?.didSelect(detailInfo: personView.person)
+        } else if let eventView = tapGesture.view as? EventView {
+            delegate?.didSelect(detailInfo: eventView.event)
         }
     }
 }

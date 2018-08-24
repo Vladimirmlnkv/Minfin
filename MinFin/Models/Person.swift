@@ -8,21 +8,27 @@
 
 import UIKit
 
-class Person {
+class Person: DetailInfo {
     
-    let name: String
-    let startYear: Int
-    let endYear: Int
+    var name: String
+    var startYear: Int
+    var endYear: Int?
+    
+    var longDescription: String?
+    var quote: String? = nil
+    var quoteSource: String? = nil
     
     init(json: Any) {
         if let dict = json as? [String: Any] {
             name = dict["name"] as! String
             startYear = dict["startYear"] as! Int
-            endYear = dict["endYear"] as! Int
+            endYear = dict["endYear"] as? Int
+            longDescription = dict["longDescription"] as? String
         } else {
             name = ""
             startYear = 0
             endYear = 0
+            longDescription = nil
         }
     }
 }

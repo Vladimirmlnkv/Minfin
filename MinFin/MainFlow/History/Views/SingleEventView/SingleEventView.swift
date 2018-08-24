@@ -8,12 +8,15 @@
 
 import UIKit
 
-class SingleEventView: UIView {
+protocol EventView {
+    var event: Event! {get set}
+}
+
+class SingleEventView: UIView, EventView {
     
     static let viewHeight: CGFloat = 110.0
     static let horizontalSpace: CGFloat = 16.0
     
-    @IBOutlet var avatarContainerView: UIView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var avatarBlurView: UIVisualEffectView!
     
@@ -22,6 +25,8 @@ class SingleEventView: UIView {
     @IBOutlet var titleBlurView: UIVisualEffectView!
     
     @IBOutlet var dotView: UIView!
+    
+    var event: Event!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,13 +40,12 @@ class SingleEventView: UIView {
         updateCornerRadiuses()
     }
     
-    private func updateCornerRadiuses() {
+    func updateCornerRadiuses() {
         avatarBlurView.clipsToBounds = true
-        avatarBlurView.layer.cornerRadius = avatarBlurView.bounds.width / 2
+        avatarBlurView.layer.cornerRadius = avatarBlurView.frame.height / 2
         dotView.layer.cornerRadius = dotView.bounds.width / 2
         titleBlurView.clipsToBounds = true
         titleBlurView.layer.cornerRadius = 10.0
-        avatarContainerView.layer.cornerRadius = avatarContainerView.bounds.width / 2
         labelContainerView.layer.cornerRadius = labelContainerView.bounds.width / 2
     }
 }
