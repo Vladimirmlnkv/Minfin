@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,14 +19,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <visualEffectView opaque="NO" contentMode="scaleToFill" id="AgB-fn-bQR">
-            <rect key="frame" x="0.0" y="0.0" width="492" height="111"/>
+            <rect key="frame" x="0.0" y="0.0" width="492" height="101"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gff-s9-ZBs">
-                <rect key="frame" x="0.0" y="0.0" width="492" height="111"/>
+                <rect key="frame" x="0.0" y="0.0" width="492" height="101"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="CMf-tF-kES">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="CMf-tF-kES">
                         <rect key="frame" x="221" y="10" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="CMf-tF-kES" secondAttribute="height" multiplier="1:1" id="uBz-iN-v8v"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр l" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLQ-nS-6Pq">
                         <rect key="frame" x="199" y="70" width="95.5" height="21"/>
@@ -34,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejD-4k-rw6">
-                        <rect key="frame" x="0.0" y="107" width="492" height="4"/>
+                        <rect key="frame" x="0.0" y="97" width="492" height="4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="4" id="qOG-6h-u1m"/>
@@ -44,10 +48,10 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="ejD-4k-rw6" secondAttribute="bottom" id="6Ad-pZ-Fwl"/>
                     <constraint firstItem="ejD-4k-rw6" firstAttribute="leading" secondItem="Gff-s9-ZBs" secondAttribute="leading" id="ILo-vJ-zVV"/>
-                    <constraint firstAttribute="bottom" secondItem="tLQ-nS-6Pq" secondAttribute="bottom" constant="20" id="LZQ-ob-gPb"/>
-                    <constraint firstItem="tLQ-nS-6Pq" firstAttribute="top" secondItem="CMf-tF-kES" secondAttribute="bottom" constant="10" id="O0Q-HT-3MC"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tLQ-nS-6Pq" secondAttribute="bottom" constant="10" id="LZQ-ob-gPb"/>
+                    <constraint firstItem="tLQ-nS-6Pq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CMf-tF-kES" secondAttribute="bottom" constant="10" id="O0Q-HT-3MC"/>
                     <constraint firstItem="tLQ-nS-6Pq" firstAttribute="centerX" secondItem="Gff-s9-ZBs" secondAttribute="centerX" id="RQP-6M-gzP"/>
-                    <constraint firstItem="CMf-tF-kES" firstAttribute="top" secondItem="Gff-s9-ZBs" secondAttribute="top" constant="10" id="XZk-7k-RgB"/>
+                    <constraint firstItem="CMf-tF-kES" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Gff-s9-ZBs" secondAttribute="top" constant="10" id="XZk-7k-RgB"/>
                     <constraint firstAttribute="trailing" secondItem="ejD-4k-rw6" secondAttribute="trailing" id="ZFm-G8-Ybu"/>
                     <constraint firstItem="CMf-tF-kES" firstAttribute="centerX" secondItem="Gff-s9-ZBs" secondAttribute="centerX" id="rJt-cy-lYo"/>
                 </constraints>

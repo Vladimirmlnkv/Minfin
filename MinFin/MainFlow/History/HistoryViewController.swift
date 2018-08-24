@@ -23,6 +23,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet var topLabelTopConstraint: NSLayoutConstraint!
     private var governers = [Person]()
     private var events = [Event]()
+    private var ministers = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,7 @@ class HistoryViewController: UIViewController {
         loadDataFromJson()
         contentView.governers = governers
         contentView.events = events
+        contentView.ministers = ministers
         let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gerbMinfinRuSmall"), landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil
@@ -69,6 +71,7 @@ class HistoryViewController: UIViewController {
     private func loadDataFromJson() {
         var governers = [Person]()
         var events = [Event]()
+        var ministers = [Person]()
         if let path = Bundle.main.path(forResource: "minfin", ofType: "json")
         {
             if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path))
@@ -85,11 +88,17 @@ class HistoryViewController: UIViewController {
                             events.append(Event(json: e))
                         }
                     }
+                    if let ministersJson = jsonResult["ministers"] as? [Any] {
+                        for m in ministersJson {
+                            ministers.append(Person(json: m))
+                        }
+                    }
                 }
             }
         }
         self.governers = governers
         self.events = events
+        self.ministers = ministers
     }
 }
 
