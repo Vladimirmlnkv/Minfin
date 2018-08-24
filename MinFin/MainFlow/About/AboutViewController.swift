@@ -37,6 +37,18 @@ class AboutViewController: UIViewController {
     
     @IBAction func writeUsButtonAction(_ sender: Any) {
         
+        let subject = "Отзыв о Минфине"
+        let iosVersion = UIDevice.current.systemVersion
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        let body = "\n\nПлатформа: iOS \(iosVersion)\nУстройство: \(UIDevice.modelName)\nВерсия приложения: \(appVersion)"
+        let encodedParams = "subject=\(subject)&body=\(body)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = "mailto:minfin@mail.ru?\(encodedParams)"
+        
+        if let emailURL = URL(string: url) {
+            if UIApplication.shared.canOpenURL(emailURL) {
+                UIApplication.shared.openURL(emailURL)
+            }
+        }
     }
     
 }
@@ -51,8 +63,20 @@ extension AboutViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AboutTableViewCell") as! AboutTableViewCell
         let data = aboutInfo[indexPath.row]
         cell.mainTitleLabel.text = data.name
+        cell.delegate = self
         cell.descriptionTitleLabel.text = data.address
         return cell
     }
     
+}
+
+extension AboutViewController: AboutTableViewCellDelegate {
+    func didPressLinkButton() {
+        let urlString = "https://www.minfin.ru"
+        if let url = URL(string: urlString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
 }

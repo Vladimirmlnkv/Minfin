@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AboutTableViewCellDelegate {
+    func didPressLinkButton()
+}
+
 class AboutTableViewCell: UITableViewCell {
 
     @IBOutlet var blurView: UIVisualEffectView!
@@ -15,15 +19,16 @@ class AboutTableViewCell: UITableViewCell {
     @IBOutlet var descriptionTitleLabel: UILabel!
     @IBOutlet var linkButton: UIButton!
     
+    var delegate: AboutTableViewCellDelegate!
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         blurView.clipsToBounds = true
         blurView.layer.cornerRadius = 10.0
-//        contentView.layer.cornerRadius = 10.0
     }
     
     @IBAction func linkButtonAction(_ sender: Any) {
-        
+        delegate.didPressLinkButton()
     }
     
 
