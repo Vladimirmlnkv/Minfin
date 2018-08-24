@@ -26,7 +26,6 @@ class TimeLineContentView: UIView {
     private let finalDate = 2019
     private let spaceBetweenDateLines: CGFloat = 40.0
     private let dotRadius: CGFloat = 2
-    private let bottomOffset: CGFloat = 50
     private let leftOffset: CGFloat = 20 + 110
     private let timeLabelHeight: CGFloat = 20
     private let timeLabelWidth: CGFloat = 44
@@ -36,10 +35,14 @@ class TimeLineContentView: UIView {
         return CGFloat(range) * spaceBetweenDateLines + bounds.minX + leftOffset + spaceBetweenDateLines;
     }
     
+    let bottomOffset: CGFloat = 50
     var eventsMinYCoordinate: CGFloat!
     var topOffset: CGFloat!
     var governers = [Person]()
     var events = [Event]()
+    
+    var personsSectionHeight: CGFloat!
+    var eventsSectionHeight: CGFloat!
     
     weak var delegate: TimeLineContentViewDelegate?
     

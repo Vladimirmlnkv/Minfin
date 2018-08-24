@@ -18,6 +18,8 @@ class HistoryViewController: UIViewController {
     @IBOutlet var contentView: TimeLineContentView!
     @IBOutlet var contentViewWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet var eventsLabelTopConstraint: NSLayoutConstraint!
+    @IBOutlet var ministersLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet var topLabelTopConstraint: NSLayoutConstraint!
     private var governers = [Person]()
     private var events = [Event]()
@@ -26,15 +28,22 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         contentView.delegate = self
         contentView.topOffset = navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 20
+        
+        let fullHeight = view.frame.height - contentView.topOffset - contentView.bottomOffset
+        contentView.personsSectionHeight = fullHeight * 3 / 2 / 10
+        contentView.eventsSectionHeight = fullHeight - 2 * contentView.personsSectionHeight        
+        
         topLabelTopConstraint.constant = contentView.topOffset
+        ministersLabelTopConstraint.constant = contentView.topOffset + contentView.personsSectionHeight
+        eventsLabelTopConstraint.constant = contentView.topOffset + contentView.personsSectionHeight * 2
         contentViewWidthConstraint.constant = self.contentView.maxWidth
+        contentView.eventsMinYCoordinate = eventsLabelTopConstraint.constant
+        
         headsLabel.text = "Главы\nгосударств"
-        scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
         navigationController?.setNavigationBarHidden(false, animated: true)
         loadDataFromJson()
         contentView.governers = governers
         contentView.events = events
-        contentView.eventsMinYCoordinate = eventsLabel.frame.minY + contentView.topOffset
         let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gerbMinfinRuSmall"), landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil
