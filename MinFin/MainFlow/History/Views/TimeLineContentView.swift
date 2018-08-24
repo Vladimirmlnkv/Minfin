@@ -120,8 +120,7 @@ class TimeLineContentView: UIView {
                 let xEndCoordinate = bounds.minX + CGFloat(event.endYear! - startDate) * spaceBetweenDateLines + leftOffset
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
                 let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
-                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + LeftEventView.horizontalSpace
-                let finalWidth = max(eventViewWidth, timeLineViewWidth)
+                let finalWidth = width(for: event, font: eventView.titleLabel.font, timeLineViewWidth: timeLineViewWidth)
                 let eventRect = CGRect(x: xEndCoordinate - finalWidth, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
                 eventView.frame = eventRect
                 eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
@@ -136,14 +135,24 @@ class TimeLineContentView: UIView {
                 let xCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
                 let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
-                let eventViewWidth = event.name.width(withConstrainedHeight: 21.0, font: eventView.titleLabel.font) + LeftEventView.horizontalSpace
-                let finalWidth = max(eventViewWidth, timeLineViewWidth)
+                let finalWidth = width(for: event, font: eventView.titleLabel.font, timeLineViewWidth: timeLineViewWidth)
                 let eventRect = CGRect(x: xCoordinate, y: yCoordinate, width: finalWidth, height: LeftEventView.viewHeight)
                 eventView.frame = eventRect
                 eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
                 addSubview(eventView)
             }
         }
+    }
+    
+    private func width(for event: Event, font: UIFont, timeLineViewWidth: CGFloat) -> CGFloat {
+        let textLines = event.name.components(separatedBy: "\n")
+        var maxTextWidth: CGFloat = 0
+        for t in textLines {
+            //set propper image width instead of 50.0
+            let width = t.width(withConstrainedHeight: 21.0, font: font) + LeftEventView.horizontalSpace + 50
+            maxTextWidth = max(maxTextWidth, width)
+        }
+        return max(maxTextWidth, timeLineViewWidth)
     }
     
     private func addMinistersViews() {
@@ -160,7 +169,7 @@ class TimeLineContentView: UIView {
         }
     }
     
-    private func addPersonView(for person: Person, tapIsEnabled: Bool, yCoordinate: CGFloat) {        
+    private func addPersonView(for person: Person, tapIsEnabled: Bool, yCoordinate: CGFloat) {
         let xCoordinate = bounds.minX + CGFloat(person.startYear - startDate) * spaceBetweenDateLines + leftOffset
         let width = CGFloat(person.endYear - person.startYear) * spaceBetweenDateLines - 1
         let rect = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: personsSectionHeight - verticalOffset)
