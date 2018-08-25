@@ -32,7 +32,7 @@ class ClusterView: UIView {
         clipsToBounds = true
         layer.cornerRadius = 10.0
         blurView.clipsToBounds = true
-        blurView.layer.cornerRadius = blurView.bounds.width / 2
+        blurView.layer.cornerRadius = 10.0
     }
     
 }

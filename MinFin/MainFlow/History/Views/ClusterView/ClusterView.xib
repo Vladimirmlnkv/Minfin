@@ -27,14 +27,14 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="sML-Qw-Mv7">
-                        <rect key="frame" x="151" y="13.5" width="50" height="50"/>
+                        <rect key="frame" x="151" y="21" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="sML-Qw-Mv7" secondAttribute="height" multiplier="1:1" id="qXq-JX-g3h"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Несколько министров" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-ub-76j">
-                        <rect key="frame" x="0.0" y="71.5" width="351" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Несколько министров" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-ub-76j">
+                        <rect key="frame" x="0.0" y="73" width="351" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -46,14 +46,14 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYJ-6t-0gk">
-                        <rect key="frame" x="158" y="26.5" width="36.5" height="24"/>
+                        <rect key="frame" x="158" y="34" width="36.5" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iWU-ub-76j" firstAttribute="top" secondItem="sML-Qw-Mv7" secondAttribute="bottom" constant="8" id="268-PF-f0Z"/>
+                    <constraint firstItem="iWU-ub-76j" firstAttribute="top" secondItem="sML-Qw-Mv7" secondAttribute="bottom" constant="2" id="268-PF-f0Z"/>
                     <constraint firstItem="IoC-qR-tn3" firstAttribute="top" secondItem="iWU-ub-76j" secondAttribute="bottom" constant="8" id="6lJ-wZ-sB2"/>
                     <constraint firstAttribute="trailing" secondItem="iWU-ub-76j" secondAttribute="trailing" id="7Mk-Yf-8rW"/>
                     <constraint firstItem="iWU-ub-76j" firstAttribute="leading" secondItem="gh1-GH-2Ey" secondAttribute="leading" id="DTs-wx-Gyv"/>

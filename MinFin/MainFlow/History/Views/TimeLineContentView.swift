@@ -42,6 +42,7 @@ class TimeLineContentView: UIView {
     var governers = [Person]()
     var events = [Event]()
     var ministers = [Person]()
+    var clusters = [Cluster]()
     
     var personsSectionHeight: CGFloat!
     var eventsSectionHeight: CGFloat!
@@ -55,6 +56,7 @@ class TimeLineContentView: UIView {
         addGovernerViews()
         addMinistersViews()
         addEvenentsViews()
+        addClustersViews()
     }
     
     private func drawDateLines() {
@@ -89,6 +91,20 @@ class TimeLineContentView: UIView {
                 context.strokePath()
             }
         }
+    }
+    
+    private func addClustersViews() {
+        let yCoordinate = bounds.minY + topOffset + personsSectionHeight
+        for cluster in clusters {
+            
+            let xCoordinate = bounds.minX + CGFloat(cluster.startYear - startDate) * spaceBetweenDateLines + leftOffset
+            let width = CGFloat(cluster.endYear - cluster.startYear) * spaceBetweenDateLines - 1
+            let rect = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: personsSectionHeight - verticalOffset)
+            let clusterView = ClusterView(frame: rect)
+            clusterView.numberLabel.text = "+\(cluster.persons.count)"
+            addSubview(clusterView)
+        }
+        
     }
     
     private func addEvenentsViews() {
@@ -190,7 +206,6 @@ class TimeLineContentView: UIView {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
             personView.addGestureRecognizer(tapGestureRecognizer)
         }
-        addSubview(personView)
     }
     
     

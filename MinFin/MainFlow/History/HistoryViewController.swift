@@ -21,9 +21,11 @@ class HistoryViewController: UIViewController {
     @IBOutlet var eventsLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet var ministersLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet var topLabelTopConstraint: NSLayoutConstraint!
+    
     private var governers = [Person]()
     private var events = [Event]()
     private var ministers = [Person]()
+    private var clusters = [Cluster]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ class HistoryViewController: UIViewController {
         contentView.governers = governers
         contentView.events = events
         contentView.ministers = ministers
+        contentView.clusters = clusters
         let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gerbMinfinRuSmall"), landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil
@@ -73,6 +76,7 @@ class HistoryViewController: UIViewController {
         var governers = [Person]()
         var events = [Event]()
         var ministers = [Person]()
+        var clusters = [Cluster]()
         if let path = Bundle.main.path(forResource: "minfin", ofType: "json")
         {
             if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path))
@@ -94,9 +98,16 @@ class HistoryViewController: UIViewController {
                             ministers.append(Person(json: m))
                         }
                     }
+                    
+                    if let clustersJson = jsonResult["clusters"] as? [Any] {
+                        for c in clustersJson {
+                            clusters.append(Cluster(json: c))
+                        }
+                    }
                 }
             }
         }
+        self.clusters = clusters
         self.governers = governers
         self.events = events
         self.ministers = ministers
