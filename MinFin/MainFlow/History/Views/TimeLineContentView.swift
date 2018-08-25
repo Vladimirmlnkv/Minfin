@@ -24,7 +24,7 @@ class TimeLineContentView: UIView {
 
     private let startDate = 1800
     private let finalDate = 2019
-    private let spaceBetweenDateLines: CGFloat = 40.0
+    private let spaceBetweenDateLines: CGFloat = 45.0
     private let dotRadius: CGFloat = 2
     private let leftOffset: CGFloat = 20 + 110
     private let timeLabelHeight: CGFloat = 20

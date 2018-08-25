@@ -25,15 +25,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="492" height="101"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="CMf-tF-kES">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" ambiguous="YES" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="CMf-tF-kES">
                         <rect key="frame" x="221" y="10" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="CMf-tF-kES" secondAttribute="height" multiplier="1:1" id="uBz-iN-v8v"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр l" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLQ-nS-6Pq">
-                        <rect key="frame" x="199" y="70" width="95.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Александр l" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLQ-nS-6Pq">
+                        <rect key="frame" x="0.0" y="70" width="492" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,12 +47,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="ejD-4k-rw6" secondAttribute="bottom" id="6Ad-pZ-Fwl"/>
+                    <constraint firstItem="tLQ-nS-6Pq" firstAttribute="leading" secondItem="Gff-s9-ZBs" secondAttribute="leading" id="AGn-Pn-aNH"/>
                     <constraint firstItem="ejD-4k-rw6" firstAttribute="leading" secondItem="Gff-s9-ZBs" secondAttribute="leading" id="ILo-vJ-zVV"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tLQ-nS-6Pq" secondAttribute="bottom" constant="10" id="LZQ-ob-gPb"/>
-                    <constraint firstItem="tLQ-nS-6Pq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CMf-tF-kES" secondAttribute="bottom" constant="10" id="O0Q-HT-3MC"/>
+                    <constraint firstItem="tLQ-nS-6Pq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CMf-tF-kES" secondAttribute="bottom" constant="4" id="O0Q-HT-3MC"/>
                     <constraint firstItem="tLQ-nS-6Pq" firstAttribute="centerX" secondItem="Gff-s9-ZBs" secondAttribute="centerX" id="RQP-6M-gzP"/>
-                    <constraint firstItem="CMf-tF-kES" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Gff-s9-ZBs" secondAttribute="top" constant="10" id="XZk-7k-RgB"/>
+                    <constraint firstItem="CMf-tF-kES" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Gff-s9-ZBs" secondAttribute="top" constant="4" id="XZk-7k-RgB"/>
                     <constraint firstAttribute="trailing" secondItem="ejD-4k-rw6" secondAttribute="trailing" id="ZFm-G8-Ybu"/>
+                    <constraint firstAttribute="trailing" secondItem="tLQ-nS-6Pq" secondAttribute="trailing" id="fMd-Kz-nXr"/>
                     <constraint firstItem="CMf-tF-kES" firstAttribute="centerX" secondItem="Gff-s9-ZBs" secondAttribute="centerX" id="rJt-cy-lYo"/>
                 </constraints>
             </view>
