@@ -21,6 +21,8 @@
 		7E32D1B6213043CC00D38233 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1B5213043CC00D38233 /* UIDeviceExtension.swift */; };
 		7E32D1B921316B0700D38233 /* HeadingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1B821316B0700D38233 /* HeadingsViewController.swift */; };
 		7E32D1BB21316BDD00D38233 /* HeadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1BA21316BDD00D38233 /* HeadingTableViewCell.swift */; };
+		7E32D1BD21317DF500D38233 /* ClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E32D1BC21317DF500D38233 /* ClusterView.xib */; };
+		7E32D1C021317FEE00D38233 /* ClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1BF21317FEE00D38233 /* ClusterView.swift */; };
 		7E374F8C212C1AA7007ACD98 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F8B212C1AA7007ACD98 /* MainMenuViewController.swift */; };
 		7E374F8F212C1B7B007ACD98 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F8E212C1B7B007ACD98 /* LibraryViewController.swift */; };
 		7E374F91212C1BE4007ACD98 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F90212C1BE4007ACD98 /* BookCollectionViewCell.swift */; };
@@ -68,6 +70,8 @@
 		7E32D1B5213043CC00D38233 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		7E32D1B821316B0700D38233 /* HeadingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingsViewController.swift; sourceTree = "<group>"; };
 		7E32D1BA21316BDD00D38233 /* HeadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingTableViewCell.swift; sourceTree = "<group>"; };
+		7E32D1BC21317DF500D38233 /* ClusterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterView.xib; sourceTree = "<group>"; };
+		7E32D1BF21317FEE00D38233 /* ClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterView.swift; sourceTree = "<group>"; };
 		7E374F8B212C1AA7007ACD98 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		7E374F8E212C1B7B007ACD98 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		7E374F90212C1BE4007ACD98 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -199,6 +203,15 @@
 			path = Headings;
 			sourceTree = "<group>";
 		};
+		7E32D1BE21317E6C00D38233 /* ClusterView */ = {
+			isa = PBXGroup;
+			children = (
+				7E32D1BC21317DF500D38233 /* ClusterView.xib */,
+				7E32D1BF21317FEE00D38233 /* ClusterView.swift */,
+			);
+			path = ClusterView;
+			sourceTree = "<group>";
+		};
 		7E374F89212C1A78007ACD98 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +263,7 @@
 		7E4A04EF212D4D9D0065FD7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E32D1BE21317E6C00D38233 /* ClusterView */,
 				7E4A050A212E7C820065FD7A /* RightEventView */,
 				7E4A0505212E74FD0065FD7A /* LeftEventView */,
 				7E4A0500212DAC700065FD7A /* SingleEventView */,
@@ -405,6 +419,7 @@
 				7E4A050C212E7CB90065FD7A /* RightEventView.xib in Resources */,
 				7E4A051B212EADEF0065FD7A /* AboutHeaderView.xib in Resources */,
 				7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */,
+				7E32D1BD21317DF500D38233 /* ClusterView.xib in Resources */,
 				7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */,
 				7E32D1B021300F2B00D38233 /* minfin.json in Resources */,
 				7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */,
@@ -438,6 +453,7 @@
 				7E4A04F1212D52570065FD7A /* TimeLineContentView.swift in Sources */,
 				7E32D1BB21316BDD00D38233 /* HeadingTableViewCell.swift in Sources */,
 				7E4A0522212EB2B00065FD7A /* MainBackgroundView.swift in Sources */,
+				7E32D1C021317FEE00D38233 /* ClusterView.swift in Sources */,
 				7E2799ED211C76D4003DE4FA /* FinalOnboardingViewController.swift in Sources */,
 				7E4A04F6212DA13B0065FD7A /* PersonView.swift in Sources */,
 				7E374F91212C1BE4007ACD98 /* BookCollectionViewCell.swift in Sources */,
