@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cn-VC-KLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1720.3125" y="-243.75"/>
+            <point key="canvasLocation" x="-2448" y="-209"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="el1-hT-9Ip">
@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFa-3Z-d5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1720.3125" y="477.34375"/>
+            <point key="canvasLocation" x="-2448" y="732"/>
         </scene>
         <!--Headings View Controller-->
         <scene sceneID="W9Y-Q8-qf2">
@@ -285,10 +285,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeadingTableViewCell" rowHeight="89" id="RL1-da-ApG" customClass="HeadingTableViewCell" customModule="MinFin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1014" height="89"/>
+                                        <rect key="frame" x="0.0" y="28" width="1004" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RL1-da-ApG" id="vj7-Z0-uSe">
-                                            <rect key="frame" x="0.0" y="0.0" width="1014" height="88.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1004" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вечная классика" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjR-Zd-4IY">
@@ -349,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VZ-yI-y60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1038.28125" y="-932.03125"/>
+            <point key="canvasLocation" x="-1245" y="-1125"/>
         </scene>
         <!--Library View Controller-->
         <scene sceneID="YSQ-nt-yF4">
@@ -514,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2Y-s5-KbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1038.28125" y="-243.75"/>
+            <point key="canvasLocation" x="-1245" y="-209"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="VrR-dE-b96">
@@ -616,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYS-vG-9Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-272.4609375" y="-243.75"/>
+            <point key="canvasLocation" x="-52" y="-209"/>
         </scene>
         <!--Person Detail View Controller-->
         <scene sceneID="7cH-cN-03k">
@@ -747,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixp-ZM-g1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396.6796875" y="-244.53125"/>
+            <point key="canvasLocation" x="1137" y="-209"/>
         </scene>
         <!--Book Details View Controller-->
         <scene sceneID="9wZ-P4-uZU">
@@ -911,7 +911,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqI-bX-zDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1038" y="478"/>
+            <point key="canvasLocation" x="-1245" y="763"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9XX-EG-PcM">
@@ -930,7 +930,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvt-bm-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2393" y="-243"/>
+            <point key="canvasLocation" x="-3650" y="-209"/>
         </scene>
     </scenes>
     <resources>
