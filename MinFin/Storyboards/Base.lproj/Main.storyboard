@@ -268,10 +268,10 @@
             </objects>
             <point key="canvasLocation" x="-1720.3125" y="477.34375"/>
         </scene>
-        <!--View Controller-->
+        <!--Headings View Controller-->
         <scene sceneID="W9Y-Q8-qf2">
             <objects>
-                <viewController id="XAF-0f-9pL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeadingsViewController" id="XAF-0f-9pL" customClass="HeadingsViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XYN-Zk-JeQ"/>
                         <viewControllerLayoutGuide type="bottom" id="iKz-zu-T6n"/>
@@ -281,14 +281,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ddo-Rv-1Bd">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="10" y="90" width="1004" height="678"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="RL1-da-ApG">
-                                        <rect key="frame" x="0.0" y="28" width="1024" height="89"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeadingTableViewCell" rowHeight="89" id="RL1-da-ApG" customClass="HeadingTableViewCell" customModule="MinFin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1014" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RL1-da-ApG" id="vj7-Z0-uSe">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="88.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1014" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вечная классика" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjR-Zd-4IY">
@@ -298,6 +298,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="IjR-Zd-4IY" firstAttribute="leading" secondItem="vj7-Z0-uSe" secondAttribute="leadingMargin" id="hqf-Bz-lNF"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="IjR-Zd-4IY" secondAttribute="trailing" id="nzQ-4n-ggf"/>
@@ -305,22 +306,50 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="IjR-Zd-4IY" secondAttribute="bottom" constant="10" id="vhh-7C-Ru8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="mainTitleLabel" destination="IjR-Zd-4IY" id="K3Z-5W-PAz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="РУБРИКАТОР" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jl-6D-alB">
+                                <rect key="frame" x="445" y="40" width="134.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7s-ep-l2j">
+                                <rect key="frame" x="927" y="34" width="77" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Отмена"/>
+                                <connections>
+                                    <action selector="cancelButtonAction:" destination="XAF-0f-9pL" eventType="touchUpInside" id="ym0-FX-Mpe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="s7s-ep-l2j" secondAttribute="trailing" constant="20" id="5zx-EZ-vBz"/>
                             <constraint firstItem="iKz-zu-T6n" firstAttribute="top" secondItem="Ddo-Rv-1Bd" secondAttribute="bottom" id="70l-GO-pQT"/>
-                            <constraint firstItem="Ddo-Rv-1Bd" firstAttribute="leading" secondItem="34M-Zf-W1i" secondAttribute="leading" id="LGE-JU-JyT"/>
-                            <constraint firstItem="Ddo-Rv-1Bd" firstAttribute="top" secondItem="XYN-Zk-JeQ" secondAttribute="bottom" id="QAE-3b-YZf"/>
-                            <constraint firstAttribute="trailing" secondItem="Ddo-Rv-1Bd" secondAttribute="trailing" id="v6H-Dl-Sh8"/>
+                            <constraint firstItem="Ddo-Rv-1Bd" firstAttribute="top" secondItem="s7s-ep-l2j" secondAttribute="bottom" constant="20" id="DlB-tf-9DB"/>
+                            <constraint firstItem="s7s-ep-l2j" firstAttribute="centerY" secondItem="2jl-6D-alB" secondAttribute="centerY" id="KFN-Ud-EUT"/>
+                            <constraint firstItem="Ddo-Rv-1Bd" firstAttribute="leading" secondItem="34M-Zf-W1i" secondAttribute="leading" constant="10" id="LGE-JU-JyT"/>
+                            <constraint firstItem="2jl-6D-alB" firstAttribute="centerX" secondItem="34M-Zf-W1i" secondAttribute="centerX" id="Qx0-uh-WzO"/>
+                            <constraint firstItem="2jl-6D-alB" firstAttribute="top" secondItem="XYN-Zk-JeQ" secondAttribute="bottom" constant="20" id="gZZ-a6-dHn"/>
+                            <constraint firstAttribute="trailing" secondItem="Ddo-Rv-1Bd" secondAttribute="trailing" constant="10" id="v6H-Dl-Sh8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="s7s-ep-l2j" id="nbT-3V-4w8"/>
+                        <outlet property="tableView" destination="Ddo-Rv-1Bd" id="MKr-Y0-0sY"/>
+                        <outlet property="titleLabel" destination="2jl-6D-alB" id="rbS-Cz-PqE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VZ-yI-y60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1038" y="-932"/>
+            <point key="canvasLocation" x="-1038.28125" y="-932.03125"/>
         </scene>
         <!--Library View Controller-->
         <scene sceneID="YSQ-nt-yF4">
@@ -335,7 +364,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-U7-YYz">
-                                <rect key="frame" x="20" y="81.5" width="984" height="666.5"/>
+                                <rect key="frame" x="20" y="157.5" width="984" height="590.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6mV-dr-lO6">
                                     <size key="itemSize" width="322" height="267"/>
@@ -437,31 +466,55 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каталог изданий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyF-Rk-gpv">
-                                <rect key="frame" x="20" y="40" width="206" height="31.5"/>
+                                <rect key="frame" x="20" y="116" width="206" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" placeholder="Поиск" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-Ac-Qw5">
+                                <rect key="frame" x="15" y="40" width="852" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGh-rY-rn7">
+                                <rect key="frame" x="897" y="57.5" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" red="0.0048346570690000002" green="0.3716031313" blue="0.1977861524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Рубрикатор" image="rybrikCopy">
+                                    <color key="titleColor" red="0.0048346570690000002" green="0.3716031313" blue="0.1977861524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="rybrikButtonAction:" destination="ptu-dq-yuj" eventType="touchUpInside" id="aG0-ds-XkV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UGh-rY-rn7" secondAttribute="trailing" id="6BL-Rz-MFq"/>
                             <constraint firstItem="KfN-U7-YYz" firstAttribute="top" secondItem="uyF-Rk-gpv" secondAttribute="bottom" constant="10" id="Aut-rJ-VEt"/>
+                            <constraint firstItem="FMQ-Ac-Qw5" firstAttribute="leading" secondItem="CAP-72-FeQ" secondAttribute="leadingMargin" constant="-5" id="Ech-MQ-zqX"/>
                             <constraint firstItem="KfN-U7-YYz" firstAttribute="leading" secondItem="CAP-72-FeQ" secondAttribute="leading" constant="20" id="FbV-X0-KDu"/>
-                            <constraint firstItem="uyF-Rk-gpv" firstAttribute="top" secondItem="rim-R9-TWS" secondAttribute="bottom" constant="20" id="G90-kQ-CV0"/>
+                            <constraint firstItem="UGh-rY-rn7" firstAttribute="leading" secondItem="FMQ-Ac-Qw5" secondAttribute="trailing" constant="30" id="Mde-Rf-zHK"/>
                             <constraint firstAttribute="trailing" secondItem="KfN-U7-YYz" secondAttribute="trailing" constant="20" id="POw-0W-f3G"/>
+                            <constraint firstItem="uyF-Rk-gpv" firstAttribute="top" secondItem="FMQ-Ac-Qw5" secondAttribute="bottom" constant="20" id="QCf-mx-OeN"/>
+                            <constraint firstItem="FMQ-Ac-Qw5" firstAttribute="top" secondItem="rim-R9-TWS" secondAttribute="bottom" constant="20" id="k5i-nK-FX3"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uyF-Rk-gpv" secondAttribute="trailing" constant="20" id="kAI-zk-Ksf"/>
                             <constraint firstItem="5hu-bD-1Pr" firstAttribute="top" secondItem="KfN-U7-YYz" secondAttribute="bottom" constant="20" id="kHL-Ou-BYr"/>
+                            <constraint firstItem="UGh-rY-rn7" firstAttribute="centerY" secondItem="FMQ-Ac-Qw5" secondAttribute="centerY" id="qg8-O5-u5y"/>
                             <constraint firstItem="uyF-Rk-gpv" firstAttribute="leading" secondItem="CAP-72-FeQ" secondAttribute="leading" constant="20" id="yeZ-7m-fwQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="KfN-U7-YYz" id="zUN-QR-YjF"/>
                         <outlet property="headerTitleLabel" destination="uyF-Rk-gpv" id="7ZR-x4-gv1"/>
+                        <outlet property="rybrikButton" destination="UGh-rY-rn7" id="tNG-Ab-m2A"/>
+                        <outlet property="searchBar" destination="FMQ-Ac-Qw5" id="sek-wN-tTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2Y-s5-KbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1038" y="-243"/>
+            <point key="canvasLocation" x="-1038.28125" y="-243.75"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="VrR-dE-b96">
@@ -886,5 +939,6 @@
         <image name="gerbMinfinRu" width="110" height="121"/>
         <image name="lang" width="18" height="18"/>
         <image name="mask" width="50" height="50"/>
+        <image name="rybrikCopy" width="12" height="12"/>
     </resources>
 </document>
