@@ -22,7 +22,6 @@
 		7E32D1BB21316BDD00D38233 /* HeadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1BA21316BDD00D38233 /* HeadingTableViewCell.swift */; };
 		7E32D1BD21317DF500D38233 /* ClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E32D1BC21317DF500D38233 /* ClusterView.xib */; };
 		7E32D1C021317FEE00D38233 /* ClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1BF21317FEE00D38233 /* ClusterView.swift */; };
-		7E32D1C22131806600D38233 /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E32D1C12131806600D38233 /* minfin.json */; };
 		7E32D1C42131808F00D38233 /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1C32131808F00D38233 /* Cluster.swift */; };
 		7E32D1C921319CBC00D38233 /* ClusterDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E32D1C721319CBC00D38233 /* ClusterDetailsCollectionViewCell.swift */; };
 		7E32D1CA21319CBC00D38233 /* ClusterDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E32D1C821319CBC00D38233 /* ClusterDetailsCollectionViewCell.xib */; };
@@ -56,6 +55,7 @@
 		7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */; };
 		7E4A0522212EB2B00065FD7A /* MainBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */; };
 		7E4A0524212EB5620065FD7A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */; };
+		7E94F8E82132A44200F27804 /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E94F8E72132A44200F27804 /* minfin.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +76,6 @@
 		7E32D1BA21316BDD00D38233 /* HeadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingTableViewCell.swift; sourceTree = "<group>"; };
 		7E32D1BC21317DF500D38233 /* ClusterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterView.xib; sourceTree = "<group>"; };
 		7E32D1BF21317FEE00D38233 /* ClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterView.swift; sourceTree = "<group>"; };
-		7E32D1C12131806600D38233 /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 		7E32D1C32131808F00D38233 /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
 		7E32D1C721319CBC00D38233 /* ClusterDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E32D1C821319CBC00D38233 /* ClusterDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainBackgroundView.xib; sourceTree = "<group>"; };
 		7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundView.swift; sourceTree = "<group>"; };
 		7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		7E94F8E72132A44200F27804 /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,7 @@
 		7E2799E4211C6D51003DE4FA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				7E32D1C12131806600D38233 /* minfin.json */,
+				7E94F8E72132A44200F27804 /* minfin.json */,
 				7E2799D2211C6898003DE4FA /* Assets.xcassets */,
 			);
 			path = Support;
@@ -457,7 +457,6 @@
 			files = (
 				7E4A050C212E7CB90065FD7A /* RightEventView.xib in Resources */,
 				7E4A051B212EADEF0065FD7A /* AboutHeaderView.xib in Resources */,
-				7E32D1C22131806600D38233 /* minfin.json in Resources */,
 				7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */,
 				7E32D1BD21317DF500D38233 /* ClusterView.xib in Resources */,
 				7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */,
@@ -469,6 +468,7 @@
 				7E32D1CD21319E6800D38233 /* ClusterDetailsContainerView.xib in Resources */,
 				7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
+				7E94F8E82132A44200F27804 /* minfin.json in Resources */,
 				7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

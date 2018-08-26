@@ -15,6 +15,8 @@ class ClusterView: UIView {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var numberLabel: UILabel!
     
+    var cluster: Cluster!
+    var detailsClusterView: ClusterDetailsContainerView?
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

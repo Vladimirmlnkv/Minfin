@@ -42,7 +42,8 @@ class TimeLineContentView: UIView {
     var governers = [Person]()
     var events = [Event]()
     var ministers = [Person]()
-    var clusters = [Cluster]()
+    var ministersClusters = [Cluster]()
+    var governorsClusters = [Cluster]()
     
     var personsSectionHeight: CGFloat!
     var eventsSectionHeight: CGFloat!
@@ -95,16 +96,30 @@ class TimeLineContentView: UIView {
     
     private func addClustersViews() {
         let yCoordinate = bounds.minY + topOffset + personsSectionHeight
-        for cluster in clusters {
-            
-            let xCoordinate = bounds.minX + CGFloat(cluster.startYear - startDate) * spaceBetweenDateLines + leftOffset
-            let width = CGFloat(cluster.endYear - cluster.startYear) * spaceBetweenDateLines - 1
-            let rect = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: personsSectionHeight - verticalOffset)
-            let clusterView = ClusterView(frame: rect)
-            clusterView.numberLabel.text = "+\(cluster.persons.count)"
-            addSubview(clusterView)
+        for cluster in ministersClusters {
+            addClusterView(for: cluster, yCoordinate: yCoordinate, title: "Несколько министров", isInteractionEnabled: true)
         }
-        
+        for cluster in governorsClusters {
+            addClusterView(for: cluster, yCoordinate: bounds.minY + topOffset, title: "Несколько правителей", isInteractionEnabled: false)
+        }
+    }
+    
+    private func addClusterView(for cluster: Cluster, yCoordinate: CGFloat, title: String, isInteractionEnabled: Bool) {
+        let xCoordinate = bounds.minX + CGFloat(cluster.startYear - startDate) * spaceBetweenDateLines + leftOffset
+        let width = CGFloat(cluster.endYear - cluster.startYear) * spaceBetweenDateLines - 1
+        let rect = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: personsSectionHeight - verticalOffset)
+        let clusterView = ClusterView(frame: rect)
+        clusterView.cluster = cluster
+        clusterView.numberLabel.text = "+\(cluster.persons.count)"
+        clusterView.titleLabel.text = title
+        addSubview(clusterView)
+        if isInteractionEnabled {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clusterTapGestureAction))
+            clusterView.addGestureRecognizer(tapGesture)
+        } else {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(governersTapGestureAction))
+            clusterView.addGestureRecognizer(tapGesture)            
+        }
     }
     
     private func addEvenentsViews() {
@@ -208,6 +223,43 @@ class TimeLineContentView: UIView {
         }
     }
     
+    @objc func governersTapGestureAction(tapGesture: UITapGestureRecognizer) {
+        if let clusterView = tapGesture.view as? ClusterView {
+            handleClusterTapGesture(for: clusterView, shouldOpenDetails: false)
+        }
+    }
+    
+    @objc func clusterTapGestureAction(tapGesture: UITapGestureRecognizer) {
+        if let clusterView = tapGesture.view as? ClusterView {
+            handleClusterTapGesture(for: clusterView, shouldOpenDetails: true)
+        }
+    }
+    
+    private func handleClusterTapGesture(for clusterView: ClusterView, shouldOpenDetails: Bool) {
+        if let detailsView = clusterView.detailsClusterView {
+            detailsView.removeFromSuperview()
+            clusterView.detailsClusterView = nil
+        } else {
+            var width: CGFloat
+            var height: CGFloat
+            if clusterView.cluster.persons.count <= 3 {
+                height = CGFloat(55 * clusterView.cluster.persons.count)
+                width = 4 * spaceBetweenDateLines
+            } else {
+                let multiplier = clusterView.cluster.persons.count % 2 == 0 ? clusterView.cluster.persons.count / 2 : (clusterView.cluster.persons.count + 1) / 2
+                height = CGFloat(55 * multiplier)
+                width = 9 * spaceBetweenDateLines
+            }
+            let detailsRect = CGRect(x: clusterView.frame.midX - width / 2, y: clusterView.frame.maxY + verticalOffset, width: width, height: height)
+            let clusterDetailsView = ClusterDetailsContainerView(frame: detailsRect)
+            if shouldOpenDetails {
+                clusterDetailsView.delegate = self
+            }
+            clusterDetailsView.cluster = clusterView.cluster
+            addSubview(clusterDetailsView)
+            clusterView.detailsClusterView = clusterDetailsView
+        }
+    }
     
     @objc func tapGestureAction(tapGesture: UITapGestureRecognizer) {
         if let personView = tapGesture.view as? PersonView {
@@ -216,4 +268,12 @@ class TimeLineContentView: UIView {
             delegate?.didSelect(detailInfo: eventView.event)
         }
     }
+}
+
+extension TimeLineContentView: ClusterDetailsContainerViewDelegate {
+    
+    func didSelect(person: Person) {
+        delegate?.didSelect(detailInfo: person)
+    }
+    
 }
