@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  MinFin
+
+  Created by Владимир Мельников on 26/08/2018.
+  Copyright © 2018 Владимир Мельников. All rights reserved.
+*/
+"lang" = "en";
+"history" = "History";
+"library" = "Library";
+"about" = "About";
+"language" = "English";
+"back" = "Back";
+"history_title" = "HISTORY OF MINFIN IN COUNTRY'S EVENTS";
+"state_heads" = "Heads of\nstate";
+"ministers" = "Ministers";
+"events" = "Events";
+"multiple_ministers" = "Multiple ministers";
+"multiple_governers" = "Multiple governors";
+"search" = "Search";
+"headings" = "Rubricator";
+"catalog" = "Catalog of publications";
+"addresses" = "Addresses";
+"write_us" = "WRITE TO US";
+"ministry" = "MINISTY OF FINANCE\nRUSSIAN FEDERATION";
+"cancel" = "Cancel";
