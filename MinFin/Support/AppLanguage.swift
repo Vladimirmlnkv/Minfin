@@ -29,6 +29,7 @@ class AppLanguage {
     static let write_us = "write_us"
     static let ministry = "ministry"
     static let cancel = "cancel"
+    static let search_results = "search_results"
     
     static let standart = AppLanguage()
     private var languageKey = "appLanguageKey"

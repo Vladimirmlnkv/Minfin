@@ -15,12 +15,31 @@ class LibraryViewController: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var rybrikButton: UIButton!
+    
     private var books = [Book]()
+    private var booksList = [Book]()
+    
+    private var headings = [
+        Heading(displayName: "Все рубрики"),
+        Heading(displayName: "Финансы"),
+        Heading(displayName: "Экономина"),
+        Heading(displayName: "Юриспруденция"),
+        Heading(displayName: "География и этнография"),
+        Heading(displayName: "Статистика"),
+        Heading(displayName: "История"),
+        Heading(displayName: "Сборники и справочники"),
+        Heading(displayName: "Зарубежная литература")
+    ]
     private var searchIsActive = false
+    private var filterHeading: Heading? = nil {
+        didSet {
+            filterBooksList()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        booksList = books
         clearBackgroundColor()
         addBackgroundView()
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -37,6 +56,38 @@ class LibraryViewController: UIViewController {
         navigationItem.rightBarButtonItem = barButtonItem
     }
     
+    private func filterBooksList() {
+        if let filterHeading = filterHeading {
+            if searchIsActive && searchBar.text != "" {
+                booksList = books.filter({$0.headings.contains(where: { heading -> Bool in
+                    return heading.displayName == filterHeading.displayName
+                })}).filter({ (book) -> Bool in
+                    return self.bookConformsTo(book: book, searchText: searchBar.text)
+                })
+            } else {
+                booksList = books.filter({$0.headings.contains(where: { heading -> Bool in
+                    return heading.displayName == filterHeading.displayName
+                })})
+            }
+        } else {
+            if searchIsActive && searchBar.text != "" {
+                booksList = books.filter({ (book) -> Bool in
+                    return self.bookConformsTo(book: book, searchText: searchBar.text)
+                })
+            } else {
+                booksList = books
+            }
+        }
+        collectionView.reloadData()
+    }
+    
+    private func bookConformsTo(book: Book, searchText: String?) -> Bool {
+        if let text = searchText {
+            return book.author.range(of: text) != nil || book.title.range(of: text) != nil || "\(book.year)".range(of: text) != nil
+        }
+        return false
+    }
+
     private func clearBackgroundColor() {
         guard let UISearchBarBackground: AnyClass = NSClassFromString("UISearchBarBackground") else { return }
         
@@ -61,6 +112,8 @@ class LibraryViewController: UIViewController {
             searchBar.resignFirstResponder()
         } else {
             let headingsVC = storyboard?.instantiateViewController(withIdentifier: "HeadingsViewController") as! HeadingsViewController
+            headingsVC.headings = headings
+            headingsVC.delegate = self
             present(headingsVC, animated: true, completion: nil)
         }
     }
@@ -74,12 +127,18 @@ extension LibraryViewController: UISearchBarDelegate {
         rybrikButton.setImage(nil, for: .normal)
         rybrikButton.setTitle(AppLanguage.cancel.customLocalized(), for: .normal)
         searchIsActive = true
+        headerTitleLabel.text = AppLanguage.search_results.customLocalized()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         rybrikButton.setImage(#imageLiteral(resourceName: "rybrikCopy"), for: .normal)
         rybrikButton.setTitle(AppLanguage.headings.customLocalized(), for: .normal)
         searchIsActive = false
+        headerTitleLabel.text = AppLanguage.catalog.customLocalized()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterBooksList()
     }
     
 }
@@ -88,7 +147,7 @@ extension LibraryViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        open(book: books[indexPath.row])
+        open(book: booksList[indexPath.row])
     }
     
 }
@@ -96,12 +155,12 @@ extension LibraryViewController: UICollectionViewDelegate {
 extension LibraryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return books.count
+        return booksList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
-        cell.configure(with: books[indexPath.row])
+        cell.configure(with: booksList[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -110,7 +169,13 @@ extension LibraryViewController: UICollectionViewDataSource {
 extension LibraryViewController: BookCollectionViewCellDelegate {
     func didPressMore(on cell: BookCollectionViewCell) {
         if let indexPath = collectionView.indexPathForItem(at: cell.center) {
-            open(book: books[indexPath.row])
+            open(book: booksList[indexPath.row])
         }
+    }
+}
+
+extension LibraryViewController: HeadingsViewControllerDelegate {
+    func didSelect(heading: Heading?) {
+        filterHeading = heading
     }
 }
