@@ -15,8 +15,8 @@ class AboutViewController: UIViewController {
     @IBOutlet var addressTitleLabel: UILabel!
     
     private let aboutInfo = [
-        AboutData(name: "Министерство финансов РФ", address: "109097, Москва, ул. Ильинка, 9"),
-        AboutData(name: "Книжный фонд «Научная библиотека Министерства финансов Российской Федерации»", address: "109097, Москва, ул. Ильинка, 9")
+        AboutData(name: AppLanguage.first_address_name.customLocalized(), address: AppLanguage.first_address.customLocalized()),
+        AboutData(name: AppLanguage.second_address_name.customLocalized(), address: AppLanguage.second_address.customLocalized())
     ]
     
     override func viewDidLoad() {
@@ -39,10 +39,11 @@ class AboutViewController: UIViewController {
     
     @IBAction func writeUsButtonAction(_ sender: Any) {
         
-        let subject = "Отзыв о Минфине"
+        let subject = AppLanguage.subject.customLocalized()
         let iosVersion = UIDevice.current.systemVersion
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-        let body = "\n\nПлатформа: iOS \(iosVersion)\nУстройство: \(UIDevice.modelName)\nВерсия приложения: \(appVersion)"
+        
+        let body = "\n\n\(AppLanguage.platform.customLocalized()) iOS \(iosVersion)\n\(AppLanguage.device.customLocalized()) \(UIDevice.modelName)\n\(AppLanguage.version.customLocalized()) \(appVersion)"
         let encodedParams = "subject=\(subject)&body=\(body)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let url = "mailto:minfin@mail.ru?\(encodedParams)"
         

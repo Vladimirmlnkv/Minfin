@@ -30,6 +30,14 @@ class AppLanguage {
     static let ministry = "ministry"
     static let cancel = "cancel"
     static let search_results = "search_results"
+    static let first_address_name = "first_address_name"
+    static let first_address = "first_address"
+    static let second_address_name = "second_address_name"
+    static let second_address = "second_address"
+    static let platform = "platform"
+    static let device = "device"
+    static let version = "version"
+    static let subject = "subject"
     
     static let standart = AppLanguage()
     private var languageKey = "appLanguageKey"
