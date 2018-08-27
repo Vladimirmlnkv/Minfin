@@ -24,7 +24,9 @@ class AboutViewController: UIViewController {
         addBackgroundView()
         writeUsButton.layer.cornerRadius = 20.0
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title = "О МИНФИНЕ"
+        navigationItem.title = AppLanguage.about.customLocalized().capitalized
+        writeUsButton.setTitle(AppLanguage.write_us.customLocalized(), for: .normal)
+        addressTitleLabel.text = AppLanguage.addresses.customLocalized()
         let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gerbMinfinRuSmall"), landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil

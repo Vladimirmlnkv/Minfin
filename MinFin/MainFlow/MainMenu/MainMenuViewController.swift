@@ -27,8 +27,16 @@ class MainMenuViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor.clear
         navigationController?.navigationBar.tintColor = Color.mainTextColor
                 navigationController?.setNavigationBarHidden(true, animated: false)
-        navigationItem.title = "Назад"
-        headerTitleLabel.text = "МИНИСТЕРСТВО ФИНАНСОВ\nРОССИЙСКОЙ ФЕДЕРАЦИИ"
+        setUIString()
+    }
+    
+    private func setUIString() {
+        navigationItem.title = AppLanguage.back.customLocalized()
+        headerTitleLabel.text = AppLanguage.ministry.customLocalized()
+        historyButton.setTitle(AppLanguage.history.customLocalized(), for: .normal)
+        libraryButton.setTitle(AppLanguage.library.customLocalized(), for: .normal)
+        aboutButton.setTitle(AppLanguage.about.customLocalized(), for: .normal)
+        languageButton.setTitle(AppLanguage.language.customLocalized(), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +59,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func languageButtonAction(_ sender: Any) {
-        
+        AppLanguage.standart.changeLanguage()
+        setUIString()
     }
 }

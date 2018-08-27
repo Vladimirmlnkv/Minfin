@@ -24,7 +24,10 @@ class LibraryViewController: UIViewController {
         clearBackgroundColor()
         addBackgroundView()
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title = "БИБЛИОТЕКА"
+        navigationItem.title = AppLanguage.library.customLocalized().capitalized
+        headerTitleLabel.text = AppLanguage.catalog.customLocalized()
+        searchBar.placeholder = AppLanguage.search.customLocalized()
+        rybrikButton.setTitle(AppLanguage.headings.customLocalized(), for: .normal)
         collectionView.dataSource = self
         collectionView.delegate = self
         searchBar.delegate = self
@@ -69,13 +72,13 @@ extension LibraryViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         rybrikButton.setImage(nil, for: .normal)
-        rybrikButton.setTitle("Отмена", for: .normal)
+        rybrikButton.setTitle(AppLanguage.cancel.customLocalized(), for: .normal)
         searchIsActive = true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         rybrikButton.setImage(#imageLiteral(resourceName: "rybrikCopy"), for: .normal)
-        rybrikButton.setTitle("Рубрикатор", for: .normal)
+        rybrikButton.setTitle(AppLanguage.headings.customLocalized(), for: .normal)
         searchIsActive = false
     }
     

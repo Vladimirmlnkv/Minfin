@@ -6,4 +6,12 @@
 //  Copyright © 2018 Владимир Мельников. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension String {
+    func customLocalized() ->String {
+        
+        let path = Bundle.main.path(forResource: AppLanguage.standart.currentLanguage, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    }}

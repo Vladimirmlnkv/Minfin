@@ -43,7 +43,9 @@ class HistoryViewController: UIViewController {
         contentViewWidthConstraint.constant = self.contentView.maxWidth
         contentView.eventsMinYCoordinate = eventsLabelTopConstraint.constant
         
-        headsLabel.text = "Главы\nгосударств"
+        headsLabel.text = AppLanguage.state_heads.customLocalized()
+        ministersLabel.text = AppLanguage.ministers.customLocalized()
+        eventsLabel.text = AppLanguage.events.customLocalized()
         navigationController?.setNavigationBarHidden(false, animated: true)
         loadDataFromJson()
         contentView.governers = governers
@@ -60,7 +62,7 @@ class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "ИСТОРИЯ МИНФИНА В СОБЫТИЯХ СТРАНЫ"
+        navigationItem.title = AppLanguage.history_title.customLocalized()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,7 +73,7 @@ class HistoryViewController: UIViewController {
     func openDetails(for info: DetailInfo) {
         let personVC = storyboard?.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
         personVC.detailInfo = info
-        navigationItem.title = "Назад"
+        navigationItem.title = AppLanguage.back.customLocalized()
         navigationController?.pushViewController(personVC, animated: true)
     }
     

@@ -26,8 +26,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="351" height="103"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="sML-Qw-Mv7">
-                        <rect key="frame" x="151" y="21" width="50" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="sML-Qw-Mv7">
+                        <rect key="frame" x="146" y="11" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="sML-Qw-Mv7" secondAttribute="height" multiplier="1:1" id="qXq-JX-g3h"/>
                         </constraints>
@@ -46,7 +46,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYJ-6t-0gk">
-                        <rect key="frame" x="158" y="34" width="36.5" height="24"/>
+                        <rect key="frame" x="158" y="29" width="36.5" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -71,6 +71,6 @@
         </visualEffectView>
     </objects>
     <resources>
-        <image name="mask" width="50" height="50"/>
+        <image name="8" width="60" height="60"/>
     </resources>
 </document>

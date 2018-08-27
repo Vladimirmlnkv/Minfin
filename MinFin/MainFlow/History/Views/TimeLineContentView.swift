@@ -97,10 +97,10 @@ class TimeLineContentView: UIView {
     private func addClustersViews() {
         let yCoordinate = bounds.minY + topOffset + personsSectionHeight
         for cluster in ministersClusters {
-            addClusterView(for: cluster, yCoordinate: yCoordinate, title: "Несколько министров", isInteractionEnabled: true)
+            addClusterView(for: cluster, yCoordinate: yCoordinate, title: AppLanguage.multiple_ministers.customLocalized(), isInteractionEnabled: true)
         }
         for cluster in governorsClusters {
-            addClusterView(for: cluster, yCoordinate: bounds.minY + topOffset, title: "Несколько правителей", isInteractionEnabled: false)
+            addClusterView(for: cluster, yCoordinate: bounds.minY + topOffset, title: AppLanguage.multiple_governers.customLocalized(), isInteractionEnabled: false)
         }
     }
     
