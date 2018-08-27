@@ -30,10 +30,17 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         contentView.delegate = self
         contentView.topOffset = navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 20
+
+        var fullHeight: CGFloat = 0
+        if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
+            fullHeight = view.frame.width - contentView.topOffset - contentView.bottomOffset
+        } else {
+            fullHeight = view.frame.height - contentView.topOffset - contentView.bottomOffset
+        }
         
-        let fullHeight = view.frame.height - contentView.topOffset - contentView.bottomOffset
         contentView.personsSectionHeight = fullHeight * 3 / 2 / 10
         contentView.eventsSectionHeight = fullHeight - 2 * contentView.personsSectionHeight        
         
@@ -63,11 +70,16 @@ class HistoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = AppLanguage.history_title.customLocalized()
+        AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollView.contentSize = CGSize(width: contentView.maxWidth, height: view.bounds.height - 100)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AppUtility.lockOrientation(.all)
     }
     
     func openDetails(for info: DetailInfo) {
