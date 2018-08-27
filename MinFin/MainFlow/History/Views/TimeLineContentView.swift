@@ -250,7 +250,7 @@ class TimeLineContentView: UIView {
                 height = CGFloat(55 * multiplier)
                 width = 9 * spaceBetweenDateLines
             }
-            let detailsRect = CGRect(x: clusterView.frame.midX - width / 2, y: clusterView.frame.maxY + verticalOffset, width: width, height: height)
+            let detailsRect = CGRect(x: clusterView.frame.midX - width / 2, y: clusterView.frame.maxY + verticalOffset, width: width, height: height + 20)
             let clusterDetailsView = ClusterDetailsContainerView(frame: detailsRect)
             if shouldOpenDetails {
                 clusterDetailsView.delegate = self
