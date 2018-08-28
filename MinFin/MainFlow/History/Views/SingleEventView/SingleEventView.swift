@@ -41,6 +41,7 @@ class SingleEventView: UIView, EventView {
     }
     
     func updateCornerRadiuses() {
+        clipsToBounds = true
         avatarBlurView.clipsToBounds = true
         avatarBlurView.layer.cornerRadius = avatarBlurView.frame.height / 2
         dotView.layer.cornerRadius = dotView.bounds.width / 2

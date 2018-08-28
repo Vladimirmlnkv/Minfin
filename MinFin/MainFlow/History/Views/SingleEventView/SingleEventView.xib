@@ -26,16 +26,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47i-9W-vMZ">
-                    <rect key="frame" x="0.0" y="70" width="375" height="25"/>
+                    <rect key="frame" x="0.0" y="60" width="375" height="35"/>
                     <subviews>
                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8XC-gK-5yJ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oEi-4p-OBB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Учреждение Госсовета" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-n1-66E">
-                                        <rect key="frame" x="8" y="0.0" width="359" height="25"/>
+                                        <rect key="frame" x="8" y="0.0" width="359" height="35"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -69,15 +69,17 @@
                     </constraints>
                 </view>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gU7-zd-qbX">
-                    <rect key="frame" x="152" y="0.0" width="70" height="70"/>
+                    <rect key="frame" x="157" y="0.0" width="60" height="60"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vMk-3p-Nar">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="gossovet" translatesAutoresizingMaskIntoConstraints="NO" id="TSb-Zm-7Ir">
-                                <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                <rect key="frame" x="5" y="5" width="50" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Sbr-Xl-hxJ"/>
                                     <constraint firstAttribute="width" secondItem="TSb-Zm-7Ir" secondAttribute="height" multiplier="1:1" id="iWS-yB-q1S"/>
+                                    <constraint firstAttribute="height" constant="50" id="yXN-Hw-XCf"/>
                                 </constraints>
                             </imageView>
                         </subviews>
