@@ -390,33 +390,34 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1894 год" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3i-Sj-UDJ">
-                                                    <rect key="frame" x="28" y="219.5" width="141" height="20"/>
+                                                    <rect key="frame" x="28" y="219.5" width="137" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.8784313725490196" green="0.87058823529411766" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карл Маркс" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3D-o8-zWF">
-                                                    <rect key="frame" x="28" y="190" width="141" height="20"/>
+                                                    <rect key="frame" x="28" y="190" width="137" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.87843137250000003" green="0.87058823529999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Финтех" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7J-d7-jw6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Финтех" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7J-d7-jw6">
                                                     <rect key="frame" x="179" y="28" width="68.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Путеводитель по новейшей финансовым технологиям" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-Ic-NJ9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Путеводитель по новейшей финансовым технологиям" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-Ic-NJ9">
                                                     <rect key="frame" x="179" y="62" width="118.5" height="67"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4w-Lf-QJ4">
-                                                    <rect key="frame" x="179" y="210" width="120" height="29"/>
+                                                    <rect key="frame" x="179" y="209" width="120" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="bf6-YO-K8x"/>
                                                         <constraint firstAttribute="width" constant="120" id="k5t-vw-3cK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -433,14 +434,14 @@
                                         <constraints>
                                             <constraint firstItem="cTh-Ic-NJ9" firstAttribute="leading" secondItem="r7J-d7-jw6" secondAttribute="leading" id="0g6-GD-2A3"/>
                                             <constraint firstItem="Vu5-yr-ov4" firstAttribute="leading" secondItem="cU6-ly-qSj" secondAttribute="leadingMargin" id="5PH-tw-aLg"/>
-                                            <constraint firstItem="J3D-o8-zWF" firstAttribute="trailing" secondItem="Vu5-yr-ov4" secondAttribute="trailing" id="7fn-0X-bhP"/>
+                                            <constraint firstItem="J3D-o8-zWF" firstAttribute="trailing" secondItem="Vu5-yr-ov4" secondAttribute="trailing" constant="-4" id="7fn-0X-bhP"/>
                                             <constraint firstItem="r7J-d7-jw6" firstAttribute="leading" secondItem="Vu5-yr-ov4" secondAttribute="trailing" constant="10" id="9jq-Fw-ZDZ"/>
                                             <constraint firstItem="J3D-o8-zWF" firstAttribute="leading" secondItem="0vH-2h-fra" secondAttribute="leading" id="BZC-6q-wr5"/>
                                             <constraint firstItem="Vu5-yr-ov4" firstAttribute="width" secondItem="cU6-ly-qSj" secondAttribute="width" multiplier="1/2" id="Bvc-bI-xtO"/>
                                             <constraint firstItem="cTh-Ic-NJ9" firstAttribute="top" secondItem="r7J-d7-jw6" secondAttribute="bottom" constant="10" id="G4C-hX-r0r"/>
-                                            <constraint firstItem="Y3i-Sj-UDJ" firstAttribute="trailing" secondItem="Vu5-yr-ov4" secondAttribute="trailing" id="Gpx-G0-EbZ"/>
+                                            <constraint firstItem="Y3i-Sj-UDJ" firstAttribute="trailing" secondItem="Vu5-yr-ov4" secondAttribute="trailing" constant="-4" id="Gpx-G0-EbZ"/>
                                             <constraint firstItem="Vu5-yr-ov4" firstAttribute="top" secondItem="cU6-ly-qSj" secondAttribute="topMargin" id="KwQ-8g-QjL"/>
-                                            <constraint firstItem="m4w-Lf-QJ4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cTh-Ic-NJ9" secondAttribute="bottom" constant="20" id="M4r-go-thP"/>
+                                            <constraint firstItem="m4w-Lf-QJ4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cTh-Ic-NJ9" secondAttribute="bottom" constant="8" id="M4r-go-thP"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cTh-Ic-NJ9" secondAttribute="trailing" constant="10" id="MiA-a7-Dvs"/>
                                             <constraint firstItem="0vH-2h-fra" firstAttribute="leading" secondItem="Vu5-yr-ov4" secondAttribute="leading" constant="20" id="Qeb-MR-AhM"/>
                                             <constraint firstItem="0vH-2h-fra" firstAttribute="top" secondItem="Vu5-yr-ov4" secondAttribute="top" constant="20" id="aCx-Hc-h45"/>
@@ -452,7 +453,7 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="m4w-Lf-QJ4" secondAttribute="bottom" constant="20" id="nn5-AG-ppM"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Vu5-yr-ov4" secondAttribute="bottom" id="s2T-67-YJh"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="r7J-d7-jw6" secondAttribute="trailing" constant="10" id="vvp-dw-ZXl"/>
-                                            <constraint firstItem="0vH-2h-fra" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Vu5-yr-ov4" secondAttribute="trailing" constant="-10" id="yx8-Q3-Cjd"/>
+                                            <constraint firstItem="0vH-2h-fra" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Vu5-yr-ov4" secondAttribute="trailing" constant="-4" id="yx8-Q3-Cjd"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="authorNameLabel" destination="J3D-o8-zWF" id="uyE-cZ-gCu"/>
@@ -768,26 +769,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="5lx-ii-gXw">
-                                                <rect key="frame" x="20" y="20" width="141" height="193"/>
+                                                <rect key="frame" x="20" y="20" width="160" height="220"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="141" id="289-td-xWu"/>
-                                                    <constraint firstAttribute="height" constant="193" id="X49-e1-Z4n"/>
+                                                    <constraint firstAttribute="width" constant="160" id="289-td-xWu"/>
+                                                    <constraint firstAttribute="height" constant="220" id="X49-e1-Z4n"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карл Маркс" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhU-7H-18o">
-                                                <rect key="frame" x="171" y="86" width="120" height="26.5"/>
+                                                <rect key="frame" x="190" y="76" width="120" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1894 год" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-Yn-NM2">
-                                                <rect key="frame" x="40" y="173" width="67" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="1894 год" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-Yn-NM2">
+                                                <rect key="frame" x="40" y="210" width="67" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.87843137250000003" green="0.87058823529999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Капитал" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-ZB-nrs">
-                                                <rect key="frame" x="171" y="30" width="113" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Капитал" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-ZB-nrs">
+                                                <rect key="frame" x="190" y="30" width="113" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -799,38 +800,38 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1984 год" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPw-Dh-gGX">
-                                                <rect key="frame" x="171" y="122.5" width="82.5" height="24"/>
+                                                <rect key="frame" x="190" y="112.5" width="82.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карл Маркс" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4E-N9-puP">
-                                                <rect key="frame" x="40" y="143" width="90.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="Карл Маркс" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4E-N9-puP">
+                                                <rect key="frame" x="40" y="180" width="90.5" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.87843137250000003" green="0.87058823529999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Коротко об издании" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3j-Sx-o6t">
-                                                <rect key="frame" x="20" y="253" width="208.5" height="26.5"/>
+                                                <rect key="frame" x="20" y="280" width="208.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUE-qS-DZq">
-                                                <rect key="frame" x="20" y="300" width="970" height="167.5"/>
+                                                <rect key="frame" x="20" y="327" width="970" height="167.5"/>
                                                 <string key="text">Первый том, «Процесс производства капитала», впервые был опубликован в 1867 году тиражом 1000 экземпляров и является расширенным продолжением опубликованной в 1859 году работы «К критике политической экономии». Уже после смерти Маркса Фридрих Энгельс скомпоновал из готовых фрагментов и черновиков два следующих тома: «Процесс обращения капитала» (1885) и «Процесс капиталистического производства, взятый в целом» (1894). Смерть помешала ему подготовить к печати рукопись заключительного (четвёртого) тома, «Теорий прибавочной стоимости», из второго чернового варианта «Капитала», и этот том был впервые опубликован в 1905—1910 годах Карлом Каутским.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вечная классика | Источник света | Рубрика с бородой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkK-Qt-PPh">
-                                                <rect key="frame" x="20" y="487.5" width="547" height="24"/>
+                                                <rect key="frame" x="20" y="514.5" width="547" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qa-sn-s9h">
-                                                <rect key="frame" x="171" y="174" width="120" height="29"/>
+                                                <rect key="frame" x="190" y="201" width="120" height="29"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="mcW-gK-wAw"/>
@@ -848,10 +849,12 @@
                                         <constraints>
                                             <constraint firstItem="pkK-Qt-PPh" firstAttribute="leading" secondItem="RUE-qS-DZq" secondAttribute="leading" id="1h6-Ca-WZB"/>
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="-10" id="3xY-2c-1kW"/>
-                                            <constraint firstItem="qw2-Yn-NM2" firstAttribute="bottom" secondItem="5lx-ii-gXw" secondAttribute="bottom" constant="-20" id="GBF-O5-eDc"/>
+                                            <constraint firstItem="qw2-Yn-NM2" firstAttribute="bottom" secondItem="5lx-ii-gXw" secondAttribute="bottom" constant="-10" id="GBF-O5-eDc"/>
+                                            <constraint firstItem="F4E-N9-puP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O9a-z7-cHW" secondAttribute="bottom" constant="4" id="GKP-pX-wfu"/>
                                             <constraint firstItem="3Qa-sn-s9h" firstAttribute="bottom" secondItem="5lx-ii-gXw" secondAttribute="bottom" constant="-10" id="I6Z-29-dyy"/>
                                             <constraint firstItem="u3j-Sx-o6t" firstAttribute="top" secondItem="5lx-ii-gXw" secondAttribute="bottom" constant="40" id="Iea-z0-XwU"/>
                                             <constraint firstItem="RUE-qS-DZq" firstAttribute="leading" secondItem="u3j-Sx-o6t" secondAttribute="leading" id="KiQ-8N-m6F"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qcR-ZB-nrs" secondAttribute="trailing" constant="20" id="MGh-pa-D84"/>
                                             <constraint firstItem="u3j-Sx-o6t" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="leading" id="Mkt-NB-R84"/>
                                             <constraint firstItem="F4E-N9-puP" firstAttribute="leading" secondItem="O9a-z7-cHW" secondAttribute="leading" id="PDK-QT-NTM"/>
                                             <constraint firstItem="qcR-ZB-nrs" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="10" id="PLo-D3-u8G"/>
@@ -860,7 +863,7 @@
                                             <constraint firstItem="pkK-Qt-PPh" firstAttribute="top" secondItem="RUE-qS-DZq" secondAttribute="bottom" constant="20" id="UQt-ZL-eOB"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RUE-qS-DZq" secondAttribute="trailing" constant="20" id="W2Z-Ix-6Uy"/>
                                             <constraint firstItem="RUE-qS-DZq" firstAttribute="top" secondItem="u3j-Sx-o6t" secondAttribute="bottom" constant="20" id="aAM-33-aK7"/>
-                                            <constraint firstItem="JhU-7H-18o" firstAttribute="top" secondItem="qcR-ZB-nrs" secondAttribute="bottom" constant="20" id="b5T-67-5uZ"/>
+                                            <constraint firstItem="JhU-7H-18o" firstAttribute="top" secondItem="qcR-ZB-nrs" secondAttribute="bottom" constant="10" id="b5T-67-5uZ"/>
                                             <constraint firstItem="O9a-z7-cHW" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="leading" constant="20" id="cFC-22-7lQ"/>
                                             <constraint firstItem="JhU-7H-18o" firstAttribute="leading" secondItem="qcR-ZB-nrs" secondAttribute="leading" id="cNx-yG-IFN"/>
                                             <constraint firstItem="5lx-ii-gXw" firstAttribute="leading" secondItem="BrE-N3-fJw" secondAttribute="leading" constant="20" id="db7-Vn-UaU"/>

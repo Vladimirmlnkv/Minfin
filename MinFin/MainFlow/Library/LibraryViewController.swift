@@ -18,6 +18,7 @@ class LibraryViewController: UIViewController {
     
     private var books = [Book]()
     private var booksList = [Book]()
+    private var dataSource = LibraryDataSource()
     
     private var headings = [
         Heading(displayName: "Все рубрики"),
@@ -39,7 +40,26 @@ class LibraryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        booksList = books
+        dataSource.getVersion { (result: Result<Int>) in
+            switch result {
+            case .failure:
+                print("error")
+            case .success(let value):
+                self.dataSource.getCatalogsData(result: ({ (catalogsResult: Result<CatalogsData>) in
+                    switch catalogsResult {
+                    case .failure:
+                        print("error")
+                    case .success(let catalogsData):
+                        self.books = catalogsData.books
+                        self.headings = catalogsData.headings
+                        self.booksList = self.books
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                    }
+                }))
+            }
+        }
         clearBackgroundColor()
         addBackgroundView()
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -59,15 +79,12 @@ class LibraryViewController: UIViewController {
     private func filterBooksList() {
         if let filterHeading = filterHeading {
             if searchIsActive && searchBar.text != "" {
-                booksList = books.filter({$0.headings.contains(where: { heading -> Bool in
-                    return heading.displayName == filterHeading.displayName
-                })}).filter({ (book) -> Bool in
+                booksList = books.filter({$0.headingCode == filterHeading.code
+                }).filter({ (book) -> Bool in
                     return self.bookConformsTo(book: book, searchText: searchBar.text)
                 })
             } else {
-                booksList = books.filter({$0.headings.contains(where: { heading -> Bool in
-                    return heading.displayName == filterHeading.displayName
-                })})
+                booksList = books.filter({$0.headingCode == filterHeading.code})
             }
         } else {
             if searchIsActive && searchBar.text != "" {
