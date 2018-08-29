@@ -43,7 +43,7 @@ class LibraryViewController: UIViewController {
         super.viewDidLoad()
         
         let realm = try! Realm()
-        let savedCatalogsData = try! realm.objects(CatalogsData.self).first
+        let savedCatalogsData = realm.objects(CatalogsData.self).first
         
         dataSource.getVersion { (result: Result<Int>) in
             switch result {
