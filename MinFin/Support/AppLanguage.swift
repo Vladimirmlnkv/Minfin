@@ -38,6 +38,9 @@ class AppLanguage {
     static let device = "device"
     static let version = "version"
     static let subject = "subject"
+    static let no_connection_title = "no_connection_title"
+    static let no_connection_message = "no_connection_message"
+    static let ok = "ok"
     
     static let standart = AppLanguage()
     private var languageKey = "appLanguageKey"

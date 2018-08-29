@@ -51,7 +51,7 @@ class LibraryViewController: UIViewController {
                 if let s = savedCatalogsData {
                     self.updateCollectionView(from: s)
                 } else {
-                    print("no saved books or rybrics")
+                    self.showNoDataAret()
                 }
             case .success(let version):
                 if savedCatalogsData == nil || savedCatalogsData!.version < version {
@@ -61,7 +61,7 @@ class LibraryViewController: UIViewController {
                             if let s = savedCatalogsData {
                                 self.updateCollectionView(from: s)
                             } else {
-                                print("no saved books or rybrics")//maybe error
+                                self.showNoDataAret()
                             }
                         case .success(let newCatalogsData):
                             newCatalogsData.version = version
@@ -78,7 +78,7 @@ class LibraryViewController: UIViewController {
                     if let s = savedCatalogsData {
                         self.updateCollectionView(from: s)
                     } else {
-                        print("no saved books or rybrics")
+                        self.showNoDataAret()
                     }
                 }
             }
@@ -97,6 +97,14 @@ class LibraryViewController: UIViewController {
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil
         navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    private func showNoDataAret() {
+        let alert = UIAlertController(title: AppLanguage.no_connection_title.customLocalized(), message: AppLanguage.no_connection_message.customLocalized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: AppLanguage.ok.customLocalized(), style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     private func updateCollectionView(from catalogsData: CatalogsData) {
