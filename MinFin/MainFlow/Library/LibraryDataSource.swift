@@ -13,7 +13,11 @@ enum Result<T> {
     case failure()
 }
 
-class LibraryDataSource {
+protocol BooksLoader {
+    func load(fileName: String, bookName: String, result: @escaping (Result<Bool>) -> Void)
+}
+
+class LibraryDataSource: BooksLoader {
     
     private let booksEndpoint = "http://82.196.15.171:8081/books"
     private let versionEndpoit = "http://82.196.15.171:8081/version"
@@ -51,5 +55,30 @@ class LibraryDataSource {
             }
         }
         task.resume()
+    }
+    
+    func load(fileName: String, bookName: String, result: @escaping (Result<Bool>) -> Void) {
+        
+        if let url = URL(string: fileName) {
+            let sessionConfig = URLSessionConfiguration.default
+            let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            let task = session.dataTask(with: request, completionHandler: { (data, response, _) in
+                if let data = data {
+                    var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last
+                    docURL = docURL?.appendingPathComponent("\(bookName).pdf")
+                    try! data.write(to: docURL!)
+                    DispatchQueue.main.async {
+                        result(Result.success(value: true))
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        result(Result.failure())
+                    }
+                }
+            })
+            task.resume()
+        }
     }
 }

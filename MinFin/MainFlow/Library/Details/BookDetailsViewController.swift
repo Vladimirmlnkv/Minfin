@@ -25,6 +25,8 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     
     var book: Book!
+    var headings: [Heading]!
+    var booksLoader: BooksLoader!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +42,34 @@ class BookDetailsViewController: UIViewController {
         yearDescriptionLabel.text = "\(book.year) год"
         
         aboutDescriptionLabel.text = book.longDescription
+        
+        if let heading = headings.filter({$0.code == book.headingCode}).first {
+            tagsLabel.text = heading.displayName
+        }
     }
 
     
     @IBAction func downloadButtonAction(_ sender: Any) {
         
+        let components = book.title.components(separatedBy: " ")
+        let title: String = components.reduce("", {$0 + $1})
+        
+        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last
+        docURL = docURL?.appendingPathComponent("\(title).pdf")
+
+        if let url = docURL, FileManager.default.fileExists(atPath: url.absoluteString) {
+            
+        } else {
+            booksLoader.load(fileName: book.fileName, bookName: title) { result in
+                switch result {
+                case .failure:
+                    print("failed to load")
+                case .success(_ ):
+                    print("success")
+                    self.downloadButton.setTitle("Open", for: .normal)
+                }
+            }
+        }
     }
     
 

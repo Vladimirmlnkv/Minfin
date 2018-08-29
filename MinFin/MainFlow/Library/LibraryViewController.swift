@@ -158,6 +158,8 @@ class LibraryViewController: UIViewController {
     func open(book: Book) {
         let bookDetailsVC = storyboard?.instantiateViewController(withIdentifier: "BookDetailsViewController") as! BookDetailsViewController
         bookDetailsVC.book = book
+        bookDetailsVC.headings = headings
+        bookDetailsVC.booksLoader = dataSource
         navigationController?.pushViewController(bookDetailsVC, animated: true)
     }
     
