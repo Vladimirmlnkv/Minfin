@@ -23,9 +23,13 @@ class LibraryDataSource {
         let url = URL(string: versionEndpoit)
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             if let data = data, let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                result(Result.success(value: json["currentVersion"] as! Int))
+                DispatchQueue.main.async {
+                    result(Result.success(value: json["currentVersion"] as! Int))
+                }
             } else {
-                result(Result.failure())
+                DispatchQueue.main.async {
+                    result(Result.failure())
+                }
             }
         }        
         task.resume()
@@ -35,10 +39,15 @@ class LibraryDataSource {
         let url = URL(string: booksEndpoint)
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             if let data = data, let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                let catalogsData = CatalogsData(json: json)
-                result(Result.success(value: catalogsData))
+                DispatchQueue.main.async {
+                    let catalogsData = CatalogsData(json: json)
+                    result(Result.success(value: catalogsData))
+                }
             } else {
-                result(Result.failure())
+                DispatchQueue.main.async {
+                    result(Result.failure())
+                    
+                }
             }
         }
         task.resume()

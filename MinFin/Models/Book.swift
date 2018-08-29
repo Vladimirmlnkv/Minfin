@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Book {
-    let title: String
-    let author: String
-    let year: Int
-    let shortDescription: String
-    let longDescription: String
-    let fileName: String
-    let headingCode: Int
+class Book: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var author: String = ""
+    @objc dynamic var year: Int = 0
+    @objc dynamic var shortDescription: String = ""
+    @objc dynamic var longDescription: String = ""
+    @objc dynamic var fileName: String = ""
+    @objc dynamic var headingCode: Int = 0
     
-    init(title: String, author: String, year: Int, shortDescription: String, longDescription: String, fileName: String, heading: Int) {
+    convenience init(title: String, author: String, year: Int, shortDescription: String, longDescription: String, fileName: String, heading: Int) {
+        self.init()
         self.title = title
         self.author = author
         self.year = year
@@ -27,7 +29,8 @@ class Book {
         self.headingCode = heading
     }
     
-    init(json: [String: Any]) {
+    convenience init(json: [String: Any]) {
+        self.init()
         title = json["title"] as! String
         author = json["author"] as! String
         year = json["year"] as! Int
@@ -38,15 +41,17 @@ class Book {
     }
 }
 
-class Heading {
-    let displayName: String
-    var code: Int = 0
+class Heading: Object {
+    @objc dynamic var displayName: String = ""
+    @objc dynamic var code: Int = 0
     
-    init(displayName: String) {
+    convenience init(displayName: String) {
+        self.init()
         self.displayName = displayName
     }
     
-    init(json: [String: Any]) {
+    convenience init(json: [String: Any]) {
+        self.init()
         displayName = json["displayName"] as! String
         code = json["code"] as! Int
     }

@@ -6,21 +6,25 @@
 //  Copyright © 2018 Владимир Мельников. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
-class CatalogsData {
-    let books: [Book]
-    let headings: [Heading]
+class CatalogsData: Object {
     
-    init(books: [Book], headings: [Heading]) {
-        self.books = books
-        self.headings = headings
+    let books = List<Book>()
+    let headings = List<Heading>()
+    @objc dynamic var version: Int = 0
+    
+    convenience init(books: [Book], headings: [Heading]) {
+        self.init()
+        self.books.append(objectsIn: books)
+        self.headings.append(objectsIn: headings)
     }
     
-    init(json: [String: Any]) {
+    convenience init(json: [String: Any]) {
+        self.init()
         let booksData = json["books"] as! [[String: Any]]
         let headingsData = json["headings"] as! [[String: Any]]
-        books = booksData.map { Book(json: $0) }
-        headings = headingsData.map { Heading(json: $0) }
+        books.append(objectsIn: booksData.map { Book(json: $0) })
+        headings.append(objectsIn: headingsData.map { Heading(json: $0) })
     }
 }

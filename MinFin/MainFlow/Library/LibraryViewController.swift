@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LibraryViewController: UIViewController {
 
@@ -40,24 +41,46 @@ class LibraryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let realm = try! Realm()
+        let savedCatalogsData = try! realm.objects(CatalogsData.self).first
+        
         dataSource.getVersion { (result: Result<Int>) in
             switch result {
             case .failure:
-                print("error")
-            case .success(let value):
-                self.dataSource.getCatalogsData(result: ({ (catalogsResult: Result<CatalogsData>) in
-                    switch catalogsResult {
-                    case .failure:
-                        print("error")
-                    case .success(let catalogsData):
-                        self.books = catalogsData.books
-                        self.headings = catalogsData.headings
-                        self.booksList = self.books
-                        DispatchQueue.main.async {
-                            self.collectionView.reloadData()
+                if let s = savedCatalogsData {
+                    self.updateCollectionView(from: s)
+                } else {
+                    print("no saved books or rybrics")
+                }
+            case .success(let version):
+                if savedCatalogsData == nil || savedCatalogsData!.version < version {
+                    self.dataSource.getCatalogsData(result: ({ (catalogsResult: Result<CatalogsData>) in
+                        switch catalogsResult {
+                        case .failure:
+                            if let s = savedCatalogsData {
+                                self.updateCollectionView(from: s)
+                            } else {
+                                print("no saved books or rybrics")//maybe error
+                            }
+                        case .success(let newCatalogsData):
+                            newCatalogsData.version = version
+                            try! realm.write {
+                                if let s = savedCatalogsData {
+                                    realm.delete(s)
+                                }
+                                realm.add(newCatalogsData)
+                            }
+                            self.updateCollectionView(from: newCatalogsData)
                         }
+                    }))
+                } else {
+                    if let s = savedCatalogsData {
+                        self.updateCollectionView(from: s)
+                    } else {
+                        print("no saved books or rybrics")
                     }
-                }))
+                }
             }
         }
         clearBackgroundColor()
@@ -74,6 +97,13 @@ class LibraryViewController: UIViewController {
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil
         navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    private func updateCollectionView(from catalogsData: CatalogsData) {
+        self.books = Array(catalogsData.books)
+        self.headings = Array(catalogsData.headings)
+        self.booksList = self.books
+        self.collectionView.reloadData()
     }
     
     private func filterBooksList() {
