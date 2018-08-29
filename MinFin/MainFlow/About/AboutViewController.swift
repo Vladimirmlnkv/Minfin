@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class AboutViewController: UIViewController {
 
@@ -32,8 +33,9 @@ class AboutViewController: UIViewController {
         barButtonItem.tintColor = nil
         navigationItem.rightBarButtonItem = barButtonItem
         tableView.estimatedRowHeight = 60.0
+        tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.allowsSelection = false
+//        tableView.allowsSelection = false
         tableView.dataSource = self
     }
     
@@ -52,6 +54,32 @@ class AboutViewController: UIViewController {
                 UIApplication.shared.openURL(emailURL)
             }
         }
+    }
+    
+    func openMapForPlace(name: String) {
+        
+        let latitude: CLLocationDegrees = 55.755839
+        let longitude: CLLocationDegrees = 37.626866
+        
+        let regionDistance:CLLocationDistance = 1000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = name
+        mapItem.openInMaps(launchOptions: options)
+    }
+}
+
+extension AboutViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        openMapForPlace(name: aboutInfo[indexPath.row].name)
     }
     
 }
