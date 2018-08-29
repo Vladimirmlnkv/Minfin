@@ -41,6 +41,8 @@ class AppLanguage {
     static let no_connection_title = "no_connection_title"
     static let no_connection_message = "no_connection_message"
     static let ok = "ok"
+    static let download = "download"
+    static let open = "open"
     
     static let standart = AppLanguage()
     private var languageKey = "appLanguageKey"

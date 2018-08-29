@@ -36,3 +36,5 @@
 "no_connection_title" = "No connection";
 "no_connection_message" = "Please, connect to the internet and try again later";
 "ok" = "Ok";
+"download" = "DOWNLOAD";
+"open" = "OPEN";

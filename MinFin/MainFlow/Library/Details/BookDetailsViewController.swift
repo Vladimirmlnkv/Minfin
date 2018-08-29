@@ -28,6 +28,8 @@ class BookDetailsViewController: UIViewController {
     var headings: [Heading]!
     var booksLoader: BooksLoader!
     
+    var documentController: UIDocumentInteractionController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundView()
@@ -46,27 +48,47 @@ class BookDetailsViewController: UIViewController {
         if let heading = headings.filter({$0.code == book.headingCode}).first {
             tagsLabel.text = heading.displayName
         }
+        
+        if fileExists() {
+            downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
+        } else {
+            downloadButton.setTitle(AppLanguage.download.customLocalized(), for: .normal)
+        }
+
     }
 
+    private func getBookTitle() -> String {
+        let components = book.title.components(separatedBy: " ")
+        return components.reduce("", {$0 + $1})
+    }
+    
+    private func fileExists() -> Bool {
+        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+        docURL = docURL?.appendingPathComponent("\(getBookTitle()).pdf")
+        if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+            return true
+        }
+        return false
+    }
     
     @IBAction func downloadButtonAction(_ sender: Any) {
-        
-        let components = book.title.components(separatedBy: " ")
-        let title: String = components.reduce("", {$0 + $1})
-        
-        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last
+        let title = getBookTitle()
+        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
         docURL = docURL?.appendingPathComponent("\(title).pdf")
-
-        if let url = docURL, FileManager.default.fileExists(atPath: url.absoluteString) {
-            
+        
+        if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+            documentController = UIDocumentInteractionController(url: url)
+            let booksUrl = URL(string:"itms-books:")!
+            if UIApplication.shared.canOpenURL(booksUrl) {
+                documentController.presentOpenInMenu(from: downloadButton.frame, in: view, animated: true)
+            }
         } else {
             booksLoader.load(fileName: book.fileName, bookName: title) { result in
                 switch result {
                 case .failure:
                     print("failed to load")
                 case .success(_ ):
-                    print("success")
-                    self.downloadButton.setTitle("Open", for: .normal)
+                    self.downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
                 }
             }
         }

@@ -66,7 +66,7 @@ class LibraryDataSource: BooksLoader {
             request.httpMethod = "GET"
             let task = session.dataTask(with: request, completionHandler: { (data, response, _) in
                 if let data = data {
-                    var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last
+                    var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
                     docURL = docURL?.appendingPathComponent("\(bookName).pdf")
                     try! data.write(to: docURL!)
                     DispatchQueue.main.async {
