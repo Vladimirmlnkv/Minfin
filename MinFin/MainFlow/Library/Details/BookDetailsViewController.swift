@@ -77,11 +77,23 @@ class BookDetailsViewController: UIViewController {
         docURL = docURL?.appendingPathComponent("\(title).pdf")
         
         if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
-            documentController = UIDocumentInteractionController(url: url)
-            let booksUrl = URL(string:"itms-books:")!
-            if UIApplication.shared.canOpenURL(booksUrl) {
-                documentController.presentOpenInMenu(from: downloadButton.frame, in: view, animated: true)
-            }
+            
+            let alert = UIAlertController(title: nil, message: AppLanguage.open_book_title.customLocalized(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppLanguage.open_book_option1.customLocalized(), style: .default, handler: { (_) in
+                let bookVC = self.storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
+                bookVC.bookURL = url
+                bookVC.bookData = FileManager.default.contents(atPath: url.path)
+                bookVC.bookTitle = self.book.title
+                self.navigationController?.pushViewController(bookVC, animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: AppLanguage.open_book_option2.customLocalized(), style: .default, handler: { (_) in
+                self.documentController = UIDocumentInteractionController(url: url)
+                let booksUrl = URL(string:"itms-books:")!
+                if UIApplication.shared.canOpenURL(booksUrl) {
+                    self.documentController.presentOpenInMenu(from: self.downloadButton.frame, in: self.view, animated: true)
+                }
+            }))
+            present(alert, animated: true, completion: nil)
         } else {
             booksLoader.load(fileName: book.fileName, bookName: title) { result in
                 switch result {

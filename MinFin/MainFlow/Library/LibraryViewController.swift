@@ -165,8 +165,12 @@ class LibraryViewController: UIViewController {
     
     @IBAction func rybrikButtonAction(_ sender: Any) {
         if searchIsActive {
+            searchBar.text = ""
             searchIsActive = false
             searchBar.resignFirstResponder()
+            filterBooksList()
+            rybrikButton.setImage(#imageLiteral(resourceName: "rybrikCopy"), for: .normal)
+            rybrikButton.setTitle(AppLanguage.headings.customLocalized(), for: .normal)
         } else {
             let headingsVC = storyboard?.instantiateViewController(withIdentifier: "HeadingsViewController") as! HeadingsViewController
             headingsVC.headings = headings
@@ -188,10 +192,12 @@ extension LibraryViewController: UISearchBarDelegate {
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        rybrikButton.setImage(#imageLiteral(resourceName: "rybrikCopy"), for: .normal)
-        rybrikButton.setTitle(AppLanguage.headings.customLocalized(), for: .normal)
-        searchIsActive = false
-        headerTitleLabel.text = AppLanguage.catalog.customLocalized()
+        if searchBar.text!.isEmpty {
+            rybrikButton.setImage(#imageLiteral(resourceName: "rybrikCopy"), for: .normal)
+            rybrikButton.setTitle(AppLanguage.headings.customLocalized(), for: .normal)
+            searchIsActive = false
+            headerTitleLabel.text = AppLanguage.catalog.customLocalized()
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

@@ -38,3 +38,6 @@
 "ok" = "Ok";
 "download" = "DOWNLOAD";
 "open" = "OPEN";
+"open_book_title" = "How would you like to open the book?";
+"open_book_option1" = "With Minfin.Hisory app";
+"open_book_option2" = "With another app";
