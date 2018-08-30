@@ -20,6 +20,11 @@ class LeftEventView: UIView, EventView {
     @IBOutlet var timeLineView: UIView!
     @IBOutlet var timeLineViewWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet var centerContainerView: UIView!
+    @IBOutlet var viewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var viewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var labelTrailingConstraint: NSLayoutConstraint!
+    
     var event: Event!
     
     required init?(coder aDecoder: NSCoder) {

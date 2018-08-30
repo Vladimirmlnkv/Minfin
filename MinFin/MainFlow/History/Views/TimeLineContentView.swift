@@ -144,11 +144,7 @@ class TimeLineContentView: UIView {
                 eventView.updateCornerRadiuses()
                 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
                 eventView.addGestureRecognizer(tapGestureRecognizer)
-            } else if event.needToCenterContent {
-                
             } else if event.isTextOnLeft {
-                
-                
                 let eventView = RightEventView(frame: CGRect())
                 eventView.titleLabel.text = event.name
                 eventView.event = event
@@ -178,6 +174,17 @@ class TimeLineContentView: UIView {
                 eventView.frame = eventRect
                 eventView.timeLineViewWidthConstraint.constant = timeLineViewWidth
                 addSubview(eventView)
+                
+                if event.needToCenterContent {
+                    eventView.viewLeadingConstraint.isActive = false
+                    eventView.viewTrailingConstraint.isActive = false
+                    eventView.labelTrailingConstraint.isActive = false
+                    
+                    let centerConstraint = NSLayoutConstraint(item: eventView.centerContainerView, attribute: .centerX, relatedBy: .equal, toItem: eventView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+                    let trailingConstraint = NSLayoutConstraint(item: eventView.titleLabel, attribute: .trailing, relatedBy: .equal, toItem: eventView.centerContainerView, attribute: .trailing, multiplier: 1.0, constant: 8.0)
+                    eventView.addConstraints([centerConstraint, trailingConstraint])
+                }
+                
                 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
                 eventView.addGestureRecognizer(tapGestureRecognizer)
             }
