@@ -41,6 +41,14 @@ class HistoryViewController: UIViewController {
             fullHeight = view.frame.height - contentView.topOffset - contentView.bottomOffset
         }
         
+        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: contentView.topOffset))
+        gradientView.backgroundColor = UIColor.clear
+        let gradient = CAGradientLayer()
+        gradient.frame = gradientView.bounds
+        gradient.colors = [UIColor.white.cgColor, UIColor.clear.cgColor]
+        gradientView.layer.insertSublayer(gradient, at: 0)
+        view.addSubview(gradientView)
+        
         contentView.personsSectionHeight = fullHeight * 3 / 2 / 10
         contentView.eventsSectionHeight = fullHeight - 2 * contentView.personsSectionHeight        
         
