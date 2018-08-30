@@ -33,7 +33,12 @@ class BookCollectionViewCell: UICollectionViewCell {
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
         mainTitleLabel.text = book.title
-        descriptionLabel.text = book.shortDescription
+        if book.shortDescription != "" {
+            descriptionLabel.text = book.shortDescription
+        } else {
+            descriptionLabel.text = book.longDescription
+        }
+
         dateLabel.text = "\(book.year) год"
     }
     
