@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  MinFin
+
+  Created by Владимир Мельников on 30/08/2018.
+  Copyright © 2018 Владимир Мельников. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Minfin.History";
