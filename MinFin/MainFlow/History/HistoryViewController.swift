@@ -35,13 +35,16 @@ class HistoryViewController: UIViewController {
         contentView.topOffset = navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 20
 
         var fullHeight: CGFloat = 0
+        var gradientWith: CGFloat = 0
         if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
             fullHeight = view.frame.width - contentView.topOffset - contentView.bottomOffset
+            gradientWith = view.frame.height
         } else {
             fullHeight = view.frame.height - contentView.topOffset - contentView.bottomOffset
+            gradientWith = view.frame.width
         }
         
-        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: contentView.topOffset))
+        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: gradientWith, height: contentView.topOffset))
         gradientView.backgroundColor = UIColor.clear
         let gradient = CAGradientLayer()
         gradient.frame = gradientView.bounds
