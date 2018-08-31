@@ -28,13 +28,14 @@ class BookDetailsViewController: UIViewController {
     var headings: [Heading]!
     var booksLoader: BooksLoader!
     
+    @IBOutlet var spinner: UIActivityIndicatorView!
     var documentController: UIDocumentInteractionController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundView()
         downloadButton.layer.cornerRadius = 15.0
-        
+        spinner.isHidden = true
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
         yearLabel.text = "\(book.year) год"
@@ -95,11 +96,18 @@ class BookDetailsViewController: UIViewController {
             }))
             present(alert, animated: true, completion: nil)
         } else {
+            spinner.isHidden = false
+            spinner.startAnimating()
             booksLoader.load(fileName: book.fileName, bookName: title) { result in
                 switch result {
                 case .failure:
                     print("failed to load")
+                    self.spinner.isHidden = true
+                    let alert = UIAlertController(title: "Error", message: "Can't load book", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 case .success(_ ):
+                    self.spinner.isHidden = true
                     self.downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
                 }
             }
