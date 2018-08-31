@@ -61,7 +61,7 @@
 		7E94F8F62132CECB00F27804 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94F8F52132CECB00F27804 /* AppLanguage.swift */; };
 		7EE4977E2137DD48000667B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EE497802137DD48000667B8 /* InfoPlist.strings */; };
 		7EE497832137DF47000667B8 /* BookReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE497822137DF47000667B8 /* BookReaderViewController.swift */; };
-		7EE702D421392C5B00253507 /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EE702D321392C5B00253507 /* minfin.json */; };
+		7EE702D6213974F000253507 /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EE702D5213974F000253507 /* minfin.json */; };
 		7EEF409A2136A9FB0070981A /* LibraryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF40992136A9FB0070981A /* LibraryDataSource.swift */; };
 		7EEF409C2136AC480070981A /* CatalogsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF409B2136AC480070981A /* CatalogsData.swift */; };
 /* End PBXBuildFile section */
@@ -127,7 +127,7 @@
 		7EE4977F2137DD48000667B8 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7EE497812137DD4A000667B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EE497822137DF47000667B8 /* BookReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderViewController.swift; sourceTree = "<group>"; };
-		7EE702D321392C5B00253507 /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
+		7EE702D5213974F000253507 /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 		7EEF40992136A9FB0070981A /* LibraryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataSource.swift; sourceTree = "<group>"; };
 		7EEF409B2136AC480070981A /* CatalogsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsData.swift; sourceTree = "<group>"; };
 		82DC40562B103256C0507218 /* Pods_MinFin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinFin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,7 +215,7 @@
 		7E2799E4211C6D51003DE4FA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				7EE702D321392C5B00253507 /* minfin.json */,
+				7EE702D5213974F000253507 /* minfin.json */,
 				7E2799D2211C6898003DE4FA /* Assets.xcassets */,
 				7E94F8EF2132C92E00F27804 /* Localizable.strings */,
 				7E94F8F52132CECB00F27804 /* AppLanguage.swift */,
@@ -511,6 +511,7 @@
 			files = (
 				7E4A050C212E7CB90065FD7A /* RightEventView.xib in Resources */,
 				7E4A051B212EADEF0065FD7A /* AboutHeaderView.xib in Resources */,
+				7EE702D6213974F000253507 /* minfin.json in Resources */,
 				7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */,
 				7E32D1BD21317DF500D38233 /* ClusterView.xib in Resources */,
 				7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */,
@@ -520,7 +521,6 @@
 				7E32D1CA21319CBC00D38233 /* ClusterDetailsCollectionViewCell.xib in Resources */,
 				7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */,
 				7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */,
-				7EE702D421392C5B00253507 /* minfin.json in Resources */,
 				7E32D1CD21319E6800D38233 /* ClusterDetailsContainerView.xib in Resources */,
 				7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,

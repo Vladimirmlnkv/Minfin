@@ -221,6 +221,9 @@ class TimeLineContentView: UIView {
         let width = CGFloat(person.endYear! - person.startYear) * spaceBetweenDateLines - 1
         let rect = CGRect(x: xCoordinate, y: yCoordinate, width: width, height: personsSectionHeight - verticalOffset)
         let personView = PersonView(frame: rect)
+        if person.photoUrl != "" {
+            personView.imageView.image = UIImage(named: person.photoUrl)
+        }
         personView.person = person
         personView.nameLabel.text = person.name
         addSubview(personView)

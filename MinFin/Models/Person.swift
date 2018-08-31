@@ -14,6 +14,7 @@ class Person: DetailInfo {
     var startYear: Int
     var endYear: Int?
     
+    var photoUrl: String!
     var longDescription: String?
     var quote: String? = nil
     var quoteSource: String? = nil
@@ -24,7 +25,9 @@ class Person: DetailInfo {
             startYear = dict["startYear"] as! Int
             endYear = dict["endYear"] as? Int
             longDescription = dict["longDescription"] as? String
+            photoUrl = dict["photoUrl"] as! String
         } else {
+            photoUrl = ""
             name = ""
             startYear = 0
             endYear = 0
