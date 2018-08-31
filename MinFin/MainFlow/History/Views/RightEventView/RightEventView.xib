@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,9 +27,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="212" height="70"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="W9m-st-noU">
-                        <rect key="frame" x="154" y="8" width="50" height="50"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="han-cR-ZLa">
+                        <rect key="frame" x="0.0" y="0.0" width="212" height="66"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="W9m-st-noU">
+                                <rect key="frame" x="154" y="8" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W9m-st-noU" secondAttribute="height" multiplier="1:1" id="txI-0B-N5v"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;План финансов&quot;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-Ao-5cd">
+                                <rect key="frame" x="11" y="24" width="134.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W9m-st-noU" firstAttribute="leading" secondItem="Ubz-Ao-5cd" secondAttribute="trailing" constant="8" id="21k-dn-sAK"/>
+                            <constraint firstItem="W9m-st-noU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="han-cR-ZLa" secondAttribute="top" constant="8" id="VpR-7s-JIn"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="W9m-st-noU" secondAttribute="bottom" constant="8" id="fa5-6D-NiQ"/>
+                            <constraint firstItem="Ubz-Ao-5cd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="han-cR-ZLa" secondAttribute="leading" constant="8" id="iKZ-2s-NIz"/>
+                            <constraint firstAttribute="trailing" secondItem="W9m-st-noU" secondAttribute="trailing" constant="8" id="rNg-e4-5dy"/>
+                            <constraint firstItem="Ubz-Ao-5cd" firstAttribute="centerY" secondItem="W9m-st-noU" secondAttribute="centerY" id="sj7-3k-Muf"/>
+                            <constraint firstItem="W9m-st-noU" firstAttribute="centerY" secondItem="han-cR-ZLa" secondAttribute="centerY" id="t0N-Yo-BeT"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxy-wU-HVJ">
                         <rect key="frame" x="192" y="66" width="20" height="4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,26 +62,18 @@
                             <constraint firstAttribute="width" constant="20" id="Y2l-xQ-Q4k"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;План финансов&quot;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-Ao-5cd">
-                        <rect key="frame" x="11.5" y="23.5" width="134.5" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="W9m-st-noU" secondAttribute="trailing" constant="8" id="Cm3-By-Cme"/>
-                    <constraint firstItem="W9m-st-noU" firstAttribute="top" secondItem="eeO-xx-GCt" secondAttribute="top" constant="8" id="Hqd-ib-ivq"/>
-                    <constraint firstItem="Ubz-Ao-5cd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eeO-xx-GCt" secondAttribute="leading" constant="8" id="OPh-e4-SHb"/>
                     <constraint firstAttribute="trailing" secondItem="Zxy-wU-HVJ" secondAttribute="trailing" id="Q1U-N2-clx"/>
-                    <constraint firstItem="Zxy-wU-HVJ" firstAttribute="top" secondItem="W9m-st-noU" secondAttribute="bottom" constant="8" id="cqN-1e-7WZ"/>
-                    <constraint firstItem="W9m-st-noU" firstAttribute="leading" secondItem="Ubz-Ao-5cd" secondAttribute="trailing" constant="8" id="hR1-ql-pam"/>
+                    <constraint firstAttribute="trailing" secondItem="han-cR-ZLa" secondAttribute="trailing" id="WIj-fR-faV"/>
+                    <constraint firstItem="han-cR-ZLa" firstAttribute="top" secondItem="eeO-xx-GCt" secondAttribute="top" id="hZS-tn-VTS"/>
                     <constraint firstAttribute="bottom" secondItem="Zxy-wU-HVJ" secondAttribute="bottom" id="jQN-kt-7VP"/>
-                    <constraint firstItem="Ubz-Ao-5cd" firstAttribute="centerY" secondItem="W9m-st-noU" secondAttribute="centerY" id="mgj-6y-QXz"/>
+                    <constraint firstItem="Zxy-wU-HVJ" firstAttribute="top" secondItem="han-cR-ZLa" secondAttribute="bottom" id="l2P-Hj-LYC"/>
+                    <constraint firstItem="han-cR-ZLa" firstAttribute="leading" secondItem="eeO-xx-GCt" secondAttribute="leading" id="tVZ-Md-cMA"/>
                 </constraints>
             </view>
             <blurEffect style="light"/>
-            <point key="canvasLocation" x="69.5" y="-102"/>
+            <point key="canvasLocation" x="69" y="-102"/>
         </visualEffectView>
     </objects>
     <resources>

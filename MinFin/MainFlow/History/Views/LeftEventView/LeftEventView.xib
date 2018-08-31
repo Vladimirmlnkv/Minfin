@@ -45,11 +45,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="dfa-x3-CjC" secondAttribute="bottom" constant="8" id="LQW-An-Me6"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dfa-x3-CjC" secondAttribute="bottom" constant="8" id="LQW-An-Me6"/>
                             <constraint firstItem="ihn-Gk-mp7" firstAttribute="centerY" secondItem="dfa-x3-CjC" secondAttribute="centerY" id="N0Y-Ts-Ohx"/>
+                            <constraint firstItem="dfa-x3-CjC" firstAttribute="centerY" secondItem="ezP-bd-Lh2" secondAttribute="centerY" id="a1l-To-TWE"/>
                             <constraint firstItem="ihn-Gk-mp7" firstAttribute="leading" secondItem="dfa-x3-CjC" secondAttribute="trailing" constant="8" id="e3D-xf-UuQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ihn-Gk-mp7" secondAttribute="trailing" constant="8" id="fIY-bJ-Cpu"/>
-                            <constraint firstItem="dfa-x3-CjC" firstAttribute="top" secondItem="ezP-bd-Lh2" secondAttribute="top" constant="8" id="lAI-Qb-whT"/>
+                            <constraint firstItem="dfa-x3-CjC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ezP-bd-Lh2" secondAttribute="top" constant="8" id="lAI-Qb-whT"/>
                             <constraint firstItem="dfa-x3-CjC" firstAttribute="leading" secondItem="ezP-bd-Lh2" secondAttribute="leading" constant="8" id="lgO-Lm-BcR"/>
                         </constraints>
                     </view>
