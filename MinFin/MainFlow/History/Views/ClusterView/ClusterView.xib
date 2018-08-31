@@ -26,18 +26,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="351" height="103"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="sML-Qw-Mv7">
-                        <rect key="frame" x="146" y="11" width="60" height="60"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="she-FB-tqp">
+                        <rect key="frame" x="0.0" y="11.5" width="351" height="80"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="sML-Qw-Mv7">
+                                <rect key="frame" x="145" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sML-Qw-Mv7" secondAttribute="height" multiplier="1:1" id="qXq-JX-g3h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Несколько министров" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-ub-76j">
+                                <rect key="frame" x="0.0" y="62" width="351" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="sML-Qw-Mv7" secondAttribute="height" multiplier="1:1" id="qXq-JX-g3h"/>
+                            <constraint firstAttribute="trailing" secondItem="iWU-ub-76j" secondAttribute="trailing" id="Oar-SZ-LPl"/>
+                            <constraint firstItem="sML-Qw-Mv7" firstAttribute="top" secondItem="she-FB-tqp" secondAttribute="top" id="PGu-no-zuA"/>
+                            <constraint firstItem="sML-Qw-Mv7" firstAttribute="centerX" secondItem="she-FB-tqp" secondAttribute="centerX" id="Rhl-i1-4cY"/>
+                            <constraint firstAttribute="bottom" secondItem="iWU-ub-76j" secondAttribute="bottom" id="ddn-61-Nv3"/>
+                            <constraint firstItem="iWU-ub-76j" firstAttribute="top" secondItem="sML-Qw-Mv7" secondAttribute="bottom" constant="2" id="eOe-Nd-7v6"/>
+                            <constraint firstItem="iWU-ub-76j" firstAttribute="leading" secondItem="she-FB-tqp" secondAttribute="leading" id="rKf-Pv-PT7"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Несколько министров" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-ub-76j">
-                        <rect key="frame" x="0.0" y="73" width="351" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IoC-qR-tn3">
                         <rect key="frame" x="0.0" y="99" width="351" height="4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,24 +60,23 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYJ-6t-0gk">
-                        <rect key="frame" x="158" y="29" width="36.5" height="24"/>
+                        <rect key="frame" x="157" y="29.5" width="36.5" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iWU-ub-76j" firstAttribute="top" secondItem="sML-Qw-Mv7" secondAttribute="bottom" constant="2" id="268-PF-f0Z"/>
-                    <constraint firstItem="IoC-qR-tn3" firstAttribute="top" secondItem="iWU-ub-76j" secondAttribute="bottom" constant="8" id="6lJ-wZ-sB2"/>
-                    <constraint firstAttribute="trailing" secondItem="iWU-ub-76j" secondAttribute="trailing" id="7Mk-Yf-8rW"/>
-                    <constraint firstItem="iWU-ub-76j" firstAttribute="leading" secondItem="gh1-GH-2Ey" secondAttribute="leading" id="DTs-wx-Gyv"/>
+                    <constraint firstItem="she-FB-tqp" firstAttribute="leading" secondItem="gh1-GH-2Ey" secondAttribute="leading" id="Lrr-9p-XFx"/>
                     <constraint firstAttribute="bottom" secondItem="IoC-qR-tn3" secondAttribute="bottom" id="MVU-1n-eUf"/>
-                    <constraint firstItem="vYJ-6t-0gk" firstAttribute="centerX" secondItem="sML-Qw-Mv7" secondAttribute="centerX" id="MZY-Zk-c62"/>
+                    <constraint firstAttribute="trailing" secondItem="she-FB-tqp" secondAttribute="trailing" id="Nbj-7y-oA9"/>
+                    <constraint firstItem="vYJ-6t-0gk" firstAttribute="centerY" secondItem="sML-Qw-Mv7" secondAttribute="centerY" id="Nld-BZ-pil"/>
                     <constraint firstAttribute="trailing" secondItem="IoC-qR-tn3" secondAttribute="trailing" id="OvI-aZ-teg"/>
+                    <constraint firstItem="she-FB-tqp" firstAttribute="centerY" secondItem="gh1-GH-2Ey" secondAttribute="centerY" id="aa2-3h-IHY"/>
                     <constraint firstItem="IoC-qR-tn3" firstAttribute="leading" secondItem="gh1-GH-2Ey" secondAttribute="leading" id="abz-Wd-6dH"/>
-                    <constraint firstItem="vYJ-6t-0gk" firstAttribute="centerY" secondItem="sML-Qw-Mv7" secondAttribute="centerY" id="fQP-YT-f3N"/>
-                    <constraint firstItem="sML-Qw-Mv7" firstAttribute="centerX" secondItem="gh1-GH-2Ey" secondAttribute="centerX" id="tDv-T7-ai4"/>
-                    <constraint firstItem="sML-Qw-Mv7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gh1-GH-2Ey" secondAttribute="top" constant="4" id="xnS-Dx-yXM"/>
+                    <constraint firstItem="vYJ-6t-0gk" firstAttribute="centerX" secondItem="sML-Qw-Mv7" secondAttribute="centerX" id="caU-Us-djv"/>
+                    <constraint firstItem="she-FB-tqp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gh1-GH-2Ey" secondAttribute="top" id="eE8-Bv-00L"/>
+                    <constraint firstItem="IoC-qR-tn3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="she-FB-tqp" secondAttribute="bottom" id="oyf-ZV-jov"/>
                 </constraints>
             </view>
             <blurEffect style="light"/>
