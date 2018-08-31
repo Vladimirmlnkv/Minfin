@@ -62,6 +62,9 @@ extension ClusterDetailsContainerView: UICollectionViewDataSource {
         let person = cluster.persons[indexPath.row]
         cell.nameLabel.text = person.name
         cell.dateLabel.text = "\(person.startYear) - \(person.endYear!)"
+        if person.photoUrl != "" {
+            cell.avatarImageView.image = UIImage(named: person.photoUrl)
+        }
         return cell
     }
     
