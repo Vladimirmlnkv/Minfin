@@ -8,39 +8,38 @@
 
 import UIKit
 
-protocol OnboardingPageViewControllerDelegate {
-    
-}
-
 class OnboardingPageViewController: UIPageViewController {
-    
-    var onboardingDelegate: OnboardingPageViewControllerDelegate!
     
     fileprivate lazy var onboardingViewControllers: [UIViewController] = {
         let sb = UIStoryboard(name: "Onboarding", bundle: nil)
         
-//        let firstVC = sb.instantiateViewController(withIdentifier: "IconedOnboardingViewController")
-//        
-//        let secondVC = sb.instantiateViewController(withIdentifier: "TextOnboardingViewController") as! TextOnboardingViewController
-//        secondVC.text = "Master meditation, breathwork and arm holding.\nEach exercise teaches you to better understand your mind and your body, while also makes you feel great"
-//        
-//        let thirdVC = sb.instantiateViewController(withIdentifier: "TextOnboardingViewController") as! TextOnboardingViewController
-//        thirdVC.text = "Use built-in diary to keep track of your progress and write down yout thought and ideas after doing exercises"
+        let firstVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        firstVC.delegate = self
+        let secondVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        secondVC.delegate = self
+        let thirdVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        thirdVC.delegate = self
         
-        let finalVC = sb.instantiateViewController(withIdentifier: "FinalOnboardingViewController") as! FinalOnboardingViewController
-        finalVC.delegate = self
-        
-        return [finalVC]
+        return [firstVC, secondVC, thirdVC]
     }()
+    var currentIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBackgroundView()
+        UIPageControl.appearance().tintColor = Color.mainTextColor
         dataSource = self
         if let firstVC = onboardingViewControllers.first {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
     }
     
+    func endOnboarding() {
+        UserDefaults.standard.set(false, forKey: (UIApplication.shared.delegate! as! AppDelegate).isFirstLaunchKey)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let startVC = mainStoryboard.instantiateInitialViewController()
+        UIApplication.shared.delegate!.window!!.rootViewController = startVC
+    }
 }
 
 extension OnboardingPageViewController: UIPageViewControllerDataSource {
@@ -66,6 +65,9 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        if let currentIndex = currentIndex {
+            return currentIndex
+        }
         return 0
     }
 }
@@ -76,4 +78,23 @@ extension OnboardingPageViewController: FinalOnboardingViewControllerDelegate {
         
     }
     
+}
+
+extension OnboardingPageViewController: OnboardingInfoViewControllerDelegate {
+    
+    func didPressContune(on vc: UIViewController) {
+        if let index = onboardingViewControllers.index(of: vc) {
+            if index == onboardingViewControllers.endIndex - 1 {
+                endOnboarding()
+            } else {
+                currentIndex = index + 1
+                setViewControllers([onboardingViewControllers[index.advanced(by: 1)]], direction: .forward, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func didPressSkip(on vc: UIViewController) {
+        endOnboarding()
+    }
+        
 }
