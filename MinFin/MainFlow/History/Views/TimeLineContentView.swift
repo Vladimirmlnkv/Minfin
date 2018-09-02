@@ -134,6 +134,9 @@ class TimeLineContentView: UIView {
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
 
                 let eventView = SingleEventView(frame: CGRect())
+                if event.photoUrl != "" {
+                    eventView.imageView.image = UIImage(named: event.photoUrl)
+                }
                 eventView.event = event
                 eventView.titleLabel.text = event.name
 
@@ -148,7 +151,9 @@ class TimeLineContentView: UIView {
                 let eventView = RightEventView(frame: CGRect())
                 eventView.titleLabel.text = event.name
                 eventView.event = event
-                
+                if event.photoUrl != "" {
+                    eventView.imageView.image = UIImage(named: event.photoUrl)
+                }
                 let xEndCoordinate = bounds.minX + CGFloat(event.endYear! - startDate) * spaceBetweenDateLines + leftOffset
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
                 let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;
@@ -165,7 +170,9 @@ class TimeLineContentView: UIView {
                 let eventView = LeftEventView(frame: CGRect())
                 eventView.titleLabel.text = event.name
                 eventView.event = event
-                
+                if event.photoUrl != "" {
+                    eventView.imageView.image = UIImage(named: event.photoUrl)
+                }
                 let xCoordinate = bounds.minX + CGFloat(event.startYear - startDate) * spaceBetweenDateLines + leftOffset
                 let yCoordinate = eventsMinYCoordinate + CGFloat(event.rowNumber) * eventRowHeight
                 let timeLineViewWidth = CGFloat(event.endYear! - event.startYear) * spaceBetweenDateLines - 1;

@@ -15,4 +15,5 @@ protocol DetailInfo {
     var longDescription: String? { get }
     var quote: String? { get }
     var quoteSource: String? { get }
+    var photoUrl: String! { get }
 }

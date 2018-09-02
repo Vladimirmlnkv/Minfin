@@ -16,6 +16,7 @@ class Event: DetailInfo {
     let isTextOnLeft: Bool
     let rowNumber: Int
     let needToCenterContent: Bool
+    let photoUrl: String!
     
     var longDescription: String?
     var quote: String?
@@ -32,6 +33,11 @@ class Event: DetailInfo {
             longDescription = dict["longDescription"] as? String
             quote = dict["quote"] as? String
             quoteSource = dict["quoteSource"] as? String
+            if let url = dict["iconUrl"] as? String {
+                photoUrl = url
+            } else {
+                photoUrl = ""
+            }
         } else {
             name = ""
             startYear = 0
@@ -42,6 +48,7 @@ class Event: DetailInfo {
             longDescription = nil
             quote = nil
             quoteSource = nil
+            photoUrl = ""
         }
     }
 }

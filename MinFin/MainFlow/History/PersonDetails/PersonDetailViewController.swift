@@ -26,6 +26,9 @@ class PersonDetailViewController: UIViewController {
         super.viewDidLoad()
         addBackgroundView()
         mainNameLabel.text = detailInfo.name
+        if detailInfo.photoUrl != "" {
+            imageView.image = UIImage(named: detailInfo.photoUrl)
+        }
         var dateText = ""
         if let endYear = detailInfo.endYear, endYear != 0 {
             dateText = "\(detailInfo.startYear) - \(endYear) года"
