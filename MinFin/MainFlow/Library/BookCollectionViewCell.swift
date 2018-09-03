@@ -34,13 +34,14 @@ class BookCollectionViewCell: UICollectionViewCell {
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
         mainTitleLabel.text = book.title
+        downloadButton.setTitle(AppLanguage.details.customLocalized(), for: .normal)
         if book.shortDescription != "" {
             descriptionLabel.text = book.shortDescription
         } else {
             descriptionLabel.text = book.longDescription
         }
 
-        dateLabel.text = "\(book.year) год"
+        dateLabel.text = "\(book.year) \(AppLanguage.year.customLocalized())"
     }
     
     @IBAction func downloadButtonAction(_ sender: Any) {

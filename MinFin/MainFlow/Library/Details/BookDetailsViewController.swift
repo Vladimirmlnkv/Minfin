@@ -38,11 +38,11 @@ class BookDetailsViewController: UIViewController {
         spinner.isHidden = true
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
-        yearLabel.text = "\(book.year) год"
+        yearLabel.text = "\(book.year) \(AppLanguage.year.customLocalized())"
         
         mainTitleLabel.text = book.title
         authorDescriptionLabel.text = book.author
-        yearDescriptionLabel.text = "\(book.year) год"
+        yearDescriptionLabel.text = "\(book.year) \(AppLanguage.year.customLocalized())"
         
         aboutDescriptionLabel.text = book.longDescription
         
