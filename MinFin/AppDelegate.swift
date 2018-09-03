@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = UIColor.white
+        appearance.currentPageIndicatorTintColor = Color.mainTextColor
+        
         if UserDefaults.standard.value(forKey: isFirstLaunchKey) == nil {
             let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
             let mainVC = onboardingStoryboard.instantiateViewController(withIdentifier: "OnboardingPageViewController") as! OnboardingPageViewController
