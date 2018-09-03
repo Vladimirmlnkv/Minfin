@@ -21,6 +21,9 @@ class RightEventView: UIView, EventView {
     @IBOutlet var timeLineViewWidthConstraint: NSLayoutConstraint!
     
     @IBOutlet var backgroundView: UIView!
+    var backgroundViews: [UIView] {
+        return [backgroundView]
+    }
     var event: Event!
 
     required init?(coder aDecoder: NSCoder) {

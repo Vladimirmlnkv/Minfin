@@ -10,7 +10,7 @@ import UIKit
 
 protocol EventView {
     var event: Event! {get set}
-    var backgroundView: UIView! { get }
+    var backgroundViews: [UIView] { get }
 }
 
 class SingleEventView: UIView, EventView {
@@ -26,8 +26,12 @@ class SingleEventView: UIView, EventView {
     @IBOutlet var titleBlurView: UIVisualEffectView!
     
     @IBOutlet var dotView: UIView!
+    @IBOutlet var imageBackgroundView: UIView!
+    @IBOutlet var titleBackgroundView: UIView!
     
-    var backgroundView: UIView! = UIView()
+    var backgroundViews: [UIView] {
+        return [imageBackgroundView, titleBackgroundView]
+    }
     
     var event: Event!
     
@@ -45,11 +49,13 @@ class SingleEventView: UIView, EventView {
     
     func updateCornerRadiuses() {
         clipsToBounds = true
+        imageBackgroundView.layer.cornerRadius = imageBackgroundView.frame.width / 2
         avatarBlurView.clipsToBounds = true
         avatarBlurView.layer.cornerRadius = avatarBlurView.frame.height / 2
         dotView.layer.cornerRadius = dotView.bounds.width / 2
         titleBlurView.clipsToBounds = true
         titleBlurView.layer.cornerRadius = 10.0
+        titleBackgroundView.layer.cornerRadius = 10.0
         labelContainerView.layer.cornerRadius = labelContainerView.bounds.width / 2
     }
 }

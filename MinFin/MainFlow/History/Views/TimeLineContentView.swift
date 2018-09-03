@@ -147,7 +147,8 @@ class TimeLineContentView: UIView {
                 eventView.frame = eventRect
                 addSubview(eventView)
                 eventView.updateCornerRadiuses()
-                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+                let tapGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(tapGestureAction))
+                tapGestureRecognizer.minimumPressDuration = 0.05
                 eventView.addGestureRecognizer(tapGestureRecognizer)
             } else if event.isTextOnLeft {
                 let eventView = RightEventView(frame: CGRect())
@@ -246,7 +247,7 @@ class TimeLineContentView: UIView {
     
     @objc func governersTapGestureAction(tapGesture: UITapGestureRecognizer) {
         if let clusterView = tapGesture.view as? ClusterView {
-            animate(backgroundView: clusterView.backgroundView, for: tapGesture, completion: {
+            animate(backgroundViews: [clusterView.backgroundView], for: tapGesture, completion: {
                 self.handleClusterTapGesture(for: clusterView, shouldOpenDetails: false)
             })
         }
@@ -254,7 +255,7 @@ class TimeLineContentView: UIView {
     
     @objc func clusterTapGestureAction(tapGesture: UITapGestureRecognizer) {
         if let clusterView = tapGesture.view as? ClusterView {
-            animate(backgroundView: clusterView.backgroundView, for: tapGesture, completion: {
+            animate(backgroundViews: [clusterView.backgroundView], for: tapGesture, completion: {
                 self.handleClusterTapGesture(for: clusterView, shouldOpenDetails: true)
             })
         }
@@ -287,14 +288,18 @@ class TimeLineContentView: UIView {
         }
     }
     
-    private func animate(backgroundView: UIView, for tapGesture: UITapGestureRecognizer, completion: @escaping () -> Void) {
+    private func animate(backgroundViews: [UIView], for tapGesture: UITapGestureRecognizer, completion: @escaping () -> Void) {
         if tapGesture.state == .began {
             UIView.animate(withDuration: 0.3, animations: {
-                backgroundView.alpha = 0.5
+                for view in backgroundViews {
+                    view.alpha = 0.5
+                }
             })
         } else if tapGesture.state == .ended {
             UIView.animate(withDuration: 0.3, animations: {
-                backgroundView.alpha = 0
+                for view in backgroundViews {
+                    view.alpha = 0
+                }
             })
             completion()
         }
@@ -302,11 +307,11 @@ class TimeLineContentView: UIView {
     
     @objc func tapGestureAction(tapGesture: UITapGestureRecognizer) {
         if let personView = tapGesture.view as? PersonView {
-            animate(backgroundView: personView.backgroundView, for: tapGesture, completion: {
+            animate(backgroundViews: [personView.backgroundView], for: tapGesture, completion: {
                 self.delegate?.didSelect(detailInfo: personView.person)
             })
         } else if let eventView = tapGesture.view as? EventView {
-            animate(backgroundView: eventView.backgroundView, for: tapGesture, completion: {
+            animate(backgroundViews: eventView.backgroundViews, for: tapGesture, completion: {
                 self.delegate?.didSelect(detailInfo: eventView.event)
             })
         }
