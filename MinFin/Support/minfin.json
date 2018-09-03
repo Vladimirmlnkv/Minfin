@@ -4,97 +4,97 @@
       "name": "Александр I",
       "startYear": 1802,
       "endYear": 1825,
-      "photoUrl": ""
+      "photoUrl": "alexfirst"
     },
     {
       "name": "Николай I",
       "startYear": 1825,
       "endYear": 1855,
-      "photoUrl": ""
+      "photoUrl": "nikfirst"
     },
     {
       "name": "Александр II",
       "startYear": 1855,
       "endYear": 1881,
-      "photoUrl": ""
+      "photoUrl": "alexsecond"
     },
     {
       "name": "Александр III",
       "startYear": 1881,
       "endYear": 1894,
-      "photoUrl": ""
+      "photoUrl": "alexthird"
     },
     {
       "name": "Николай II",
       "startYear": 1894,
       "endYear": 1917,
-      "photoUrl": ""
+      "photoUrl": "niksecond"
     },
     {
       "name": "Г.Е. Львов",
       "startYear": 1917,
       "endYear": 1917,
-      "photoUrl": ""
+      "photoUrl": "lvov"
     },
     {
       "name": "А.Ф. Керенский",
       "startYear": 1917,
       "endYear": 1917,
-      "photoUrl": ""
+      "photoUrl": "kerenskiy"
     },
     {
       "name": "В.И. Ленин",
       "startYear": 1917,
       "endYear": 1924,
-      "photoUrl": ""
+      "photoUrl": "lenin"
     },
     {
       "name": "И.В. Сталин",
       "startYear": 1924,
       "endYear": 1953,
-      "photoUrl": ""
+      "photoUrl": "stalin"
     },
     {
       "name": "Н.С. Хрущев",
       "startYear": 1953,
       "endYear": 1964,
-      "photoUrl": ""
+      "photoUrl": "hrushev"
     },
     {
       "name": "А.И. Брежнев",
       "startYear": 1964,
       "endYear": 1982,
-      "photoUrl": ""
+      "photoUrl": "brezhnev"
     },
     {
       "name": "М.С. Горбачев",
       "startYear": 1985,
       "endYear": 1991,
-      "photoUrl": ""
+      "photoUrl": "gorbachev"
     },
     {
       "name": "Б.Н. Ельцин",
       "startYear": 1991,
       "endYear": 2000,
-      "photoUrl": ""
+      "photoUrl": "elcin"
     },
     {
       "name": "В.В. Путин",
       "startYear": 2000,
       "endYear": 2008,
-      "photoUrl": ""
+      "photoUrl": "putin"
     },
     {
       "name": "Д.А. Медведев",
       "startYear": 2008,
       "endYear": 2012,
-      "photoUrl": ""
+      "photoUrl": "medvedev"
     },
     {
       "name": "В.В. Путин",
       "startYear": 2012,
       "endYear": 2018,
-      "photoUrl": ""
+      "photoUrl": "putin"
     }
   ],
   "governorsClusters": [
@@ -106,13 +106,13 @@
           "name": "Ю.В. Андропов",
           "startYear": 1982,
           "endYear": 1984,
-          "photoUrl": ""
+          "photoUrl": "andropov"
         },
         {
           "name": "К.У. Черненко",
           "startYear": 1984,
           "endYear": 1985,
-          "photoUrl": ""
+          "photoUrl": "chernenko"
         }
       ]
     }

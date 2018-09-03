@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0425088F47E07AD5DA015716 /* Pods_MinFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DC40562B103256C0507218 /* Pods_MinFin.framework */; };
-		7E26D0C8213D402E003837EF /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E26D0C7213D402E003837EF /* minfin.json */; };
 		7E2799CC211C6898003DE4FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2799CB211C6898003DE4FA /* AppDelegate.swift */; };
 		7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799CF211C6898003DE4FA /* Main.storyboard */; };
 		7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799D2211C6898003DE4FA /* Assets.xcassets */; };
@@ -57,6 +56,7 @@
 		7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */; };
 		7E4A0522212EB2B00065FD7A /* MainBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */; };
 		7E4A0524212EB5620065FD7A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */; };
+		7E6DFCFB213D7D060082B47C /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E6DFCFA213D7D060082B47C /* minfin.json */; };
 		7E94F8ED2132C92E00F27804 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E94F8EF2132C92E00F27804 /* Localizable.strings */; };
 		7E94F8F32132CB6D00F27804 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94F8F22132CB6D00F27804 /* StringExtension.swift */; };
 		7E94F8F62132CECB00F27804 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94F8F52132CECB00F27804 /* AppLanguage.swift */; };
@@ -69,7 +69,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E26D0C7213D402E003837EF /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 		7E2799C8211C6898003DE4FA /* MinFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2799CB211C6898003DE4FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E2799D0211C6898003DE4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +119,7 @@
 		7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainBackgroundView.xib; sourceTree = "<group>"; };
 		7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundView.swift; sourceTree = "<group>"; };
 		7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		7E6DFCFA213D7D060082B47C /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = "<group>"; };
 		7E94F8E92132C85300F27804 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7E94F8EA2132C85300F27804 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Main.strings"; sourceTree = "<group>"; };
 		7E94F8F02132C93400F27804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		7E2799E4211C6D51003DE4FA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				7E26D0C7213D402E003837EF /* minfin.json */,
+				7E6DFCFA213D7D060082B47C /* minfin.json */,
 				7E2799D2211C6898003DE4FA /* Assets.xcassets */,
 				7E94F8EF2132C92E00F27804 /* Localizable.strings */,
 				7E94F8F52132CECB00F27804 /* AppLanguage.swift */,
@@ -519,7 +519,6 @@
 				7E4A051B212EADEF0065FD7A /* AboutHeaderView.xib in Resources */,
 				7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */,
 				7E32D1BD21317DF500D38233 /* ClusterView.xib in Resources */,
-				7E26D0C8213D402E003837EF /* minfin.json in Resources */,
 				7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */,
 				7EE4977E2137DD48000667B8 /* InfoPlist.strings in Resources */,
 				7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */,
@@ -530,6 +529,7 @@
 				7E32D1CD21319E6800D38233 /* ClusterDetailsContainerView.xib in Resources */,
 				7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
+				7E6DFCFB213D7D060082B47C /* minfin.json in Resources */,
 				7E94F8ED2132C92E00F27804 /* Localizable.strings in Resources */,
 				7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */,
 			);
