@@ -246,7 +246,9 @@ class TimeLineContentView: UIView {
     
     @objc func governersTapGestureAction(tapGesture: UITapGestureRecognizer) {
         if let clusterView = tapGesture.view as? ClusterView {
-            handleClusterTapGesture(for: clusterView, shouldOpenDetails: false)
+            animate(backgroundView: clusterView.backgroundView, for: tapGesture, completion: {
+                self.handleClusterTapGesture(for: clusterView, shouldOpenDetails: false)
+            })
         }
     }
     
@@ -275,6 +277,7 @@ class TimeLineContentView: UIView {
             }
             let detailsRect = CGRect(x: clusterView.frame.midX - width / 2, y: clusterView.frame.maxY + verticalOffset, width: width, height: height + 20)
             let clusterDetailsView = ClusterDetailsContainerView(frame: detailsRect)
+            clusterDetailsView.allowsSelection = shouldOpenDetails
             if shouldOpenDetails {
                 clusterDetailsView.delegate = self
             }

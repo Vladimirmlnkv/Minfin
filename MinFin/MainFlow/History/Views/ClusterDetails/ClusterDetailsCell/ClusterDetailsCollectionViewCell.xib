@@ -19,6 +19,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MG-hv-mp1">
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="Uqh-FS-USq">
                         <rect key="frame" x="8" y="0.0" width="50" height="50"/>
                         <constraints>
@@ -58,8 +62,12 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="8MG-hv-mp1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="39q-dn-4T0"/>
                 <constraint firstAttribute="trailing" secondItem="0sY-8Y-e45" secondAttribute="trailing" id="4Ex-Z6-Ree"/>
+                <constraint firstAttribute="bottom" secondItem="8MG-hv-mp1" secondAttribute="bottom" id="GiR-sU-T50"/>
                 <constraint firstItem="Uqh-FS-USq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HFx-Yt-EHT"/>
+                <constraint firstItem="8MG-hv-mp1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IjK-X0-dY4"/>
+                <constraint firstAttribute="trailing" secondItem="8MG-hv-mp1" secondAttribute="trailing" id="JXs-fy-yQB"/>
                 <constraint firstAttribute="bottom" secondItem="Uqh-FS-USq" secondAttribute="bottom" id="M7G-Sf-YdT"/>
                 <constraint firstItem="Uqh-FS-USq" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Meh-fJ-8w3"/>
                 <constraint firstItem="0sY-8Y-e45" firstAttribute="centerY" secondItem="Uqh-FS-USq" secondAttribute="centerY" id="bkX-mX-FBk"/>
@@ -68,6 +76,7 @@
             </constraints>
             <size key="customSize" width="345" height="50"/>
             <connections>
+                <outlet property="animateView" destination="8MG-hv-mp1" id="ra2-xN-5wi"/>
                 <outlet property="avatarImageView" destination="Uqh-FS-USq" id="i92-D8-GTs"/>
                 <outlet property="dateLabel" destination="6pv-dK-hni" id="zqO-dP-e6L"/>
                 <outlet property="nameLabel" destination="cYa-Jx-6ea" id="zlY-j4-mIZ"/>

@@ -18,6 +18,7 @@ class ClusterDetailsContainerView: UIView {
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var collectionView: UICollectionView!
     
+    var allowsSelection: Bool = true
     var cluster: Cluster!
     var delegate: ClusterDetailsContainerViewDelegate?
     
@@ -62,6 +63,7 @@ extension ClusterDetailsContainerView: UICollectionViewDataSource {
         let person = cluster.persons[indexPath.row]
         cell.nameLabel.text = person.name
         cell.dateLabel.text = "\(person.startYear) - \(person.endYear!)"
+        cell.isUserInteractionEnabled = allowsSelection
         if person.photoUrl != "" {
             cell.avatarImageView.image = UIImage(named: person.photoUrl)
         }
