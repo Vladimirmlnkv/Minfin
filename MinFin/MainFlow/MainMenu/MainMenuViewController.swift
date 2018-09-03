@@ -61,5 +61,8 @@ class MainMenuViewController: UIViewController {
     @IBAction func languageButtonAction(_ sender: Any) {
         AppLanguage.standart.changeLanguage()
         setUIString()
+        let vc = storyboard?.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
+        vc.isForceUpdate = true
+        present(vc, animated: true, completion: nil)
     }
 }

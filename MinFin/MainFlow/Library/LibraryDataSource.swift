@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Result<T> {
     case success(value: T)
@@ -39,22 +40,22 @@ class LibraryDataSource: BooksLoader {
         task.resume()
     }
     
-    func getCatalogsData(result: @escaping (Result<CatalogsData>) -> Void) {
-        let url = URL(string: booksEndpoint)
-        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
-            if let data = data, let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+    func getCatalogsData(progressClosure: @escaping (Double) -> Void, result: @escaping (Result<CatalogsData>) -> Void) {
+        
+        Alamofire.request(booksEndpoint, method: .get, encoding: JSONEncoding.default).downloadProgress { (progress) in
+            progressClosure(progress.fractionCompleted)
+        }.responseData { (resp: DataResponse<Data>) in
+            if let data = resp.data, let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 DispatchQueue.main.async {
                     let catalogsData = CatalogsData(json: json)
                     result(Result.success(value: catalogsData))
                 }
             } else {
                 DispatchQueue.main.async {
-                    result(Result.failure())
-                    
+                    result(Result.failure())                    
                 }
             }
         }
-        task.resume()
     }
     
     func load(fileName: String, bookName: String, result: @escaping (Result<Bool>) -> Void) {

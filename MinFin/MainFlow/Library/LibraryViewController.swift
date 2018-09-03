@@ -44,44 +44,10 @@ class LibraryViewController: UIViewController {
         
         let realm = try! Realm()
         let savedCatalogsData = realm.objects(CatalogsData.self).first
-        
-        dataSource.getVersion { (result: Result<Int>) in
-            switch result {
-            case .failure:
-                if let s = savedCatalogsData {
-                    self.updateCollectionView(from: s)
-                } else {
-                    self.showNoDataAret()
-                }
-            case .success(let version):
-                if savedCatalogsData == nil || savedCatalogsData!.version < version {
-                    self.dataSource.getCatalogsData(result: ({ (catalogsResult: Result<CatalogsData>) in
-                        switch catalogsResult {
-                        case .failure:
-                            if let s = savedCatalogsData {
-                                self.updateCollectionView(from: s)
-                            } else {
-                                self.showNoDataAret()
-                            }
-                        case .success(let newCatalogsData):
-                            newCatalogsData.version = version
-                            try! realm.write {
-                                if let s = savedCatalogsData {
-                                    realm.delete(s)
-                                }
-                                realm.add(newCatalogsData)
-                            }
-                            self.updateCollectionView(from: newCatalogsData)
-                        }
-                    }))
-                } else {
-                    if let s = savedCatalogsData {
-                        self.updateCollectionView(from: s)
-                    } else {
-                        self.showNoDataAret()
-                    }
-                }
-            }
+        if let s = savedCatalogsData {
+            self.updateCollectionView(from: s)
+        } else {
+            self.showNoDataAret()
         }
         clearBackgroundColor()
         addBackgroundView()
