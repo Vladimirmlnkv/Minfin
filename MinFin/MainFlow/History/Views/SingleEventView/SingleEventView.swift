@@ -10,6 +10,7 @@ import UIKit
 
 protocol EventView {
     var event: Event! {get set}
+    var backgroundView: UIView! { get }
 }
 
 class SingleEventView: UIView, EventView {
@@ -25,6 +26,8 @@ class SingleEventView: UIView, EventView {
     @IBOutlet var titleBlurView: UIVisualEffectView!
     
     @IBOutlet var dotView: UIView!
+    
+    var backgroundView: UIView! = UIView()
     
     var event: Event!
     

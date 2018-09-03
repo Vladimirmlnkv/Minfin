@@ -14,6 +14,7 @@ class ClusterView: UIView {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var numberLabel: UILabel!
+    @IBOutlet var backgroundView: UIView!
     
     var cluster: Cluster!
     var detailsClusterView: ClusterDetailsContainerView?

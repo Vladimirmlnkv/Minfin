@@ -20,6 +20,7 @@ class RightEventView: UIView, EventView {
     @IBOutlet var timeLineView: UIView!
     @IBOutlet var timeLineViewWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet var backgroundView: UIView!
     var event: Event!
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,10 +36,10 @@ class RightEventView: UIView, EventView {
     }
     
     private func updateCornerRadiuses() {
+        blurView.clipsToBounds = true
+        blurView.layer.cornerRadius = 10.0
         clipsToBounds = true
         layer.cornerRadius = 10.0
-        blurView.clipsToBounds = true
-        blurView.layer.cornerRadius = blurView.bounds.width / 2
     }
     
 }

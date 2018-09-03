@@ -25,6 +25,7 @@ class LeftEventView: UIView, EventView {
     @IBOutlet var viewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet var labelTrailingConstraint: NSLayoutConstraint!
     
+    @IBOutlet var backgroundView: UIView!
     var event: Event!
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,9 +42,9 @@ class LeftEventView: UIView, EventView {
     
     private func updateCornerRadiuses() {
         clipsToBounds = true
-        blurView.clipsToBounds = true
-        blurView.layer.cornerRadius = blurView.bounds.width / 2
         layer.cornerRadius = 10.0
+        blurView.clipsToBounds = true
+        blurView.layer.cornerRadius = 10.0
     }
     
 }

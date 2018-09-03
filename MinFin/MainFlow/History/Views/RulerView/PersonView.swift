@@ -13,6 +13,7 @@ class PersonView: UIView {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var blurView: UIVisualEffectView!
+    @IBOutlet var backgroundView: UIView!
     
     static let viewHeight: CGFloat = 111.0
     var person: Person!
