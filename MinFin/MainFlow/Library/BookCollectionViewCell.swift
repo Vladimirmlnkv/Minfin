@@ -21,6 +21,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet var mainTitleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var downloadButton: UIButton!
+    @IBOutlet var bookImageView: UIImageView!
     
     var delegate: BookCollectionViewCellDelegate!
     

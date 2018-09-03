@@ -227,6 +227,15 @@ extension LibraryViewController: UICollectionViewDataSource {
         cell.delegate = self
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! BookCollectionViewCell
+        cell.bookImageView.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            cell.bookImageView.alpha = 1.0
+        }
+        
+    }
 }
 
 extension LibraryViewController: BookCollectionViewCellDelegate {

@@ -457,6 +457,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="authorNameLabel" destination="J3D-o8-zWF" id="uyE-cZ-gCu"/>
+                                            <outlet property="bookImageView" destination="Vu5-yr-ov4" id="UA1-Gf-f6z"/>
                                             <outlet property="bookNameLabel" destination="0vH-2h-fra" id="qh7-zs-edb"/>
                                             <outlet property="dateLabel" destination="Y3i-Sj-UDJ" id="U86-SF-Ew2"/>
                                             <outlet property="descriptionLabel" destination="cTh-Ic-NJ9" id="OfF-LO-eLT"/>
