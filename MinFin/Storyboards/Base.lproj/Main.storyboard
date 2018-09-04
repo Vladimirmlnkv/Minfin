@@ -880,12 +880,26 @@
                                                 </connections>
                                             </button>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="zht-38-VoL">
-                                                <rect key="frame" x="320" y="205.5" width="20" height="20"/>
+                                                <rect key="frame" x="450" y="205" width="20" height="20"/>
                                             </activityIndicatorView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22o-p3-zlm">
+                                                <rect key="frame" x="320" y="201" width="120" height="29"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="Y11-eV-0es"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <state key="normal" title="ОТКРЫТЬ В">
+                                                    <color key="titleColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="opeinInButtonAction:" destination="tlj-rT-ARJ" eventType="touchUpInside" id="9EE-zP-Mlc"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="zht-38-VoL" firstAttribute="leading" secondItem="3Qa-sn-s9h" secondAttribute="trailing" constant="10" id="0CN-XQ-7mM"/>
+                                            <constraint firstItem="22o-p3-zlm" firstAttribute="leading" secondItem="3Qa-sn-s9h" secondAttribute="trailing" constant="10" id="0Fh-2J-WWV"/>
                                             <constraint firstItem="pkK-Qt-PPh" firstAttribute="leading" secondItem="RUE-qS-DZq" secondAttribute="leading" id="1h6-Ca-WZB"/>
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="-10" id="3xY-2c-1kW"/>
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="bottom" secondItem="5lx-ii-gXw" secondAttribute="bottom" constant="-10" id="GBF-O5-eDc"/>
@@ -907,8 +921,10 @@
                                             <constraint firstItem="JhU-7H-18o" firstAttribute="top" secondItem="qcR-ZB-nrs" secondAttribute="bottom" constant="10" id="b5T-67-5uZ"/>
                                             <constraint firstItem="O9a-z7-cHW" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="leading" constant="20" id="cFC-22-7lQ"/>
                                             <constraint firstItem="JhU-7H-18o" firstAttribute="leading" secondItem="qcR-ZB-nrs" secondAttribute="leading" id="cNx-yG-IFN"/>
+                                            <constraint firstItem="22o-p3-zlm" firstAttribute="centerY" secondItem="3Qa-sn-s9h" secondAttribute="centerY" id="cUo-bE-ZzL"/>
                                             <constraint firstItem="5lx-ii-gXw" firstAttribute="leading" secondItem="BrE-N3-fJw" secondAttribute="leading" constant="20" id="db7-Vn-UaU"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pkK-Qt-PPh" secondAttribute="bottom" constant="10" id="ged-BQ-Yx4"/>
+                                            <constraint firstItem="zht-38-VoL" firstAttribute="leading" secondItem="22o-p3-zlm" secondAttribute="trailing" constant="10" id="hp4-0S-ZiI"/>
                                             <constraint firstItem="5lx-ii-gXw" firstAttribute="top" secondItem="BrE-N3-fJw" secondAttribute="top" constant="20" id="lgu-be-pNG"/>
                                             <constraint firstItem="O9a-z7-cHW" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="-10" id="mrO-qS-8Mc"/>
                                             <constraint firstItem="3Qa-sn-s9h" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="10" id="o45-Oe-E1u"/>
@@ -946,8 +962,11 @@
                         <outlet property="authorDescriptionLabel" destination="JhU-7H-18o" id="b2V-jB-1V9"/>
                         <outlet property="authorNameLabel" destination="F4E-N9-puP" id="tkt-Mu-5TF"/>
                         <outlet property="bookNameLabel" destination="O9a-z7-cHW" id="lOB-n1-Rzj"/>
+                        <outlet property="contentView" destination="BrE-N3-fJw" id="FNw-Qr-jyZ"/>
                         <outlet property="downloadButton" destination="3Qa-sn-s9h" id="ndI-d9-yPy"/>
                         <outlet property="mainTitleLabel" destination="qcR-ZB-nrs" id="A1l-il-lfD"/>
+                        <outlet property="opeinInButton" destination="22o-p3-zlm" id="m2b-7o-qrY"/>
+                        <outlet property="openInWidthConstraint" destination="Y11-eV-0es" id="HzT-yb-CVC"/>
                         <outlet property="scrollView" destination="PVF-U8-gzk" id="UZr-FH-BOV"/>
                         <outlet property="spinner" destination="zht-38-VoL" id="Mg2-v7-z4F"/>
                         <outlet property="tagsLabel" destination="pkK-Qt-PPh" id="w9u-eL-1Bi"/>
@@ -962,7 +981,6 @@
         <!--Navigation Controller-->
         <scene sceneID="9XX-EG-PcM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fvt-bm-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KLS-1n-1y3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7uq-UP-n2c">
@@ -975,6 +993,7 @@
                         <segue destination="BtO-GY-4xU" kind="relationship" relationship="rootViewController" id="nXj-hc-lbG"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fvt-bm-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3650" y="-209"/>
         </scene>

@@ -48,6 +48,7 @@ class AppLanguage {
     static let open_book_option2 = "open_book_option2"
     static let details = "details"
     static let year = "year"
+    static let open_in = "open_in"
     
     static let standart = AppLanguage()
     private var languageKey = "appLanguageKey"

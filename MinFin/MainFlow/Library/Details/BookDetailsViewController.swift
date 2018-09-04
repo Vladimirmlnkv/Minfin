@@ -18,11 +18,14 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var authorDescriptionLabel: UILabel!
     @IBOutlet var yearDescriptionLabel: UILabel!
     @IBOutlet var downloadButton: UIButton!
+    @IBOutlet var opeinInButton: UIButton!
+    @IBOutlet var openInWidthConstraint: NSLayoutConstraint!
     
     @IBOutlet var aboutTitleLabel: UILabel!
     @IBOutlet var aboutDescriptionLabel: UILabel!
     @IBOutlet var tagsLabel: UILabel!
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var contentView: UIView!
     
     var book: Book!
     var headings: [Heading]!
@@ -35,6 +38,7 @@ class BookDetailsViewController: UIViewController {
         super.viewDidLoad()
         addBackgroundView()
         downloadButton.layer.cornerRadius = 15.0
+        opeinInButton.layer.cornerRadius = 15.0
         spinner.isHidden = true
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
@@ -51,11 +55,20 @@ class BookDetailsViewController: UIViewController {
         }
         
         if fileExists() {
-            downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
+            setOpenButtons()
         } else {
             downloadButton.setTitle(AppLanguage.download.customLocalized(), for: .normal)
+            openInWidthConstraint.constant = 0
         }
 
+    }
+    
+    
+    private func setOpenButtons() {
+        downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
+        opeinInButton.setTitle(AppLanguage.open_in.customLocalized(), for: .normal)
+        openInWidthConstraint.constant = 120.0
+        spinner.isHidden = true
     }
 
     private func getBookTitle() -> String {
@@ -71,6 +84,20 @@ class BookDetailsViewController: UIViewController {
         }
         return false
     }
+
+    @IBAction func opeinInButtonAction(_ sender: Any) {
+        let title = getBookTitle()
+        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+        docURL = docURL?.appendingPathComponent("\(title).pdf")
+        
+        if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+            self.documentController = UIDocumentInteractionController(url: url)
+            let booksUrl = URL(string:"itms-books:")!
+            if UIApplication.shared.canOpenURL(booksUrl) {
+                self.documentController.presentOpenInMenu(from: self.opeinInButton.frame, in: self.view, animated: true)
+            }
+        }        
+    }
     
     @IBAction func downloadButtonAction(_ sender: Any) {
         let title = getBookTitle()
@@ -78,23 +105,11 @@ class BookDetailsViewController: UIViewController {
         docURL = docURL?.appendingPathComponent("\(title).pdf")
         
         if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
-            
-            let alert = UIAlertController(title: nil, message: AppLanguage.open_book_title.customLocalized(), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: AppLanguage.open_book_option1.customLocalized(), style: .default, handler: { (_) in
-                let bookVC = self.storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
-                bookVC.bookURL = url
-                bookVC.bookData = FileManager.default.contents(atPath: url.path)
-                bookVC.bookTitle = self.book.title
-                self.navigationController?.pushViewController(bookVC, animated: true)
-            }))
-            alert.addAction(UIAlertAction(title: AppLanguage.open_book_option2.customLocalized(), style: .default, handler: { (_) in
-                self.documentController = UIDocumentInteractionController(url: url)
-                let booksUrl = URL(string:"itms-books:")!
-                if UIApplication.shared.canOpenURL(booksUrl) {
-                    self.documentController.presentOpenInMenu(from: self.downloadButton.frame, in: self.view, animated: true)
-                }
-            }))
-            present(alert, animated: true, completion: nil)
+            let bookVC = self.storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
+            bookVC.bookURL = url
+            bookVC.bookData = FileManager.default.contents(atPath: url.path)
+            bookVC.bookTitle = self.book.title
+            self.navigationController?.pushViewController(bookVC, animated: true)
         } else {
             spinner.isHidden = false
             spinner.startAnimating()
@@ -108,7 +123,7 @@ class BookDetailsViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 case .success(_ ):
                     self.spinner.isHidden = true
-                    self.downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
+                    self.setOpenButtons()
                 }
             }
         }
