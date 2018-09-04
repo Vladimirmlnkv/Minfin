@@ -35,7 +35,6 @@ class AboutViewController: UIViewController {
         tableView.estimatedRowHeight = 60.0
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.allowsSelection = false
         tableView.dataSource = self
     }
     
@@ -93,6 +92,7 @@ extension AboutViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AboutTableViewCell") as! AboutTableViewCell
         let data = aboutInfo[indexPath.row]
+        cell.backgroundColor = .clear
         cell.mainTitleLabel.text = data.name
         cell.delegate = self
         cell.descriptionTitleLabel.text = data.address
