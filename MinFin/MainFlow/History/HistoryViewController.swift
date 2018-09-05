@@ -36,7 +36,7 @@ class HistoryViewController: UIViewController {
 
         var fullHeight: CGFloat = 0
         var gradientWith: CGFloat = 0
-        if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown || view.frame.height < view.frame.width {
+        if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown || view.frame.height > view.frame.width {
             fullHeight = view.frame.width - contentView.topOffset - contentView.bottomOffset
             gradientWith = view.frame.height
         } else {
