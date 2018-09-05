@@ -871,12 +871,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qa-sn-s9h">
-                                                <rect key="frame" x="190" y="201" width="120" height="29"/>
+                                                <rect key="frame" x="190" y="200" width="120" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="MPJ-TY-Zlt"/>
                                                     <constraint firstAttribute="width" constant="120" id="mcW-gK-wAw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="ЗАГРУЗИТЬ">
                                                     <color key="titleColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -884,9 +886,13 @@
                                                     <action selector="downloadButtonAction:" destination="tlj-rT-ARJ" eventType="touchUpInside" id="Tdc-Wi-UDQ"/>
                                                 </connections>
                                             </button>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="zht-38-VoL">
-                                                <rect key="frame" x="330" y="205" width="20" height="20"/>
-                                            </activityIndicatorView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TtH-K9-1XV">
+                                                <rect key="frame" x="320" y="214" width="100" height="2"/>
+                                                <color key="tintColor" red="0.2135584354" green="0.2780484855" blue="0.31154003740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="QJo-6v-hGZ"/>
+                                                </constraints>
+                                            </progressView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -902,8 +908,8 @@
                                             <constraint firstItem="3Qa-sn-s9h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FPw-Dh-gGX" secondAttribute="bottom" constant="4" id="Mpa-Tj-LmR"/>
                                             <constraint firstItem="F4E-N9-puP" firstAttribute="leading" secondItem="O9a-z7-cHW" secondAttribute="leading" id="PDK-QT-NTM"/>
                                             <constraint firstItem="qcR-ZB-nrs" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="10" id="PLo-D3-u8G"/>
-                                            <constraint firstItem="zht-38-VoL" firstAttribute="leading" secondItem="3Qa-sn-s9h" secondAttribute="trailing" constant="20" id="R8N-M8-q0j"/>
                                             <constraint firstItem="O9a-z7-cHW" firstAttribute="top" secondItem="5lx-ii-gXw" secondAttribute="top" constant="20" id="RLQ-7G-aXm"/>
+                                            <constraint firstItem="TtH-K9-1XV" firstAttribute="leading" secondItem="3Qa-sn-s9h" secondAttribute="trailing" constant="10" id="SkL-tY-gai"/>
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="top" secondItem="F4E-N9-puP" secondAttribute="bottom" constant="10" id="U2T-Dm-k4W"/>
                                             <constraint firstItem="pkK-Qt-PPh" firstAttribute="top" secondItem="RUE-qS-DZq" secondAttribute="bottom" constant="20" id="UQt-ZL-eOB"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JhU-7H-18o" secondAttribute="trailing" constant="4" id="UsB-Ad-T25"/>
@@ -914,6 +920,7 @@
                                             <constraint firstItem="JhU-7H-18o" firstAttribute="leading" secondItem="qcR-ZB-nrs" secondAttribute="leading" id="cNx-yG-IFN"/>
                                             <constraint firstItem="5lx-ii-gXw" firstAttribute="leading" secondItem="BrE-N3-fJw" secondAttribute="leading" constant="20" id="db7-Vn-UaU"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pkK-Qt-PPh" secondAttribute="bottom" constant="10" id="ged-BQ-Yx4"/>
+                                            <constraint firstItem="TtH-K9-1XV" firstAttribute="centerY" secondItem="3Qa-sn-s9h" secondAttribute="centerY" id="jGz-vY-CS1"/>
                                             <constraint firstItem="5lx-ii-gXw" firstAttribute="top" secondItem="BrE-N3-fJw" secondAttribute="top" constant="20" id="lgu-be-pNG"/>
                                             <constraint firstItem="O9a-z7-cHW" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="-10" id="mrO-qS-8Mc"/>
                                             <constraint firstItem="3Qa-sn-s9h" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="10" id="o45-Oe-E1u"/>
@@ -921,7 +928,6 @@
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="leading" secondItem="F4E-N9-puP" secondAttribute="leading" id="qAb-12-2kO"/>
                                             <constraint firstItem="qcR-ZB-nrs" firstAttribute="top" secondItem="5lx-ii-gXw" secondAttribute="top" constant="10" id="uSU-W5-2su"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FPw-Dh-gGX" secondAttribute="trailing" constant="4" id="ufZ-rz-crh"/>
-                                            <constraint firstItem="zht-38-VoL" firstAttribute="centerY" secondItem="3Qa-sn-s9h" secondAttribute="centerY" id="vqq-pS-S9C"/>
                                             <constraint firstItem="F4E-N9-puP" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="-10" id="yPC-6j-x5O"/>
                                             <constraint firstItem="FPw-Dh-gGX" firstAttribute="leading" secondItem="JhU-7H-18o" secondAttribute="leading" id="yzx-G6-RVx"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pkK-Qt-PPh" secondAttribute="trailing" constant="20" id="zRH-l0-eoj"/>
@@ -953,9 +959,10 @@
                         <outlet property="bookNameLabel" destination="O9a-z7-cHW" id="lOB-n1-Rzj"/>
                         <outlet property="contentView" destination="BrE-N3-fJw" id="FNw-Qr-jyZ"/>
                         <outlet property="downloadButton" destination="3Qa-sn-s9h" id="ndI-d9-yPy"/>
+                        <outlet property="downloadButtonWidthConstraint" destination="mcW-gK-wAw" id="e9d-zM-eZH"/>
                         <outlet property="mainTitleLabel" destination="qcR-ZB-nrs" id="A1l-il-lfD"/>
+                        <outlet property="progressView" destination="TtH-K9-1XV" id="DO0-dU-jLd"/>
                         <outlet property="scrollView" destination="PVF-U8-gzk" id="UZr-FH-BOV"/>
-                        <outlet property="spinner" destination="zht-38-VoL" id="Mg2-v7-z4F"/>
                         <outlet property="tagsLabel" destination="pkK-Qt-PPh" id="w9u-eL-1Bi"/>
                         <outlet property="yearDescriptionLabel" destination="FPw-Dh-gGX" id="jWB-yL-qY5"/>
                         <outlet property="yearLabel" destination="qw2-Yn-NM2" id="cgh-MU-yEU"/>

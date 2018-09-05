@@ -15,13 +15,20 @@ enum Result<T> {
 }
 
 protocol BooksLoader {
-    func load(fileName: String, bookName: String, result: @escaping (Result<Bool>) -> Void)
+    var isLoading: Bool { get }
+    func load(fileName: String, bookName: String, progressClosure: @escaping (Double) -> Void, result: @escaping (Result<Bool>) -> Void)
+    func stopBookLoad()
 }
 
 class LibraryDataSource: BooksLoader {
     
     private let booksEndpoint = "http://82.196.15.171:8081/books"
     private let versionEndpoit = "http://82.196.15.171:8081/version"
+    private var bookRequest: DataRequest?
+    
+    var isLoading: Bool {
+        return bookRequest != nil
+    }
     
     func getVersion(result: @escaping (Result<Int>) -> Void) {
         
@@ -58,28 +65,34 @@ class LibraryDataSource: BooksLoader {
         }
     }
     
-    func load(fileName: String, bookName: String, result: @escaping (Result<Bool>) -> Void) {
+    func stopBookLoad() {
+        if let bookRequest = bookRequest {
+            bookRequest.cancel()
+            self.bookRequest = nil
+        }
+    }
+    
+    func load(fileName: String, bookName: String, progressClosure: @escaping (Double) -> Void, result: @escaping (Result<Bool>) -> Void) {
         
         if let url = URL(string: fileName) {
-            let sessionConfig = URLSessionConfiguration.default
-            let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            let task = session.dataTask(with: request, completionHandler: { (data, response, _) in
-                if let data = data {
+            bookRequest = Alamofire.request(url, method: .get).downloadProgress(closure: { progress in
+                progressClosure(progress.fractionCompleted)
+            }).responseData(completionHandler: { [weak self] (response: DataResponse<Data>) in
+                switch response.result {
+                case .failure( _):
+                    DispatchQueue.main.async {
+                        result(Result.failure())
+                    }
+                case .success(let data):
                     var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
                     docURL = docURL?.appendingPathComponent("\(bookName).pdf")
                     try! data.write(to: docURL!)
                     DispatchQueue.main.async {
                         result(Result.success(value: true))
                     }
-                } else {
-                    DispatchQueue.main.async {
-                        result(Result.failure())
-                    }
+                    self?.bookRequest = nil
                 }
             })
-            task.resume()
         }
     }
 }

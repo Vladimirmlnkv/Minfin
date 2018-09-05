@@ -29,14 +29,19 @@ class BookDetailsViewController: UIViewController {
     var headings: [Heading]!
     var booksLoader: BooksLoader!
     
-    @IBOutlet var spinner: UIActivityIndicatorView!
-    var documentController: UIDocumentInteractionController!
+    var documentController: UIDocumentInteractionController!    
+    @IBOutlet var progressView: UIProgressView!
+    @IBOutlet var downloadButtonWidthConstraint: NSLayoutConstraint!
+    private var openButtonDefaultWidth: CGFloat = 120.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let transform = CGAffineTransform(scaleX: 1, y: 4)
+        progressView.transform = transform
+        progressView.isHidden = true
+        progressView.layer.cornerRadius = 5.0
         addBackgroundView()
         downloadButton.layer.cornerRadius = 15.0
-        spinner.isHidden = true
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
         yearLabel.text = "\(book.year) \(AppLanguage.year.customLocalized())"
@@ -59,10 +64,26 @@ class BookDetailsViewController: UIViewController {
 
     }
     
+    private func restoreDownloadButton() {
+        downloadButton.setTitle(AppLanguage.download.customLocalized(), for: .normal)
+        downloadButton.setImage(nil, for: .normal)
+        progressView.isHidden = true
+        UIView.animate(withDuration: 0.3, animations: {
+            self.downloadButtonWidthConstraint.constant = self.openButtonDefaultWidth
+            self.contentView.layoutIfNeeded()
+        })
+    }
     
     private func setOpenButton() {
         downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
-        spinner.isHidden = true
+        downloadButton.setImage(nil, for: .normal)
+        progressView.isHidden = true
+        if downloadButtonWidthConstraint.constant != openButtonDefaultWidth {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.downloadButtonWidthConstraint.constant = self.openButtonDefaultWidth
+                self.contentView.layoutIfNeeded()
+            })
+        }
     }
 
     private func getBookTitle() -> String {
@@ -80,35 +101,45 @@ class BookDetailsViewController: UIViewController {
     }
     
     @IBAction func downloadButtonAction(_ sender: Any) {
-        let title = getBookTitle()
-        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
-        docURL = docURL?.appendingPathComponent("\(title).pdf")
         
-        if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+        if booksLoader.isLoading {
+            booksLoader.stopBookLoad()
+            restoreDownloadButton()
+        } else {
             let title = getBookTitle()
             var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
             docURL = docURL?.appendingPathComponent("\(title).pdf")
+            
             if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
-                self.documentController = UIDocumentInteractionController(url: url)
-                let booksUrl = URL(string:"itms-books:")!
-                if UIApplication.shared.canOpenURL(booksUrl) {
-                    self.documentController.presentOpenInMenu(from: self.downloadButton.frame, in: self.view, animated: true)
+                let title = getBookTitle()
+                var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+                docURL = docURL?.appendingPathComponent("\(title).pdf")
+                if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+                    self.documentController = UIDocumentInteractionController(url: url)
+                    let booksUrl = URL(string:"itms-books:")!
+                    if UIApplication.shared.canOpenURL(booksUrl) {
+                        self.documentController.presentOpenInMenu(from: self.downloadButton.frame, in: self.view, animated: true)
+                    }
                 }
-            }
-        } else {
-            spinner.isHidden = false
-            spinner.startAnimating()
-            booksLoader.load(fileName: book.fileName, bookName: title) { result in
-                switch result {
-                case .failure:
-                    print("failed to load")
-                    self.spinner.isHidden = true
-                    let alert = UIAlertController(title: "Error", message: "Can't load book", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                case .success(_ ):
-                    self.spinner.isHidden = true
-                    self.setOpenButton()
+            } else {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.downloadButton.setImage(#imageLiteral(resourceName: "stop"), for: .normal)
+                    self.downloadButton.setTitle("", for: .normal)
+                    self.downloadButtonWidthConstraint.constant = 30.0
+                    self.progressView.isHidden = false
+                    self.progressView.progress = 0
+                    self.contentView.layoutIfNeeded()
+                })
+                
+                booksLoader.load(fileName: book.fileName, bookName: title, progressClosure: { progress in
+                    self.progressView.progress = Float(progress)
+                }) { result in
+                    switch result {
+                    case .failure:
+                        self.restoreDownloadButton()
+                    case .success(_ ):
+                        self.setOpenButton()
+                    }
                 }
             }
         }
