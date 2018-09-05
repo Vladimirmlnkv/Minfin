@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HaA-yv-uKb">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="lazurski-cyrillic.ttf">
+            <string>LazurskiCyrillic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="JnW-gJ-43L">
+            <objects>
+                <viewController id="HaA-yv-uKb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fMm-4f-bnc"/>
+                        <viewControllerLayoutGuide type="bottom" id="KgS-6I-7Ef"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qgj-OA-D4I">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="v75-xB-tmU">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVH-RV-oWt">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3ua-Qi-kbv">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gerbMinfinRuBig" translatesAutoresizingMaskIntoConstraints="NO" id="MV2-0s-jP4">
+                                            <rect key="frame" x="223" y="120" width="322.5" height="323"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="MV2-0s-jP4" secondAttribute="height" multiplier="1:1" id="AJG-k8-Aw6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Министерство Финансов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv1-Ih-BbV">
+                                            <rect key="frame" x="20" y="503" width="728" height="31"/>
+                                            <fontDescription key="fontDescription" name="LazurskiCyrillic" family="Lazurski" pointSize="30"/>
+                                            <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Российской Федерации" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WS6-Rc-XNu">
+                                            <rect key="frame" x="20" y="542" width="728" height="31"/>
+                                            <fontDescription key="fontDescription" name="LazurskiCyrillic" family="Lazurski" pointSize="30"/>
+                                            <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MV2-0s-jP4" firstAttribute="centerX" secondItem="3ua-Qi-kbv" secondAttribute="centerX" id="0dl-G6-9M7"/>
+                                        <constraint firstAttribute="trailing" secondItem="WS6-Rc-XNu" secondAttribute="trailing" constant="20" id="4EV-AQ-f0O"/>
+                                        <constraint firstItem="Fv1-Ih-BbV" firstAttribute="leading" secondItem="3ua-Qi-kbv" secondAttribute="leading" constant="20" id="CW6-Rg-4ci"/>
+                                        <constraint firstItem="WS6-Rc-XNu" firstAttribute="top" secondItem="Fv1-Ih-BbV" secondAttribute="bottom" constant="8" id="M8n-tW-VU0"/>
+                                        <constraint firstItem="MV2-0s-jP4" firstAttribute="top" secondItem="3ua-Qi-kbv" secondAttribute="top" constant="120" id="NWb-uo-Q03"/>
+                                        <constraint firstAttribute="trailing" secondItem="Fv1-Ih-BbV" secondAttribute="trailing" constant="20" id="Vfb-Am-Ppm"/>
+                                        <constraint firstItem="MV2-0s-jP4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3ua-Qi-kbv" secondAttribute="leading" constant="30" id="WIq-Fi-igJ"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MV2-0s-jP4" secondAttribute="trailing" constant="30" id="YNU-Zk-7MT"/>
+                                        <constraint firstItem="Fv1-Ih-BbV" firstAttribute="top" secondItem="MV2-0s-jP4" secondAttribute="bottom" constant="60" id="kxx-4B-Mdu"/>
+                                        <constraint firstItem="WS6-Rc-XNu" firstAttribute="leading" secondItem="3ua-Qi-kbv" secondAttribute="leading" constant="20" id="ylN-yA-w3J"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KgS-6I-7Ef" firstAttribute="top" secondItem="v75-xB-tmU" secondAttribute="bottom" id="QfU-oj-ibf"/>
+                            <constraint firstItem="v75-xB-tmU" firstAttribute="top" secondItem="qgj-OA-D4I" secondAttribute="top" id="RxE-Ia-uy6"/>
+                            <constraint firstItem="KVH-RV-oWt" firstAttribute="top" secondItem="qgj-OA-D4I" secondAttribute="top" id="W7d-VB-UFr"/>
+                            <constraint firstAttribute="trailing" secondItem="v75-xB-tmU" secondAttribute="trailing" id="XBi-ih-jAZ"/>
+                            <constraint firstItem="KgS-6I-7Ef" firstAttribute="top" secondItem="KVH-RV-oWt" secondAttribute="bottom" id="hkn-Mn-jLy"/>
+                            <constraint firstItem="v75-xB-tmU" firstAttribute="leading" secondItem="qgj-OA-D4I" secondAttribute="leading" id="nm1-sI-yQr"/>
+                            <constraint firstAttribute="trailing" secondItem="KVH-RV-oWt" secondAttribute="trailing" id="wTT-O5-0QY"/>
+                            <constraint firstItem="KVH-RV-oWt" firstAttribute="leading" secondItem="qgj-OA-D4I" secondAttribute="leading" id="zKf-8M-1Tx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTG-4E-ets" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="384" height="513"/>
+        <image name="gerbMinfinRuBig" width="295" height="323"/>
+    </resources>
+</document>
