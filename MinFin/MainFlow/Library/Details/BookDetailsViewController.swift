@@ -18,8 +18,6 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var authorDescriptionLabel: UILabel!
     @IBOutlet var yearDescriptionLabel: UILabel!
     @IBOutlet var downloadButton: UIButton!
-    @IBOutlet var opeinInButton: UIButton!
-    @IBOutlet var openInWidthConstraint: NSLayoutConstraint!
     
     @IBOutlet var aboutTitleLabel: UILabel!
     @IBOutlet var aboutDescriptionLabel: UILabel!
@@ -38,7 +36,6 @@ class BookDetailsViewController: UIViewController {
         super.viewDidLoad()
         addBackgroundView()
         downloadButton.layer.cornerRadius = 15.0
-        opeinInButton.layer.cornerRadius = 15.0
         spinner.isHidden = true
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
@@ -55,19 +52,16 @@ class BookDetailsViewController: UIViewController {
         }
         
         if fileExists() {
-            setOpenButtons()
+            setOpenButton()
         } else {
             downloadButton.setTitle(AppLanguage.download.customLocalized(), for: .normal)
-            openInWidthConstraint.constant = 0
         }
 
     }
     
     
-    private func setOpenButtons() {
+    private func setOpenButton() {
         downloadButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
-        opeinInButton.setTitle(AppLanguage.open_in.customLocalized(), for: .normal)
-        openInWidthConstraint.constant = 120.0
         spinner.isHidden = true
     }
 
@@ -84,20 +78,6 @@ class BookDetailsViewController: UIViewController {
         }
         return false
     }
-
-    @IBAction func opeinInButtonAction(_ sender: Any) {
-        let title = getBookTitle()
-        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
-        docURL = docURL?.appendingPathComponent("\(title).pdf")
-        
-        if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
-            self.documentController = UIDocumentInteractionController(url: url)
-            let booksUrl = URL(string:"itms-books:")!
-            if UIApplication.shared.canOpenURL(booksUrl) {
-                self.documentController.presentOpenInMenu(from: self.opeinInButton.frame, in: self.view, animated: true)
-            }
-        }        
-    }
     
     @IBAction func downloadButtonAction(_ sender: Any) {
         let title = getBookTitle()
@@ -105,11 +85,16 @@ class BookDetailsViewController: UIViewController {
         docURL = docURL?.appendingPathComponent("\(title).pdf")
         
         if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
-            let bookVC = self.storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
-            bookVC.bookURL = url
-            bookVC.bookData = FileManager.default.contents(atPath: url.path)
-            bookVC.bookTitle = self.book.title
-            self.navigationController?.pushViewController(bookVC, animated: true)
+            let title = getBookTitle()
+            var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+            docURL = docURL?.appendingPathComponent("\(title).pdf")
+            if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+                self.documentController = UIDocumentInteractionController(url: url)
+                let booksUrl = URL(string:"itms-books:")!
+                if UIApplication.shared.canOpenURL(booksUrl) {
+                    self.documentController.presentOpenInMenu(from: self.downloadButton.frame, in: self.view, animated: true)
+                }
+            }
         } else {
             spinner.isHidden = false
             spinner.startAnimating()
@@ -123,7 +108,7 @@ class BookDetailsViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 case .success(_ ):
                     self.spinner.isHidden = true
-                    self.setOpenButtons()
+                    self.setOpenButton()
                 }
             }
         }
