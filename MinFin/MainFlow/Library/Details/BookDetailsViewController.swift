@@ -37,6 +37,11 @@ class BookDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let transform = CGAffineTransform(scaleX: 1, y: 4)
+        
+        let shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
+        shareBarButtonItem.tintColor = Color.mainTextColor
+        navigationItem.rightBarButtonItem = shareBarButtonItem
+        
         progressView.transform = transform
         progressView.isHidden = true
         progressView.layer.cornerRadius = 5.0
@@ -72,6 +77,13 @@ class BookDetailsViewController: UIViewController {
             self.downloadButtonWidthConstraint.constant = self.openButtonDefaultWidth
             self.contentView.layoutIfNeeded()
         })
+    }
+    
+    @objc func shareAction() {
+        let activityTest = "Я читаю книгу \(book.title) в приложении Минфин.История.\nВставить нужный текст.\nСкачайте приложение по ссылке"
+        let activityVC = UIActivityViewController(activityItems: [activityTest], applicationActivities: nil)
+        activityVC.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(activityVC, animated: true, completion: nil)
     }
     
     private func setOpenButton() {
