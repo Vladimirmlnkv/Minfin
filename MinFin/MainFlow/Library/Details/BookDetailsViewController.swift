@@ -18,6 +18,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var authorDescriptionLabel: UILabel!
     @IBOutlet var yearDescriptionLabel: UILabel!
     @IBOutlet var downloadButton: UIButton!
+    @IBOutlet var openButton: UIButton!
     
     @IBOutlet var aboutTitleLabel: UILabel!
     @IBOutlet var aboutDescriptionLabel: UILabel!
@@ -96,6 +97,29 @@ class BookDetailsViewController: UIViewController {
                 self.contentView.layoutIfNeeded()
             })
         }
+        if #available(iOS 11.0, *) {
+            downloadButton.setTitle(AppLanguage.open_in.customLocalized(), for: .normal)
+            openButton.isHidden = false
+            openButton.layer.cornerRadius = downloadButton.layer.cornerRadius
+            openButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
+            openButton.addTarget(self, action: #selector(openButtonAction), for: .touchUpInside)
+        }
+    }
+    
+    @objc func openButtonAction() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
+        
+        let title = getBookTitle()
+        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+        docURL = docURL?.appendingPathComponent("\(title).pdf")
+        
+        if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+            if let data = FileManager.default.contents(atPath: url.path) {
+                vc.bookData = data
+                vc.bookTitle = title
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 
     private func getBookTitle() -> String {
@@ -123,16 +147,11 @@ class BookDetailsViewController: UIViewController {
             docURL = docURL?.appendingPathComponent("\(title).pdf")
             
             if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
-                let title = getBookTitle()
-                var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
-                docURL = docURL?.appendingPathComponent("\(title).pdf")
-                if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
                     self.documentController = UIDocumentInteractionController(url: url)
                     let booksUrl = URL(string:"itms-books:")!
                     if UIApplication.shared.canOpenURL(booksUrl) {
                         self.documentController.presentOpenInMenu(from: self.downloadButton.frame, in: self.view, animated: true)
                     }
-                }
             } else {
                 UIView.animate(withDuration: 0.3, animations: {
                     self.downloadButton.setImage(#imageLiteral(resourceName: "stop"), for: .normal)

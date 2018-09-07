@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import PDFKit
 
 class BookReaderViewController: UIViewController {
-
-    @IBOutlet var webView: UIWebView!
     
     var bookURL: URL!
     var bookData: Data!
@@ -20,7 +19,17 @@ class BookReaderViewController: UIViewController {
         super.viewDidLoad()
         addBackgroundView()
         navigationItem.title = bookTitle
-        webView.load(bookData, mimeType: "application/pdf", textEncodingName: "", baseURL: bookURL.deletingLastPathComponent())
+        
+        if #available(iOS 11.0, *) {
+            let pdfView = PDFView(frame: view.frame)
+            pdfView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(pdfView)
+            pdfView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+            pdfView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+            pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+            pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+            pdfView.document = PDFDocument(data: bookData)
+        }
     }
 
 
