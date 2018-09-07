@@ -24,7 +24,8 @@ class LibraryDataSource: BooksLoader {
     
     private let booksEndpoint = "http://82.196.15.171:8081/books"
     private let versionEndpoit = "http://82.196.15.171:8081/version"
-    private var bookRequest: DataRequest?
+    private var bookRequest: DownloadRequest?
+    private var sessionManager = Alamofire.SessionManager(configuration: URLSessionConfiguration.background(withIdentifier: "com.book.BackroundDownload"))
     
     var isLoading: Bool {
         return bookRequest != nil
@@ -73,20 +74,26 @@ class LibraryDataSource: BooksLoader {
     }
     
     func load(fileName: String, bookName: String, progressClosure: @escaping (Double) -> Void, result: @escaping (Result<Bool>) -> Void) {
-        
         if let url = URL(string: fileName) {
-            bookRequest = Alamofire.request(url, method: .get).downloadProgress(closure: { progress in
-                progressClosure(progress.fractionCompleted)
-            }).responseData(completionHandler: { [weak self] (response: DataResponse<Data>) in
+            
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+                docURL = docURL?.appendingPathComponent("\(bookName).pdf")
+                return (docURL!, [.removePreviousFile, .createIntermediateDirectories])
+                
+            }
+            
+            bookRequest = sessionManager.download(url, to: destination)
+                .downloadProgress(closure: { progress in
+                    progressClosure(progress.fractionCompleted)
+                })
+                .responseData(completionHandler: { [weak self] (response: DownloadResponse<Data>) in
                 switch response.result {
                 case .failure( _):
                     DispatchQueue.main.async {
                         result(Result.failure())
                     }
-                case .success(let data):
-                    var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
-                    docURL = docURL?.appendingPathComponent("\(bookName).pdf")
-                    try! data.write(to: docURL!)
+                case .success( _):
                     DispatchQueue.main.async {
                         result(Result.success(value: true))
                     }
