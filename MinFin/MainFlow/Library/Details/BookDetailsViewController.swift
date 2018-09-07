@@ -80,8 +80,8 @@ class BookDetailsViewController: UIViewController {
     }
     
     @objc func shareAction() {
-        let activityTest = "Я читаю книгу \(book.title) в приложении Минфин.История.\nВставить нужный текст.\nСкачайте приложение по ссылке"
-        let activityVC = UIActivityViewController(activityItems: [activityTest], applicationActivities: nil)
+        let text = String(format: AppLanguage.share_text.customLocalized(), book.title, book.author, "google.com")
+        let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         activityVC.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(activityVC, animated: true, completion: nil)
     }

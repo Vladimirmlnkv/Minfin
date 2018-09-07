@@ -49,6 +49,7 @@ class AppLanguage {
     static let details = "details"
     static let year = "year"
     static let open_in = "open_in"
+    static let share_text = "share_text"
     
     static let standart = AppLanguage()
     private var languageKey = "appLanguageKey"
