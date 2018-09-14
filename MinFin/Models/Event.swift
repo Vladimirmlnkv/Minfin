@@ -10,6 +10,10 @@ import Foundation
 
 class Event: DetailInfo {
     
+    var displayName: String {
+        return name
+    }
+    
     var name: String
     var startYear: Int
     var endYear: Int?

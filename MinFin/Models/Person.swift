@@ -10,7 +10,12 @@ import UIKit
 
 class Person: DetailInfo {
     
+    var displayName: String {
+        return fullName ?? name
+    }
+    
     var name: String
+    var fullName: String?
     var startYear: Int
     var endYear: Int?
     
@@ -26,6 +31,7 @@ class Person: DetailInfo {
             endYear = dict["endYear"] as? Int
             longDescription = dict["longDescription"] as? String
             photoUrl = dict["photoUrl"] as! String
+            fullName = dict["fullName"] as? String
         } else {
             photoUrl = ""
             name = ""

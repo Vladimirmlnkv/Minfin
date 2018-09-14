@@ -25,7 +25,7 @@ class PersonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundView()
-        mainNameLabel.text = detailInfo.name
+        mainNameLabel.text = detailInfo.displayName
         if detailInfo.photoUrl != "" {
             imageView.image = UIImage(named: detailInfo.photoUrl)
         }

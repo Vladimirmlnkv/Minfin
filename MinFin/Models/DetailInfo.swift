@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DetailInfo {
-    var name: String { get }
+    var displayName: String { get }
     var startYear: Int { get }
     var endYear: Int? { get }
     var longDescription: String? { get }
