@@ -33,7 +33,7 @@ class PersonDetailViewController: UIViewController {
         if let endYear = detailInfo.endYear, endYear != 0 {
             dateText = "\(detailInfo.startYear) - \(endYear) \(AppLanguage.years.customLocalized())"
         } else {
-            dateText = "\(detailInfo.startYear) \(AppLanguage.yeart.customLocalized())"
+            dateText = "\(detailInfo.startYear) \(AppLanguage.year.customLocalized())"
         }
         dateLabel.text = dateText
         
