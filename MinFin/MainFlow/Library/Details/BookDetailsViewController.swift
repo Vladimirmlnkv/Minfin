@@ -123,8 +123,8 @@ class BookDetailsViewController: UIViewController {
     }
 
     private func getBookTitle() -> String {
-        let components = book.title.components(separatedBy: " ")
-        return components.reduce("", {$0 + $1})
+        let components = book.fileName.components(separatedBy: "/")
+        return components.last!
     }
     
     private func fileExists() -> Bool {
