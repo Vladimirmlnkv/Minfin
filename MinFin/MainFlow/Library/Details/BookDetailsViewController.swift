@@ -109,7 +109,7 @@ class BookDetailsViewController: UIViewController {
     @objc func openButtonAction() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
         
-        let title = getBookTitle()
+        let title = book.title
         var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
         docURL = docURL?.appendingPathComponent("\(title).pdf")
         
