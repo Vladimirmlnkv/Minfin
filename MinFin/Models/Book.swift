@@ -39,6 +39,13 @@ class Book: Object {
         fileName = json["fileName"] as! String
         headingCode = json["headingCode"] as! Int
     }
+    
+    func getDocUrl() -> URL? {
+        let fileName = self.fileName.components(separatedBy: "/").last!
+        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+        docURL = docURL?.appendingPathComponent("\(fileName).pdf")
+        return docURL
+    }
 }
 
 class Heading: Object {

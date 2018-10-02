@@ -121,6 +121,24 @@ class LibraryViewController: UIViewController {
         }
     }
     
+    func drawPDFfromURL(url: URL) -> UIImage? {
+        guard let document = CGPDFDocument(url as CFURL) else { return nil }
+        guard let page = document.page(at: 0) else { return nil }
+        
+        let pageRect = page.getBoxRect(.mediaBox)
+        
+        UIGraphicsBeginImageContextWithOptions(pageRect.size, false, 0.0)
+        let context = UIGraphicsGetCurrentContext();
+        context?.fill(pageRect)
+        context?.translateBy(x: 0.0, y: pageRect.size.height)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        context?.drawPDFPage(page)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return img
+    }
+    
     func open(book: Book) {
         let bookDetailsVC = storyboard?.instantiateViewController(withIdentifier: "BookDetailsViewController") as! BookDetailsViewController
         bookDetailsVC.book = book
@@ -189,8 +207,13 @@ extension LibraryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
+
         cell.configure(with: booksList[indexPath.row])
         cell.delegate = self
+        if let url = booksList[indexPath.row].getDocUrl(), let image = drawPDFfromURL(url: url) {
+            cell.bookImageView.image = image
+        }
+        
         return cell
     }
     

@@ -954,6 +954,7 @@
                         <outlet property="aboutTitleLabel" destination="u3j-Sx-o6t" id="NvR-PW-J0N"/>
                         <outlet property="authorDescriptionLabel" destination="JhU-7H-18o" id="b2V-jB-1V9"/>
                         <outlet property="authorNameLabel" destination="F4E-N9-puP" id="tkt-Mu-5TF"/>
+                        <outlet property="bookImageView" destination="5lx-ii-gXw" id="lEI-XH-LaA"/>
                         <outlet property="bookNameLabel" destination="O9a-z7-cHW" id="lOB-n1-Rzj"/>
                         <outlet property="contentView" destination="BrE-N3-fJw" id="FNw-Qr-jyZ"/>
                         <outlet property="deleteButton" destination="aRI-Z7-87L" id="NO4-0B-FjJ"/>
