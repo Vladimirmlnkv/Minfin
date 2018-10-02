@@ -57,23 +57,23 @@ class AppLanguage {
     
     var currentLanguage: String = "ru-RU"
     
-    init() {
-        if let lang = UserDefaults.standard.string(forKey: languageKey) {
-            currentLanguage = lang
-        } else {
-            let lang = NSLocalizedString("lang", comment: "")
-            currentLanguage = lang
-            UserDefaults.standard.set(lang, forKey: languageKey)
-        }
-    }
+//    init() {
+//        if let lang = UserDefaults.standard.string(forKey: languageKey) {
+//            currentLanguage = lang
+//        } else {
+//            let lang = NSLocalizedString("lang", comment: "")
+//            currentLanguage = lang
+//            UserDefaults.standard.set(lang, forKey: languageKey)
+//        }
+//    }
     
-    func changeLanguage() {
-        if currentLanguage == "ru-RU" {
-            UserDefaults.standard.set("en", forKey: languageKey)
-            currentLanguage = "en"
-        } else {
-            UserDefaults.standard.set("ru-RU", forKey: languageKey)
-            currentLanguage = "ru-RU"
-        }
-    }
+//    func changeLanguage() {
+//        if currentLanguage == "ru-RU" {
+//            UserDefaults.standard.set("en", forKey: languageKey)
+//            currentLanguage = "en"
+//        } else {
+//            UserDefaults.standard.set("ru-RU", forKey: languageKey)
+//            currentLanguage = "ru-RU"
+//        }
+//    }
 }

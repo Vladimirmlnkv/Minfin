@@ -15,7 +15,6 @@ class MainMenuViewController: UIViewController {
     @IBOutlet var historyButton: UIButton!
     @IBOutlet var libraryButton: UIButton!
     @IBOutlet var aboutButton: UIButton!
-    @IBOutlet var languageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +35,7 @@ class MainMenuViewController: UIViewController {
         historyButton.setTitle(AppLanguage.history.customLocalized(), for: .normal)
         libraryButton.setTitle(AppLanguage.library.customLocalized(), for: .normal)
         aboutButton.setTitle(AppLanguage.about.customLocalized(), for: .normal)
-        languageButton.setTitle(AppLanguage.language.customLocalized(), for: .normal)
+//        languageButton.setTitle(AppLanguage.language.customLocalized(), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,11 +57,11 @@ class MainMenuViewController: UIViewController {
         navigationController?.pushViewController(aboutVC, animated: true)
     }
     
-    @IBAction func languageButtonAction(_ sender: Any) {
-        AppLanguage.standart.changeLanguage()
-        setUIString()
-        let vc = storyboard?.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
-        vc.isForceUpdate = true
-        present(vc, animated: true, completion: nil)
-    }
+//    @IBAction func languageButtonAction(_ sender: Any) {
+//        AppLanguage.standart.changeLanguage()
+//        setUIString()
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
+//        vc.isForceUpdate = true
+//        present(vc, animated: true, completion: nil)
+//    }
 }

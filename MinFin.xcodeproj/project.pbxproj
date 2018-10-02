@@ -11,7 +11,6 @@
 		7E2799CC211C6898003DE4FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2799CB211C6898003DE4FA /* AppDelegate.swift */; };
 		7E2799D1211C6898003DE4FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799CF211C6898003DE4FA /* Main.storyboard */; };
 		7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799D2211C6898003DE4FA /* Assets.xcassets */; };
-		7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799D4211C6898003DE4FA /* LaunchScreen.storyboard */; };
 		7E2799E2211C6C9E003DE4FA /* lazurski-cyrillic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799E1211C6C9E003DE4FA /* lazurski-cyrillic.ttf */; };
 		7E2799E8211C6DA8003DE4FA /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2799E7211C6DA8003DE4FA /* Onboarding.storyboard */; };
 		7E2799EB211C7667003DE4FA /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2799EA211C7667003DE4FA /* OnboardingPageViewController.swift */; };
@@ -74,7 +73,6 @@
 		7E2799CB211C6898003DE4FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E2799D0211C6898003DE4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E2799D2211C6898003DE4FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7E2799D5211C6898003DE4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E2799D7211C6898003DE4FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E2799E1211C6C9E003DE4FA /* lazurski-cyrillic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lazurski-cyrillic.ttf"; sourceTree = "<group>"; };
 		7E2799E7211C6DA8003DE4FA /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -121,18 +119,14 @@
 		7E4A051F212EB2610065FD7A /* MainBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainBackgroundView.xib; sourceTree = "<group>"; };
 		7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundView.swift; sourceTree = "<group>"; };
 		7E4A0523212EB5620065FD7A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		7E94F8E92132C85300F27804 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7E94F8EA2132C85300F27804 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Main.strings"; sourceTree = "<group>"; };
 		7E94F8F02132C93400F27804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7E94F8F12132C93500F27804 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7E94F8F22132CB6D00F27804 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		7E94F8F42132CDED00F27804 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7E94F8F52132CECB00F27804 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		7E9B7194213D588000C236A9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		7EA3820B214022B600C1A640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7EA3820C2140235D00C1A640 /* LaunchScreen_Ru.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen_Ru.storyboard; sourceTree = "<group>"; };
 		7EE4977F2137DD48000667B8 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		7EE497812137DD4A000667B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EE497822137DF47000667B8 /* BookReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderViewController.swift; sourceTree = "<group>"; };
 		7EEF40992136A9FB0070981A /* LibraryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataSource.swift; sourceTree = "<group>"; };
 		7EEF409B2136AC480070981A /* CatalogsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsData.swift; sourceTree = "<group>"; };
@@ -233,7 +227,6 @@
 		7E2799E5211C6D78003DE4FA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7E2799D4211C6898003DE4FA /* LaunchScreen.storyboard */,
 				7E2799CF211C6898003DE4FA /* Main.storyboard */,
 				7E2799E7211C6DA8003DE4FA /* Onboarding.storyboard */,
 				7EA3820C2140235D00C1A640 /* LaunchScreen_Ru.storyboard */,
@@ -529,7 +522,6 @@
 				7E27F9C6215A57FA001FC833 /* minfin.json in Resources */,
 				7E4A0502212DAC820065FD7A /* SingleEventView.xib in Resources */,
 				7E32D1CA21319CBC00D38233 /* ClusterDetailsCollectionViewCell.xib in Resources */,
-				7E2799D6211C6898003DE4FA /* LaunchScreen.storyboard in Resources */,
 				7EA3820D2140235D00C1A640 /* LaunchScreen_Ru.storyboard in Resources */,
 				7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */,
 				7E32D1CD21319E6800D38233 /* ClusterDetailsContainerView.xib in Resources */,
@@ -661,22 +653,11 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		7E2799D4211C6898003DE4FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E2799D5211C6898003DE4FA /* Base */,
-				7E94F8E92132C85300F27804 /* ru-RU */,
-				7EA3820B214022B600C1A640 /* en */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		7E94F8EF2132C92E00F27804 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7E94F8F02132C93400F27804 /* Base */,
 				7E94F8F12132C93500F27804 /* ru-RU */,
-				7E94F8F42132CDED00F27804 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -685,7 +666,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				7EE4977F2137DD48000667B8 /* ru-RU */,
-				7EE497812137DD4A000667B8 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
