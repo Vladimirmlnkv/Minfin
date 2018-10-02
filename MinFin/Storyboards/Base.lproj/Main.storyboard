@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y2Z-w5-REC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y2Z-w5-REC">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,14 +27,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gerbMinfinRu" translatesAutoresizingMaskIntoConstraints="NO" id="Eqf-2R-B9i">
-                                <rect key="frame" x="462" y="84" width="100" height="100"/>
+                                <rect key="frame" x="462" y="90" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="BUe-KZ-cEA"/>
                                     <constraint firstAttribute="height" constant="100" id="VMq-AH-Toa"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="МИНИСТЕРСТВО ФИНАНСОВ РОССИЙСКОЙ ФЕДЕРАЦИИ" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZ0-lL-Gfi">
-                                <rect key="frame" x="20" y="194" width="984" height="25"/>
+                                <rect key="frame" x="20" y="200" width="984" height="25"/>
                                 <fontDescription key="fontDescription" name="LazurskiCyrillic" family="Lazurski" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -320,7 +317,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="РУБРИКАТОР" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jl-6D-alB">
-                                <rect key="frame" x="445" y="40" width="134.5" height="24"/>
+                                <rect key="frame" x="445" y="40" width="134" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -370,7 +367,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-U7-YYz">
-                                <rect key="frame" x="20" y="157.5" width="984" height="590.5"/>
+                                <rect key="frame" x="20" y="151.5" width="984" height="596.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6mV-dr-lO6">
                                     <size key="itemSize" width="322" height="267"/>
@@ -387,34 +384,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="Vu5-yr-ov4">
-                                                    <rect key="frame" x="8" y="8" width="161" height="251"/>
+                                                    <rect key="frame" x="8" y="28" width="161" height="231"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Капитал" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vH-2h-fra">
-                                                    <rect key="frame" x="28" y="28" width="62.5" height="19.5"/>
+                                                    <rect key="frame" x="28" y="48" width="62.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1894 год" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3i-Sj-UDJ">
-                                                    <rect key="frame" x="28" y="219.5" width="137" height="20"/>
+                                                    <rect key="frame" x="28" y="219.5" width="137" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.8784313725490196" green="0.87058823529411766" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карл Маркс" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3D-o8-zWF">
-                                                    <rect key="frame" x="28" y="190" width="137" height="20"/>
+                                                    <rect key="frame" x="28" y="190" width="137" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.87843137250000003" green="0.87058823529999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Финтех" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7J-d7-jw6">
-                                                    <rect key="frame" x="179" y="28" width="68.5" height="24"/>
+                                                    <rect key="frame" x="179" y="48" width="68.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="Путеводитель по новейшей финансовым технологиям" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-Ic-NJ9">
-                                                    <rect key="frame" x="179" y="62" width="118.5" height="67"/>
+                                                    <rect key="frame" x="179" y="82" width="118.5" height="67"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -474,19 +471,19 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каталог изданий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyF-Rk-gpv">
-                                <rect key="frame" x="20" y="116" width="206" height="31.5"/>
+                                <rect key="frame" x="20" y="110" width="206" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" placeholder="Поиск" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-Ac-Qw5">
-                                <rect key="frame" x="15" y="40" width="852" height="56"/>
+                                <rect key="frame" x="15" y="40" width="852" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGh-rY-rn7">
-                                <rect key="frame" x="897" y="57.5" width="107" height="21"/>
+                                <rect key="frame" x="897" y="54.5" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" red="0.0048346570690000002" green="0.3716031313" blue="0.1977861524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Рубрикатор" image="rybrikCopy">
@@ -550,7 +547,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Главы государств" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-U3-nwo">
-                                                <rect key="frame" x="10" y="10" width="100" height="21"/>
+                                                <rect key="frame" x="10" y="10" width="100" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="gmd-3L-36V"/>
                                                 </constraints>
@@ -671,7 +668,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21j-9P-PZe">
-                                        <rect key="frame" x="200" y="76.5" width="784" height="68"/>
+                                        <rect key="frame" x="200" y="76" width="784" height="68"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7V-hK-kNi">
                                                 <rect key="frame" x="0.0" y="0.0" width="784" height="36"/>
@@ -698,7 +695,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coA-fx-efD">
-                                        <rect key="frame" x="40" y="200" width="882" height="143.5"/>
+                                        <rect key="frame" x="40" y="200" width="881.5" height="143.5"/>
                                         <string key="text">История российского Министерства финансов начинается 8 сентебря 1802 года. В этот день император Александр I подписал манифест об учреждении министерств.
 
 «Общим учреждением министерств» предусматривалась группа министерств и ведомств под названием «Государственная экономия», в которую входили Министерство финансов, Государственное казначейство, Ревизия государственных счетов.</string>
@@ -720,7 +717,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Из Манифеста императора Россйский империи." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55M-8L-XUR">
-                                        <rect key="frame" x="540.5" y="475.5" width="443.5" height="24"/>
+                                        <rect key="frame" x="540" y="475.5" width="444" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -807,7 +804,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="1894 год" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-Yn-NM2">
-                                                <rect key="frame" x="40" y="210" width="67" height="20"/>
+                                                <rect key="frame" x="40" y="210.5" width="67" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.87843137250000003" green="0.87058823529999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -831,7 +828,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="Карл Маркс" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4E-N9-puP">
-                                                <rect key="frame" x="40" y="180" width="90.5" height="20"/>
+                                                <rect key="frame" x="40" y="181" width="90.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.87843137250000003" green="0.87058823529999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -843,14 +840,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUE-qS-DZq">
-                                                <rect key="frame" x="20" y="327" width="970" height="167.5"/>
+                                                <rect key="frame" x="20" y="326.5" width="970" height="167.5"/>
                                                 <string key="text">Первый том, «Процесс производства капитала», впервые был опубликован в 1867 году тиражом 1000 экземпляров и является расширенным продолжением опубликованной в 1859 году работы «К критике политической экономии». Уже после смерти Маркса Фридрих Энгельс скомпоновал из готовых фрагментов и черновиков два следующих тома: «Процесс обращения капитала» (1885) и «Процесс капиталистического производства, взятый в целом» (1894). Смерть помешала ему подготовить к печати рукопись заключительного (четвёртого) тома, «Теорий прибавочной стоимости», из второго чернового варианта «Капитала», и этот том был впервые опубликован в 1905—1910 годах Карлом Каутским.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вечная классика | Источник света | Рубрика с бородой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkK-Qt-PPh">
-                                                <rect key="frame" x="20" y="514.5" width="547" height="24"/>
+                                                <rect key="frame" x="20" y="514" width="547" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -891,11 +888,27 @@
                                                     <color key="titleColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-Z7-87L">
+                                                <rect key="frame" x="455" y="200" width="50" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="otl-ft-J1j"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.0048346570690000002" green="0.3716031313" blue="0.1977861524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="icons8-trash-50">
+                                                    <color key="titleColor" red="0.0048346570690000002" green="0.3716031313" blue="0.1977861524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteButtonAction:" destination="tlj-rT-ARJ" eventType="touchUpInside" id="ECI-6E-8mT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="aRI-Z7-87L" firstAttribute="height" secondItem="mbi-wn-sgo" secondAttribute="height" id="1Cx-FR-gVj"/>
                                             <constraint firstItem="pkK-Qt-PPh" firstAttribute="leading" secondItem="RUE-qS-DZq" secondAttribute="leading" id="1h6-Ca-WZB"/>
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="-10" id="3xY-2c-1kW"/>
+                                            <constraint firstItem="aRI-Z7-87L" firstAttribute="leading" secondItem="mbi-wn-sgo" secondAttribute="trailing" constant="10" id="DvL-LJ-xRB"/>
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="bottom" secondItem="5lx-ii-gXw" secondAttribute="bottom" constant="-10" id="GBF-O5-eDc"/>
                                             <constraint firstItem="F4E-N9-puP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O9a-z7-cHW" secondAttribute="bottom" constant="4" id="GKP-pX-wfu"/>
                                             <constraint firstItem="3Qa-sn-s9h" firstAttribute="bottom" secondItem="5lx-ii-gXw" secondAttribute="bottom" constant="-10" id="I6Z-29-dyy"/>
@@ -906,6 +919,7 @@
                                             <constraint firstItem="3Qa-sn-s9h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FPw-Dh-gGX" secondAttribute="bottom" constant="4" id="Mpa-Tj-LmR"/>
                                             <constraint firstItem="F4E-N9-puP" firstAttribute="leading" secondItem="O9a-z7-cHW" secondAttribute="leading" id="PDK-QT-NTM"/>
                                             <constraint firstItem="qcR-ZB-nrs" firstAttribute="leading" secondItem="5lx-ii-gXw" secondAttribute="trailing" constant="10" id="PLo-D3-u8G"/>
+                                            <constraint firstItem="aRI-Z7-87L" firstAttribute="centerY" secondItem="mbi-wn-sgo" secondAttribute="centerY" id="Qv9-Lw-jcI"/>
                                             <constraint firstItem="O9a-z7-cHW" firstAttribute="top" secondItem="5lx-ii-gXw" secondAttribute="top" constant="20" id="RLQ-7G-aXm"/>
                                             <constraint firstItem="TtH-K9-1XV" firstAttribute="leading" secondItem="3Qa-sn-s9h" secondAttribute="trailing" constant="10" id="SkL-tY-gai"/>
                                             <constraint firstItem="qw2-Yn-NM2" firstAttribute="top" secondItem="F4E-N9-puP" secondAttribute="bottom" constant="10" id="U2T-Dm-k4W"/>
@@ -958,10 +972,12 @@
                         <outlet property="authorNameLabel" destination="F4E-N9-puP" id="tkt-Mu-5TF"/>
                         <outlet property="bookNameLabel" destination="O9a-z7-cHW" id="lOB-n1-Rzj"/>
                         <outlet property="contentView" destination="BrE-N3-fJw" id="FNw-Qr-jyZ"/>
+                        <outlet property="deleteButton" destination="aRI-Z7-87L" id="NO4-0B-FjJ"/>
                         <outlet property="downloadButton" destination="3Qa-sn-s9h" id="ndI-d9-yPy"/>
                         <outlet property="downloadButtonWidthConstraint" destination="mcW-gK-wAw" id="e9d-zM-eZH"/>
                         <outlet property="mainTitleLabel" destination="qcR-ZB-nrs" id="A1l-il-lfD"/>
                         <outlet property="openButton" destination="mbi-wn-sgo" id="vei-YN-5P6"/>
+                        <outlet property="openButtonWidthConstraitn" destination="uPU-ag-BbQ" id="sMC-6t-9fg"/>
                         <outlet property="progressView" destination="TtH-K9-1XV" id="DO0-dU-jLd"/>
                         <outlet property="scrollView" destination="PVF-U8-gzk" id="UZr-FH-BOV"/>
                         <outlet property="tagsLabel" destination="pkK-Qt-PPh" id="w9u-eL-1Bi"/>
@@ -979,7 +995,7 @@
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KLS-1n-1y3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7uq-UP-n2c">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -1014,7 +1030,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gerbMinfinRuBig" translatesAutoresizingMaskIntoConstraints="NO" id="b4k-eZ-oBw">
-                                            <rect key="frame" x="351" y="120" width="322.5" height="323"/>
+                                            <rect key="frame" x="350.5" y="120" width="323" height="323"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="b4k-eZ-oBw" secondAttribute="height" multiplier="1:1" id="Z2O-Gh-Exa"/>
                                             </constraints>
@@ -1086,6 +1102,7 @@
         <image name="book" width="141" height="193"/>
         <image name="gerbMinfinRu" width="110" height="121"/>
         <image name="gerbMinfinRuBig" width="295" height="323"/>
+        <image name="icons8-trash-50" width="25" height="25"/>
         <image name="lang" width="18" height="18"/>
         <image name="mask" width="50" height="50"/>
         <image name="rybrikCopy" width="12" height="12"/>

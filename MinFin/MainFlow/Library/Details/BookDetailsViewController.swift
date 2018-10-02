@@ -25,6 +25,8 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var tagsLabel: UILabel!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
+    @IBOutlet var deleteButton: UIButton!
+    @IBOutlet var openButtonWidthConstraitn: NSLayoutConstraint!
     
     var book: Book!
     var headings: [Heading]!
@@ -48,6 +50,7 @@ class BookDetailsViewController: UIViewController {
         progressView.layer.cornerRadius = 5.0
         addBackgroundView()
         downloadButton.layer.cornerRadius = 15.0
+        deleteButton.layer.cornerRadius = 15.0
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
         yearLabel.text = "\(book.year) \(AppLanguage.year.customLocalized())"
@@ -74,6 +77,8 @@ class BookDetailsViewController: UIViewController {
         downloadButton.setTitle(AppLanguage.download.customLocalized(), for: .normal)
         downloadButton.setImage(nil, for: .normal)
         progressView.isHidden = true
+        deleteButton.isHidden = true
+        openButton.isHidden = true
         UIView.animate(withDuration: 0.3, animations: {
             self.downloadButtonWidthConstraint.constant = self.openButtonDefaultWidth
             self.contentView.layoutIfNeeded()
@@ -103,13 +108,16 @@ class BookDetailsViewController: UIViewController {
             openButton.layer.cornerRadius = downloadButton.layer.cornerRadius
             openButton.setTitle(AppLanguage.open.customLocalized(), for: .normal)
             openButton.addTarget(self, action: #selector(openButtonAction), for: .touchUpInside)
+        } else {
+            openButtonWidthConstraitn.constant = 0
         }
+        deleteButton.isHidden = false
     }
     
     @objc func openButtonAction() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
         
-        let title = book.title
+        let title = getBookTitle()
         var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
         docURL = docURL?.appendingPathComponent("\(title).pdf")
         
@@ -134,6 +142,23 @@ class BookDetailsViewController: UIViewController {
             return true
         }
         return false
+    }
+    
+    @IBAction func deleteButtonAction(_ sender: Any) {
+        
+        var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
+        docURL = docURL?.appendingPathComponent("\(getBookTitle()).pdf")
+        
+        if let url = docURL, FileManager.default.fileExists(atPath: url.path) {
+            do {
+                try FileManager.default.removeItem(at: url)
+                restoreDownloadButton()
+            } catch {
+                print(error)
+            }
+            
+        }
+        
     }
     
     @IBAction func downloadButtonAction(_ sender: Any) {
