@@ -7,8 +7,46 @@
 //
 
 import UIKit
+import RealmSwift
 
-class BookDetailsViewController: UIViewController {
+protocol ImageLoader { }
+extension ImageLoader {
+    func convertPDFPageToImage(url: URL, completion: @escaping (UIImage?) -> Void ) {
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let pdfdata = try NSData(contentsOfFile: url.path, options: NSData.ReadingOptions.init(rawValue: 0))
+                
+                let pdfData = pdfdata as CFData
+                let provider:CGDataProvider = CGDataProvider(data: pdfData)!
+                let pdfDoc:CGPDFDocument = CGPDFDocument(provider)!
+                let pdfPage:CGPDFPage = pdfDoc.page(at: 1)!
+                var pageRect:CGRect = pdfPage.getBoxRect(.mediaBox)
+                pageRect.size = CGSize(width:pageRect.size.width, height:pageRect.size.height)
+                
+                UIGraphicsBeginImageContext(pageRect.size)
+                let context:CGContext = UIGraphicsGetCurrentContext()!
+                context.saveGState()
+                context.translateBy(x: 0.0, y: pageRect.size.height)
+                context.scaleBy(x: 1.0, y: -1.0)
+                context.concatenate(pdfPage.getDrawingTransform(.mediaBox, rect: pageRect, rotate: 0, preserveAspectRatio: true))
+                context.drawPDFPage(pdfPage)
+                context.restoreGState()
+                let pdfImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+                UIGraphicsEndImageContext()
+                DispatchQueue.main.async {
+                    completion(pdfImage)
+                }
+            }
+            catch {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+    }
+}
+
+class BookDetailsViewController: UIViewController, ImageLoader {
 
     @IBOutlet var bookNameLabel: UILabel!
     @IBOutlet var authorNameLabel: UILabel!
@@ -68,13 +106,20 @@ class BookDetailsViewController: UIViewController {
         
         if fileExists() {
             setOpenButton()
-            if let url = book.getDocUrl(), let image = convertPDFPageToImage(url: url) {
-                setImage(image: image)
+            if let data = book.imageData, let image = UIImage(data: data) {
+                self.setImage(image: image)
             }
         } else {
             downloadButton.setTitle(AppLanguage.download.customLocalized(), for: .normal)
         }
 
+    }
+    
+    private func restoreImage() {
+        bookImageView.image = UIImage(named: "book")
+        bookNameLabel.isHidden = false
+        authorNameLabel.isHidden = false
+        yearLabel.isHidden = false
     }
     
     private func setImage(image: UIImage) {
@@ -94,6 +139,7 @@ class BookDetailsViewController: UIViewController {
             self.downloadButtonWidthConstraint.constant = self.openButtonDefaultWidth
             self.contentView.layoutIfNeeded()
         })
+        restoreImage()
     }
     
     @objc func shareAction() {
@@ -125,35 +171,6 @@ class BookDetailsViewController: UIViewController {
         deleteButton.isHidden = false
     }
     
-    func convertPDFPageToImage(url: URL) -> UIImage? {
-        do {
-            let pdfdata = try NSData(contentsOfFile: url.path, options: NSData.ReadingOptions.init(rawValue: 0))
-            
-            let pdfData = pdfdata as CFData
-            let provider:CGDataProvider = CGDataProvider(data: pdfData)!
-            let pdfDoc:CGPDFDocument = CGPDFDocument(provider)!
-            let pdfPage:CGPDFPage = pdfDoc.page(at: 1)!
-            var pageRect:CGRect = pdfPage.getBoxRect(.mediaBox)
-            pageRect.size = CGSize(width:pageRect.size.width, height:pageRect.size.height)
-            
-            UIGraphicsBeginImageContext(pageRect.size)
-            let context:CGContext = UIGraphicsGetCurrentContext()!
-            context.saveGState()
-            context.translateBy(x: 0.0, y: pageRect.size.height)
-            context.scaleBy(x: 1.0, y: -1.0)
-            context.concatenate(pdfPage.getDrawingTransform(.mediaBox, rect: pageRect, rotate: 0, preserveAspectRatio: true))
-            context.drawPDFPage(pdfPage)
-            context.restoreGState()
-            let pdfImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            
-            return pdfImage
-        }
-        catch {
-            return nil
-        }
-    }
-    
     @objc func openButtonAction() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
 
@@ -183,6 +200,9 @@ class BookDetailsViewController: UIViewController {
             do {
                 try FileManager.default.removeItem(at: url)
                 restoreDownloadButton()
+                try! Realm().write {
+                    self.book.imageData = nil
+                }
             } catch {
                 print(error)
             }
@@ -222,6 +242,14 @@ class BookDetailsViewController: UIViewController {
                         self.restoreDownloadButton()
                     case .success(_ ):
                         self.setOpenButton()
+                        self.convertPDFPageToImage(url: self.book.getDocUrl()!) { (image) in
+                            if let image = image {
+                                self.setImage(image: image)
+                                try! Realm().write {
+                                    self.book.imageData = UIImagePNGRepresentation(image)
+                                }
+                            }
+                        }
                     }
                 }
             }

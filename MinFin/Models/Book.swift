@@ -17,6 +17,7 @@ class Book: Object {
     @objc dynamic var longDescription: String = ""
     @objc dynamic var fileName: String = ""
     @objc dynamic var headingCode: Int = 0
+    @objc dynamic var imageData: Data?
     
     convenience init(title: String, author: String, year: Int, shortDescription: String, longDescription: String, fileName: String, heading: Int) {
         self.init()

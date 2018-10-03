@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class LibraryViewController: UIViewController {
+class LibraryViewController: UIViewController, ImageLoader {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var headerTitleLabel: UILabel!
@@ -63,6 +63,11 @@ class LibraryViewController: UIViewController {
         barButtonItem.isEnabled = false
         barButtonItem.tintColor = nil
         navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
     
     private func showNoDataAret() {
@@ -119,24 +124,6 @@ class LibraryViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    func drawPDFfromURL(url: URL) -> UIImage? {
-        guard let document = CGPDFDocument(url as CFURL) else { return nil }
-        guard let page = document.page(at: 0) else { return nil }
-        
-        let pageRect = page.getBoxRect(.mediaBox)
-        
-        UIGraphicsBeginImageContextWithOptions(pageRect.size, false, 0.0)
-        let context = UIGraphicsGetCurrentContext();
-        context?.fill(pageRect)
-        context?.translateBy(x: 0.0, y: pageRect.size.height)
-        context?.scaleBy(x: 1.0, y: -1.0)
-        context?.drawPDFPage(page)
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return img
     }
     
     func open(book: Book) {
@@ -210,10 +197,17 @@ extension LibraryViewController: UICollectionViewDataSource {
 
         cell.configure(with: booksList[indexPath.row])
         cell.delegate = self
-        if let url = booksList[indexPath.row].getDocUrl(), let image = drawPDFfromURL(url: url) {
+        if let data = booksList[indexPath.row].imageData, let image = UIImage(data: data) {
             cell.bookImageView.image = image
+            cell.bookNameLabel.isHidden = true
+            cell.authorNameLabel.isHidden = true
+            cell.dateLabel.isHidden = true
+        } else {
+            cell.bookImageView.image = UIImage(named: "book")
+            cell.bookNameLabel.isHidden = false
+            cell.authorNameLabel.isHidden = false
+            cell.dateLabel.isHidden = false
         }
-        
         return cell
     }
     
