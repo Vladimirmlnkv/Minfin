@@ -115,6 +115,11 @@ class BookDetailsViewController: UIViewController, ImageLoader {
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        booksLoader.stopBookLoad()
+    }
+    
     private func restoreImage() {
         bookImageView.image = UIImage(named: "book")
         bookNameLabel.isHidden = false

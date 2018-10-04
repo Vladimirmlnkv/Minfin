@@ -25,10 +25,14 @@ class LibraryDataSource: BooksLoader {
     private let booksEndpoint = "http://82.196.15.171:8081/books"
     private let versionEndpoit = "http://82.196.15.171:8081/version"
     private var bookRequest: DownloadRequest?
-    private var sessionManager: Alamofire.SessionManager!
+    private var sessionManager: Alamofire.SessionManager = Alamofire.SessionManager(configuration: URLSessionConfiguration.background(withIdentifier: "com.book.BackroundDownload"))
     
     var isLoading: Bool {
         return bookRequest != nil
+    }
+    
+    deinit {
+        sessionManager.session.finishTasksAndInvalidate()
     }
     
     func getVersion(result: @escaping (Result<Int>) -> Void) {
@@ -82,8 +86,6 @@ class LibraryDataSource: BooksLoader {
                 return (docURL!, [.removePreviousFile, .createIntermediateDirectories])
                 
             }
-            
-             sessionManager = Alamofire.SessionManager(configuration: URLSessionConfiguration.background(withIdentifier: "com.book.BackroundDownload\(bookName)"))
             
             bookRequest = sessionManager.download(url, to: destination)
                 .downloadProgress(closure: { progress in
