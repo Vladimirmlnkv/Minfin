@@ -47,6 +47,14 @@ class StartViewController: UIViewController {
                             newCatalogsData.version = version
                             try! realm.write {
                                 if let s = savedCatalogsData {
+                                    for book in s.books {
+                                        if let imageData = book.imageData {
+                                            let predicate = NSPredicate(format: "title == %@", book.title)
+                                            if let index = newCatalogsData.books.index(matching: predicate) {
+                                                newCatalogsData.books[index].imageData = imageData
+                                            }
+                                        }
+                                    }
                                     realm.delete(s)
                                 }
                                 realm.add(newCatalogsData)
