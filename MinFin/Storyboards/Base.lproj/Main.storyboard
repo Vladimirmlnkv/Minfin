@@ -477,6 +477,17 @@
                                     <action selector="rybrikButtonAction:" destination="ptu-dq-yuj" eventType="touchUpInside" id="aG0-ds-XkV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Neq-cW-zrZ">
+                                <rect key="frame" x="928" y="109.5" width="76" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" red="0.0048346570690000002" green="0.3716031313" blue="0.1977861524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Закладки">
+                                    <color key="titleColor" red="0.0048346570690000002" green="0.3716031313" blue="0.1977861524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bookmarksButtonAction:" destination="ptu-dq-yuj" eventType="touchUpInside" id="LXN-2j-YEE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -490,7 +501,9 @@
                             <constraint firstItem="FMQ-Ac-Qw5" firstAttribute="top" secondItem="rim-R9-TWS" secondAttribute="bottom" constant="20" id="k5i-nK-FX3"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uyF-Rk-gpv" secondAttribute="trailing" constant="20" id="kAI-zk-Ksf"/>
                             <constraint firstItem="5hu-bD-1Pr" firstAttribute="top" secondItem="KfN-U7-YYz" secondAttribute="bottom" constant="20" id="kHL-Ou-BYr"/>
+                            <constraint firstItem="Neq-cW-zrZ" firstAttribute="trailing" secondItem="UGh-rY-rn7" secondAttribute="trailing" id="l1P-Fn-bIN"/>
                             <constraint firstItem="UGh-rY-rn7" firstAttribute="centerY" secondItem="FMQ-Ac-Qw5" secondAttribute="centerY" id="qg8-O5-u5y"/>
+                            <constraint firstItem="Neq-cW-zrZ" firstAttribute="centerY" secondItem="uyF-Rk-gpv" secondAttribute="centerY" id="srO-fb-lRG"/>
                             <constraint firstItem="uyF-Rk-gpv" firstAttribute="leading" secondItem="CAP-72-FeQ" secondAttribute="leading" constant="20" id="yeZ-7m-fwQ"/>
                         </constraints>
                     </view>
@@ -974,6 +987,90 @@
             </objects>
             <point key="canvasLocation" x="-1245" y="530"/>
         </scene>
+        <!--Закладки-->
+        <scene sceneID="pCo-5a-8Hv">
+            <objects>
+                <viewController storyboardIdentifier="BookmarksViewController" title="Закладки" id="kGf-Kf-eaO" customClass="BookmarksViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gep-df-QZI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fmw-Kt-QWw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4pa-9M-YfD">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PaM-uC-tHX">
+                                <rect key="frame" x="20" y="20" width="984" height="748"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookmarkCell" rowHeight="129" id="tn2-NP-ab1" customClass="BookmarkCell" customModule="MinFin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="984" height="129"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tn2-NP-ab1" id="nDz-6K-qfy">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="128.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="GXx-k1-m0S">
+                                                    <rect key="frame" x="8" y="8" width="70" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="MYP-NM-Yjt"/>
+                                                        <constraint firstAttribute="height" constant="100" id="fGQ-uL-mgy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oS-O2-M42">
+                                                    <rect key="frame" x="86" y="46" width="838" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAa-oG-837">
+                                                    <rect key="frame" x="932" y="36" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="Iix-B3-h7t"/>
+                                                        <constraint firstAttribute="height" constant="44" id="Jgx-fo-prJ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="cross"/>
+                                                    <connections>
+                                                        <action selector="crossButtonAction:" destination="tn2-NP-ab1" eventType="touchUpInside" id="nms-kg-Qyl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GXx-k1-m0S" firstAttribute="leading" secondItem="nDz-6K-qfy" secondAttribute="leading" constant="8" id="BmZ-ee-eZl"/>
+                                                <constraint firstItem="MAa-oG-837" firstAttribute="centerY" secondItem="6oS-O2-M42" secondAttribute="centerY" id="EM2-ai-4h5"/>
+                                                <constraint firstAttribute="bottom" secondItem="GXx-k1-m0S" secondAttribute="bottom" constant="8" id="IiK-sU-s3v"/>
+                                                <constraint firstItem="MAa-oG-837" firstAttribute="leading" secondItem="6oS-O2-M42" secondAttribute="trailing" constant="8" id="JHo-A7-Vbt"/>
+                                                <constraint firstItem="6oS-O2-M42" firstAttribute="leading" secondItem="GXx-k1-m0S" secondAttribute="trailing" constant="8" id="Rpy-jt-pqy"/>
+                                                <constraint firstItem="6oS-O2-M42" firstAttribute="centerY" secondItem="GXx-k1-m0S" secondAttribute="centerY" id="SLJ-SF-VQm"/>
+                                                <constraint firstAttribute="trailing" secondItem="MAa-oG-837" secondAttribute="trailing" constant="8" id="hnU-rt-JWM"/>
+                                                <constraint firstItem="GXx-k1-m0S" firstAttribute="top" secondItem="nDz-6K-qfy" secondAttribute="top" constant="8" id="zZm-O5-v8f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="bookImage" destination="GXx-k1-m0S" id="sNl-BN-vyO"/>
+                                            <outlet property="bookTitleLabel" destination="6oS-O2-M42" id="oQ3-2a-qpS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="PaM-uC-tHX" secondAttribute="trailing" id="NkH-Wr-c3M"/>
+                            <constraint firstItem="PaM-uC-tHX" firstAttribute="top" secondItem="gep-df-QZI" secondAttribute="bottom" id="OMM-ry-CCh"/>
+                            <constraint firstItem="PaM-uC-tHX" firstAttribute="leading" secondItem="4pa-9M-YfD" secondAttribute="leadingMargin" id="Wq6-ef-aQV"/>
+                            <constraint firstItem="Fmw-Kt-QWw" firstAttribute="top" secondItem="PaM-uC-tHX" secondAttribute="bottom" id="s5G-qG-tpq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="PaM-uC-tHX" id="KTa-9e-4oF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUR-AV-jwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1245.1171875" y="1179.6875"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="9XX-EG-PcM">
             <objects>
@@ -1085,6 +1182,7 @@
         <image name="background" width="384" height="513"/>
         <image name="background2" width="2175" height="512"/>
         <image name="book" width="141" height="193"/>
+        <image name="cross" width="128" height="128"/>
         <image name="gerbMinfinRu" width="110" height="121"/>
         <image name="gerbMinfinRuBig" width="295" height="323"/>
         <image name="icons8-trash-50" width="25" height="25"/>

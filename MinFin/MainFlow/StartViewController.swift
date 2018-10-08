@@ -52,6 +52,7 @@ class StartViewController: UIViewController {
                                             let predicate = NSPredicate(format: "title == %@", book.title)
                                             if let index = newCatalogsData.books.index(matching: predicate) {
                                                 newCatalogsData.books[index].imageData = imageData
+                                                newCatalogsData.books[index].isBookmarked = book.isBookmarked
                                             }
                                         }
                                     }

@@ -74,15 +74,18 @@ class BookDetailsViewController: UIViewController, ImageLoader {
     var documentController: UIDocumentInteractionController!    
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var downloadButtonWidthConstraint: NSLayoutConstraint!
+    private var bookMarkBarButtonItem: UIBarButtonItem!
+    private var shareBarButtonItem: UIBarButtonItem!
     private var openButtonDefaultWidth: CGFloat = 120.0
+    private let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let transform = CGAffineTransform(scaleX: 1, y: 4)
         
-        let shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
+        shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
         shareBarButtonItem.tintColor = Color.mainTextColor
-        navigationItem.rightBarButtonItem = shareBarButtonItem
+        setBookmarkButton()
         
         progressView.transform = transform
         progressView.isHidden = true
@@ -115,6 +118,12 @@ class BookDetailsViewController: UIViewController, ImageLoader {
 
     }
     
+    private func setBookmarkButton() {
+        let imageName = book.isBookmarked ? "starFull": "star"
+        bookMarkBarButtonItem = UIBarButtonItem(image: UIImage(named: imageName), style: .done, target: self, action: #selector(addBookmarkAction))
+        navigationItem.rightBarButtonItems = [bookMarkBarButtonItem, shareBarButtonItem]
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         booksLoader.stopBookLoad()
@@ -145,6 +154,13 @@ class BookDetailsViewController: UIViewController, ImageLoader {
             self.contentView.layoutIfNeeded()
         })
         restoreImage()
+    }
+    
+    @objc func addBookmarkAction() {
+        try! realm.write {
+            book.isBookmarked = !book.isBookmarked
+        }
+        setBookmarkButton()
     }
     
     @objc func shareAction() {
@@ -205,7 +221,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
             do {
                 try FileManager.default.removeItem(at: url)
                 restoreDownloadButton()
-                try! Realm().write {
+                try! realm.write {
                     self.book.imageData = nil
                 }
             } catch {
@@ -250,7 +266,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
                         self.convertPDFPageToImage(url: self.book.getDocUrl()!) { (image) in
                             if let image = image {
                                 self.setImage(image: image)
-                                try! Realm().write {
+                                try! self.realm.write {
                                     self.book.imageData = UIImagePNGRepresentation(image)
                                 }
                             }

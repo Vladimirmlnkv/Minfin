@@ -60,6 +60,8 @@
 		7E94F8F62132CECB00F27804 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94F8F52132CECB00F27804 /* AppLanguage.swift */; };
 		7E9B7195213D588000C236A9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B7194213D588000C236A9 /* StartViewController.swift */; };
 		7EA3820D2140235D00C1A640 /* LaunchScreen_Ru.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3820C2140235D00C1A640 /* LaunchScreen_Ru.storyboard */; };
+		7ED53CEA216B883700AD3B7A /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED53CE9216B883700AD3B7A /* BookmarkCell.swift */; };
+		7ED53CEC216B888A00AD3B7A /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED53CEB216B888A00AD3B7A /* BookmarksViewController.swift */; };
 		7EE4977E2137DD48000667B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EE497802137DD48000667B8 /* InfoPlist.strings */; };
 		7EE497832137DF47000667B8 /* BookReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE497822137DF47000667B8 /* BookReaderViewController.swift */; };
 		7EEF409A2136A9FB0070981A /* LibraryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF40992136A9FB0070981A /* LibraryDataSource.swift */; };
@@ -125,6 +127,8 @@
 		7E94F8F52132CECB00F27804 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		7E9B7194213D588000C236A9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		7EA3820C2140235D00C1A640 /* LaunchScreen_Ru.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen_Ru.storyboard; sourceTree = "<group>"; };
+		7ED53CE9216B883700AD3B7A /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
+		7ED53CEB216B888A00AD3B7A /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		7EE4977F2137DD48000667B8 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7EE497822137DF47000667B8 /* BookReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderViewController.swift; sourceTree = "<group>"; };
 		7EEF40992136A9FB0070981A /* LibraryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataSource.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 		7E374F8D212C1B48007ACD98 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7ED53CE8216B880800AD3B7A /* Bookmarks */,
 				7E32D1B721316AF400D38233 /* Headings */,
 				7E374F92212C1CE8007ACD98 /* Details */,
 				7E374F8E212C1B7B007ACD98 /* LibraryViewController.swift */,
@@ -438,6 +443,15 @@
 				7E4A0521212EB2B00065FD7A /* MainBackgroundView.swift */,
 			);
 			path = BackgroundView;
+			sourceTree = "<group>";
+		};
+		7ED53CE8216B880800AD3B7A /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				7ED53CE9216B883700AD3B7A /* BookmarkCell.swift */,
+				7ED53CEB216B888A00AD3B7A /* BookmarksViewController.swift */,
+			);
+			path = Bookmarks;
 			sourceTree = "<group>";
 		};
 		F3800E3A3F695FC2C27266D8 /* Pods */ = {
@@ -599,6 +613,7 @@
 			files = (
 				7E374F8C212C1AA7007ACD98 /* MainMenuViewController.swift in Sources */,
 				7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */,
+				7ED53CEC216B888A00AD3B7A /* BookmarksViewController.swift in Sources */,
 				7E9B7195213D588000C236A9 /* StartViewController.swift in Sources */,
 				7E4A0524212EB5620065FD7A /* UIViewControllerExtension.swift in Sources */,
 				7E4A050E212E7D0C0065FD7A /* RightEventView.swift in Sources */,
@@ -626,6 +641,7 @@
 				7E32D1B921316B0700D38233 /* HeadingsViewController.swift in Sources */,
 				7E94F8F62132CECB00F27804 /* AppLanguage.swift in Sources */,
 				7E4A051D212EADFA0065FD7A /* AboutHeaderView.swift in Sources */,
+				7ED53CEA216B883700AD3B7A /* BookmarkCell.swift in Sources */,
 				7EEF409A2136A9FB0070981A /* LibraryDataSource.swift in Sources */,
 				7E4A04FB212DA1C20065FD7A /* Person.swift in Sources */,
 				7E2799CC211C6898003DE4FA /* AppDelegate.swift in Sources */,

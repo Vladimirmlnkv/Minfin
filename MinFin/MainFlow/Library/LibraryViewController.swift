@@ -20,6 +20,7 @@ class LibraryViewController: UIViewController, ImageLoader {
     private var books = [Book]()
     private var booksList = [Book]()
     private var dataSource = LibraryDataSource()
+    private var realm: Realm!
     
     private var headings = [
         Heading(displayName: "Все рубрики"),
@@ -42,7 +43,7 @@ class LibraryViewController: UIViewController, ImageLoader {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let realm = try! Realm()
+        realm = try! Realm()
         let savedCatalogsData = realm.objects(CatalogsData.self).first
         if let s = savedCatalogsData {
             self.updateCollectionView(from: s)
@@ -69,6 +70,13 @@ class LibraryViewController: UIViewController, ImageLoader {
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
+    
+    @IBAction func bookmarksButtonAction(_ sender: Any) {
+        let bookmarksVC = storyboard?.instantiateViewController(withIdentifier: "BookmarksViewController") as! BookmarksViewController
+        bookmarksVC.realm = realm
+        navigationController?.pushViewController(bookmarksVC, animated: true)
+    }
+    
     
     private func showNoDataAret() {
         let alert = UIAlertController(title: AppLanguage.no_connection_title.customLocalized(), message: AppLanguage.no_connection_message.customLocalized(), preferredStyle: .alert)
