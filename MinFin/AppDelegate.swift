@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var orientationLock = UIInterfaceOrientationMask.all
+    let backgroundSessionsManager = Alamofire.SessionManager(configuration: URLSessionConfiguration.background(withIdentifier: "com.book.BackroundDownload"))
     let isFirstLaunchKey = "isFirstAppLaunchKey"
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
