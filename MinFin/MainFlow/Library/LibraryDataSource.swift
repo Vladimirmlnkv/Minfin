@@ -16,14 +16,22 @@ enum Result<T> {
 
 protocol BooksLoader {
     var isLoading: Bool { get }
-    func load(fileName: String, bookName: String, progressClosure: @escaping (Double) -> Void, result: @escaping (Result<Bool>) -> Void)
+    func load(fileName: String, progressClosure: @escaping (Double) -> Void, result: @escaping (Result<Bool>) -> Void)
     func stopBookLoad()
+}
+
+struct Versions {
+    let booksVersion: Int
+    let headingsVersion: Int
 }
 
 class LibraryDataSource: BooksLoader {
     
-    private let booksEndpoint = "http://82.196.15.171:8081/books"
-    private let versionEndpoit = "http://82.196.15.171:8081/version"
+    private let booksEndpoint = "https://minfin.fox.wf/api/getExport"
+    private let versionEndpoit = "https://minfin.fox.wf/api/getVersion"
+    
+    //book_id as param
+    private let getBookEndpoint = "https://minfin.fox.wf/api/book/%@/download"
     private var bookRequest: DownloadRequest?
     private var sessionManager: Alamofire.SessionManager
     
@@ -36,13 +44,15 @@ class LibraryDataSource: BooksLoader {
         sessionManager = delegate.backgroundSessionsManager
     }
     
-    func getVersion(result: @escaping (Result<Int>) -> Void) {
+    func getVersion(result: @escaping (Result<Versions>) -> Void) {
         
         let url = URL(string: versionEndpoit)
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             if let data = data, let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                let bookVersion = json["booksVersion"] as! Int
+                let headingsVersion = json["headingsVersion"] as! Int
                 DispatchQueue.main.async {
-                    result(Result.success(value: json["currentVersion"] as! Int))
+                    result(Result.success(value: Versions(booksVersion: bookVersion, headingsVersion: headingsVersion)))
                 }
             } else {
                 DispatchQueue.main.async {
@@ -78,14 +88,13 @@ class LibraryDataSource: BooksLoader {
         }
     }
     
-    func load(fileName: String, bookName: String, progressClosure: @escaping (Double) -> Void, result: @escaping (Result<Bool>) -> Void) {
-        if let url = URL(string: fileName) {
+    func load(fileName: String, progressClosure: @escaping (Double) -> Void, result: @escaping (Result<Bool>) -> Void) {
+        if let url = URL(string: String(format: getBookEndpoint, fileName)) {
             
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
-                docURL = docURL?.appendingPathComponent("\(bookName).pdf")
+                docURL = docURL?.appendingPathComponent(fileName)
                 return (docURL!, [.removePreviousFile, .createIntermediateDirectories])
-                
             }
             
             bookRequest = sessionManager.download(url, to: destination)

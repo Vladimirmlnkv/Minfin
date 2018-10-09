@@ -12,7 +12,9 @@ class CatalogsData: Object {
     
     let books = List<Book>()
     let headings = List<Heading>()
-    @objc dynamic var version: Int = 0
+    
+    @objc dynamic var booksVersion: Int = 0
+    @objc dynamic var headingsVersion: Int = 0
     
     convenience init(books: [Book], headings: [Heading]) {
         self.init()

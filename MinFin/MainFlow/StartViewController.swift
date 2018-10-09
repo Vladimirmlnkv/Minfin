@@ -29,12 +29,12 @@ class StartViewController: UIViewController {
         let savedCatalogsData = realm.objects(CatalogsData.self).first
         let dataSource = LibraryDataSource()
         
-        dataSource.getVersion { (result: Result<Int>) in
+        dataSource.getVersion { (result: Result<Versions>) in
             switch result {
             case .failure:
                 self.nextScreen()
-            case .success(let version):
-                if savedCatalogsData == nil || savedCatalogsData!.version < version {
+            case .success(let versions):
+                if savedCatalogsData == nil || savedCatalogsData!.booksVersion < versions.booksVersion || savedCatalogsData!.headingsVersion < versions.headingsVersion {
                     dataSource.getCatalogsData(progressClosure: { (progress) in
                         UIView.animate(withDuration: 0.1, animations: {
                             self.progressView.progress = Float(progress)
@@ -44,7 +44,8 @@ class StartViewController: UIViewController {
                         case .failure:
                             self.nextScreen()
                         case .success(let newCatalogsData):
-                            newCatalogsData.version = version
+                            newCatalogsData.booksVersion = versions.booksVersion
+                            newCatalogsData.headingsVersion = versions.headingsVersion
                             try! realm.write {
                                 if let s = savedCatalogsData {
                                     for book in s.books {

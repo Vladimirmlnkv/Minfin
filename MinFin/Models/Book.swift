@@ -12,7 +12,7 @@ import RealmSwift
 class Book: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var author: String = ""
-    @objc dynamic var year: Int = 0
+    @objc dynamic var year: String = ""
     @objc dynamic var shortDescription: String = ""
     @objc dynamic var longDescription: String = ""
     @objc dynamic var fileName: String = ""
@@ -20,7 +20,7 @@ class Book: Object {
     @objc dynamic var imageData: Data?
     @objc dynamic var isBookmarked: Bool = false
     
-    convenience init(title: String, author: String, year: Int, shortDescription: String, longDescription: String, fileName: String, heading: Int) {
+    convenience init(title: String, author: String, year: String, shortDescription: String, longDescription: String, fileName: String, heading: Int) {
         self.init()
         self.title = title
         self.author = author
@@ -35,17 +35,16 @@ class Book: Object {
         self.init()
         title = json["title"] as! String
         author = json["author"] as! String
-        year = json["year"] as! Int
-        shortDescription = json["shortDescription"] as! String
-        longDescription = json["longDescription"] as! String
-        fileName = json["fileName"] as! String
-        headingCode = json["headingCode"] as! Int
+        year = json["year"] as! String
+        shortDescription = json["short_description"] as! String
+        longDescription = json["long_descritpion"] as! String
+        fileName = json["book_id"] as! String
+        headingCode = json["heading_code"] as! Int
     }
     
     func getDocUrl() -> URL? {
-        let fileName = self.fileName.components(separatedBy: "/").last!
         var docURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).first
-        docURL = docURL?.appendingPathComponent("\(fileName).pdf")
+        docURL = docURL?.appendingPathComponent(fileName)
         return docURL
     }
 }
@@ -61,7 +60,7 @@ class Heading: Object {
     
     convenience init(json: [String: Any]) {
         self.init()
-        displayName = json["displayName"] as! String
+        displayName = json["display_name"] as! String
         code = json["code"] as! Int
     }
 }

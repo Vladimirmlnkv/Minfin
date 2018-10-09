@@ -193,20 +193,14 @@ class BookDetailsViewController: UIViewController, ImageLoader {
     }
     
     @objc func openButtonAction() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
-
         if let url = book.getDocUrl(), FileManager.default.fileExists(atPath: url.path) {
             if let data = FileManager.default.contents(atPath: url.path) {
+                let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
                 vc.bookData = data
                 vc.bookTitle = title
                 navigationController?.pushViewController(vc, animated: true)
             }
         }
-    }
-
-    private func getBookTitle() -> String {
-        let components = book.fileName.components(separatedBy: "/")
-        return components.last!
     }
     
     private func fileExists() -> Bool {
@@ -238,7 +232,6 @@ class BookDetailsViewController: UIViewController, ImageLoader {
             booksLoader.stopBookLoad()
             restoreDownloadButton()
         } else {
-            let title = getBookTitle()
             if let url = book.getDocUrl(), FileManager.default.fileExists(atPath: url.path) {
                     self.documentController = UIDocumentInteractionController(url: url)
                     let booksUrl = URL(string:"itms-books:")!
@@ -255,7 +248,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
                     self.contentView.layoutIfNeeded()
                 })
                 
-                booksLoader.load(fileName: book.fileName, bookName: title, progressClosure: { progress in
+                booksLoader.load(fileName: book.fileName, progressClosure: { progress in
                     self.progressView.progress = Float(progress)
                 }) { result in
                     switch result {
