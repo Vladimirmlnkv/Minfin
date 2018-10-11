@@ -14,7 +14,7 @@ class Book: Object {
     @objc dynamic var author: String = ""
     @objc dynamic var year: String = ""
     @objc dynamic var shortDescription: String = ""
-    @objc dynamic var longDescription: String = ""
+    @objc dynamic var longDescription: String?
     @objc dynamic var fileName: String = ""
     @objc dynamic var headingCode: Int = 0
     @objc dynamic var imageData: Data?
@@ -37,7 +37,7 @@ class Book: Object {
         author = json["author"] as! String
         year = json["year"] as! String
         shortDescription = json["short_description"] as! String
-        longDescription = json["long_descritpion"] as! String
+        longDescription = json["long_descritpion"] as? String
         fileName = json["book_id"] as! String
         headingCode = json["heading_code"] as! Int
     }

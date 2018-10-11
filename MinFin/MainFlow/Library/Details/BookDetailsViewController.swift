@@ -63,13 +63,14 @@ class BookDetailsViewController: UIViewController, ImageLoader {
     @IBOutlet var tagsLabel: UILabel!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
-    @IBOutlet var deleteButton: UIButton!
     @IBOutlet var openButtonWidthConstraitn: NSLayoutConstraint!
     @IBOutlet var bookImageView: UIImageView!
     
     var book: Book!
     var headings: [Heading]!
     var booksLoader: BooksLoader!
+    
+    private var deleteBarButtonItem: UIBarButtonItem!
     
     var documentController: UIDocumentInteractionController!    
     @IBOutlet var progressView: UIProgressView!
@@ -83,16 +84,16 @@ class BookDetailsViewController: UIViewController, ImageLoader {
         super.viewDidLoad()
         let transform = CGAffineTransform(scaleX: 1, y: 4)
         
+        deleteBarButtonItem = UIBarButtonItem(image: UIImage(named: "icons8-trash-50"), landscapeImagePhone: UIImage(named: "icons8-trash-50"), style: .done, target: self, action: #selector(deleteButtonAction))
         shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
         shareBarButtonItem.tintColor = Color.mainTextColor
-        setBookmarkButton()
+        setBarButtonItems()
         
         progressView.transform = transform
         progressView.isHidden = true
         progressView.layer.cornerRadius = 5.0
         addBackgroundView()
         downloadButton.layer.cornerRadius = 15.0
-        deleteButton.layer.cornerRadius = 15.0
         bookNameLabel.text = book.title
         authorNameLabel.text = book.author
         yearLabel.text = "\(book.year) \(AppLanguage.year.customLocalized())"
@@ -101,7 +102,11 @@ class BookDetailsViewController: UIViewController, ImageLoader {
         authorDescriptionLabel.text = book.author
         yearDescriptionLabel.text = "\(book.year) \(AppLanguage.year.customLocalized())"
         
-        aboutDescriptionLabel.text = book.longDescription
+        if let longDescription = book.longDescription {
+            aboutDescriptionLabel.text = longDescription
+        } else {
+            aboutDescriptionLabel.text = ""
+        }
         
         if let heading = headings.filter({$0.code == book.headingCode}).first {
             tagsLabel.text = heading.displayName
@@ -118,10 +123,15 @@ class BookDetailsViewController: UIViewController, ImageLoader {
 
     }
     
-    private func setBookmarkButton() {
+    private func setBarButtonItems() {
         let imageName = book.isBookmarked ? "starFull": "star"
         bookMarkBarButtonItem = UIBarButtonItem(image: UIImage(named: imageName), style: .done, target: self, action: #selector(addBookmarkAction))
-        navigationItem.rightBarButtonItems = [bookMarkBarButtonItem, shareBarButtonItem]
+        if fileExists() {
+            navigationItem.rightBarButtonItems = [bookMarkBarButtonItem, shareBarButtonItem, deleteBarButtonItem]
+        } else {
+            navigationItem.rightBarButtonItems = [bookMarkBarButtonItem, shareBarButtonItem]
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -147,7 +157,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
         downloadButton.setTitle(AppLanguage.download.customLocalized(), for: .normal)
         downloadButton.setImage(nil, for: .normal)
         progressView.isHidden = true
-        deleteButton.isHidden = true
+        setBarButtonItems()
         openButton.isHidden = true
         UIView.animate(withDuration: 0.3, animations: {
             self.downloadButtonWidthConstraint.constant = self.openButtonDefaultWidth
@@ -160,7 +170,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
         try! realm.write {
             book.isBookmarked = !book.isBookmarked
         }
-        setBookmarkButton()
+        setBarButtonItems()
     }
     
     @objc func shareAction() {
@@ -189,7 +199,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
         } else {
             openButtonWidthConstraitn.constant = 0
         }
-        deleteButton.isHidden = false
+        setBarButtonItems()
     }
     
     @objc func openButtonAction() {
@@ -210,7 +220,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
         return false
     }
     
-    @IBAction func deleteButtonAction(_ sender: Any) {
+    @objc func deleteButtonAction() {
         if let url = book.getDocUrl(), FileManager.default.fileExists(atPath: url.path) {
             do {
                 try FileManager.default.removeItem(at: url)
