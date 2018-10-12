@@ -105,7 +105,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
         if let longDescription = book.longDescription {
             aboutDescriptionLabel.text = longDescription
         } else {
-            aboutDescriptionLabel.text = ""
+            aboutDescriptionLabel.text = book.shortDescription
         }
         
         if let heading = headings.filter({$0.code == book.headingCode}).first {
@@ -203,12 +203,16 @@ class BookDetailsViewController: UIViewController, ImageLoader {
     }
     
     @objc func openButtonAction() {
-        if let url = book.getDocUrl(), FileManager.default.fileExists(atPath: url.path) {
-            if let data = FileManager.default.contents(atPath: url.path) {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
-                vc.bookData = data
-                vc.bookTitle = title
-                navigationController?.pushViewController(vc, animated: true)
+        if #available(iOS 11.0, *) {
+            if let url = book.getDocUrl(), FileManager.default.fileExists(atPath: url.path) {
+                if let data = FileManager.default.contents(atPath: url.path) {
+                    let vc = storyboard?.instantiateViewController(withIdentifier: "BookReaderViewController") as! BookReaderViewController
+                    vc.lastPage = book.lastPage
+                    vc.bookData = data
+                    vc.bookTitle = title
+                    vc.delegate = self
+                    navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
     }
@@ -227,6 +231,7 @@ class BookDetailsViewController: UIViewController, ImageLoader {
                 restoreDownloadButton()
                 try! realm.write {
                     self.book.imageData = nil
+                    self.book.lastPage = 0
                 }
             } catch {
                 print(error)
@@ -281,4 +286,14 @@ class BookDetailsViewController: UIViewController, ImageLoader {
     }
     
 
+}
+
+extension BookDetailsViewController: BookReaderViewControllerDelegate {
+    
+    func savePage(index: Int) {
+        try! realm.write {
+            book.lastPage = index
+        }
+    }
+    
 }

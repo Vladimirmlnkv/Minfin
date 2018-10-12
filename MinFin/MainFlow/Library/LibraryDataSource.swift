@@ -71,6 +71,9 @@ class LibraryDataSource: BooksLoader {
             if let data = resp.data, let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 DispatchQueue.main.async {
                     let catalogsData = CatalogsData(json: json)
+                    let heading = Heading(displayName: "Все рубрики")
+                    heading.code = 0
+                    catalogsData.headings.insert(heading, at: 0)
                     result(Result.success(value: catalogsData))
                 }
             } else {

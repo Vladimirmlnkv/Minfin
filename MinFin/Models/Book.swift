@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Book: Object {
+    
     @objc dynamic var title: String = ""
     @objc dynamic var author: String = ""
     @objc dynamic var year: String = ""
@@ -19,6 +20,7 @@ class Book: Object {
     @objc dynamic var headingCode: Int = 0
     @objc dynamic var imageData: Data?
     @objc dynamic var isBookmarked: Bool = false
+    @objc dynamic var lastPage: Int = 0
     
     convenience init(title: String, author: String, year: String, shortDescription: String, longDescription: String, fileName: String, heading: Int) {
         self.init()

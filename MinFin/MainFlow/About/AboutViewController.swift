@@ -78,7 +78,9 @@ extension AboutViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        openMapForPlace(name: aboutInfo[indexPath.row].name)
+        if aboutInfo[indexPath.row].address != "" {
+            openMapForPlace(name: aboutInfo[indexPath.row].name)
+        }
     }
     
 }
