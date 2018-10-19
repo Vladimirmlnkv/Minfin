@@ -32,6 +32,7 @@ class OnboardingPageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
         addBackgroundView()
         UIPageControl.appearance().tintColor = Color.mainTextColor
         dataSource = self
