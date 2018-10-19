@@ -82,7 +82,7 @@ class HistoryViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationItem.title = AppLanguage.history_title.customLocalized()
         let currentOrientation = UIDevice.current.orientation
-        if currentOrientation == .portrait {
+        if currentOrientation != .landscapeRight && currentOrientation != .landscapeLeft {
             AppUtility.lockOrientation(UIInterfaceOrientationMask.landscape, andRotateTo: UIInterfaceOrientation.landscapeRight)
         } else {
             AppUtility.lockOrientation(UIInterfaceOrientationMask.landscape)
