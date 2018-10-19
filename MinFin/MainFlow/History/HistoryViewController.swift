@@ -81,7 +81,12 @@ class HistoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = AppLanguage.history_title.customLocalized()
-        AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
+        let currentOrientation = UIDevice.current.orientation
+        if currentOrientation == .portrait {
+            AppUtility.lockOrientation(UIInterfaceOrientationMask.landscape, andRotateTo: UIInterfaceOrientation.landscapeRight)
+        } else {
+            AppUtility.lockOrientation(UIInterfaceOrientationMask.landscape)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
