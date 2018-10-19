@@ -62,6 +62,7 @@
 		7EA3820D2140235D00C1A640 /* LaunchScreen_Ru.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3820C2140235D00C1A640 /* LaunchScreen_Ru.storyboard */; };
 		7ED53CEA216B883700AD3B7A /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED53CE9216B883700AD3B7A /* BookmarkCell.swift */; };
 		7ED53CEC216B888A00AD3B7A /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED53CEB216B888A00AD3B7A /* BookmarksViewController.swift */; };
+		7EDBAE2E2179D5EC005D0BEB /* FirstOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDBAE2D2179D5EC005D0BEB /* FirstOnboardingViewController.swift */; };
 		7EE4977E2137DD48000667B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EE497802137DD48000667B8 /* InfoPlist.strings */; };
 		7EE497832137DF47000667B8 /* BookReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE497822137DF47000667B8 /* BookReaderViewController.swift */; };
 		7EEF409A2136A9FB0070981A /* LibraryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF40992136A9FB0070981A /* LibraryDataSource.swift */; };
@@ -129,6 +130,7 @@
 		7EA3820C2140235D00C1A640 /* LaunchScreen_Ru.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen_Ru.storyboard; sourceTree = "<group>"; };
 		7ED53CE9216B883700AD3B7A /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
 		7ED53CEB216B888A00AD3B7A /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		7EDBAE2D2179D5EC005D0BEB /* FirstOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewController.swift; sourceTree = "<group>"; };
 		7EE4977F2137DD48000667B8 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7EE497822137DF47000667B8 /* BookReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderViewController.swift; sourceTree = "<group>"; };
 		7EEF40992136A9FB0070981A /* LibraryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataSource.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				7E2799EA211C7667003DE4FA /* OnboardingPageViewController.swift */,
 				7E2799EC211C76D4003DE4FA /* FinalOnboardingViewController.swift */,
 				7EF94D8E213BCF4B0089372A /* OnboardingInfoViewController.swift */,
+				7EDBAE2D2179D5EC005D0BEB /* FirstOnboardingViewController.swift */,
 			);
 			path = OnboardingFlow;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDBAE2E2179D5EC005D0BEB /* FirstOnboardingViewController.swift in Sources */,
 				7E374F8C212C1AA7007ACD98 /* MainMenuViewController.swift in Sources */,
 				7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */,
 				7ED53CEC216B888A00AD3B7A /* BookmarksViewController.swift in Sources */,

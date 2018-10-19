@@ -14,6 +14,18 @@ protocol FinalOnboardingViewControllerDelegate: class {
 
 class FinalOnboardingViewController: UIViewController {
     
-    weak var delegate: FinalOnboardingViewControllerDelegate?
-
+    @IBOutlet var imageView: UIImageView!
+    
+    @IBOutlet var startButton: UIButton!
+    var delegate: FinalOnboardingViewControllerDelegate!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        startButton.layer.cornerRadius = 10.0
+    }
+    
+    @IBAction func startButtonAction(_ sender: Any) {
+        
+    }
+    
 }

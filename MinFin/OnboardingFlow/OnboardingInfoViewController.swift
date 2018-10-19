@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol OnboardingInfoViewControllerDelegate {
+protocol OnboardingViewControllerDelegate {
     func didPressContune(on vc: UIViewController)
     func didPressSkip(on vc: UIViewController)
 }
@@ -16,23 +16,17 @@ protocol OnboardingInfoViewControllerDelegate {
 class OnboardingInfoViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var blurView: UIVisualEffectView!
     
-    @IBOutlet var headerLabel: UILabel!
-    @IBOutlet var firstDescriptionLabel: UILabel!
-    @IBOutlet var secondDescriptionLabel: UILabel!
+    var image: UIImage!
+    var delegate: OnboardingViewControllerDelegate!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var skipButton: UIButton!
     
-    var delegate: OnboardingInfoViewControllerDelegate!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        blurView.clipsToBounds = true
-        blurView.layer.cornerRadius = blurView.frame.width / 2
         continueButton.layer.cornerRadius = 10.0
+        skipButton.layer.cornerRadius = 10.0
     }
-
     
     @IBAction func continueButtonAction(_ sender: Any) {
         delegate.didPressContune(on: self)
