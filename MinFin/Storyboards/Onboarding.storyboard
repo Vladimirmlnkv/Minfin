@@ -195,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOR-B3-pGA">
-                                <rect key="frame" x="20" y="20" width="728" height="614.5"/>
+                                <rect key="frame" x="20" y="20" width="728" height="439"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Ye-fH5">
@@ -203,16 +203,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UG1-oA-64Q">
-                                <rect key="frame" x="20" y="634.5" width="728" height="133.5"/>
+                                <rect key="frame" x="20" y="459" width="728" height="309"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmh-I7-FRv">
-                                        <rect key="frame" x="269.5" y="44.5" width="189" height="44"/>
+                                        <rect key="frame" x="247.5" y="129.5" width="233" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="7Mn-8f-PMi"/>
+                                            <constraint firstAttribute="height" constant="50" id="7Mn-8f-PMi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="5"/>
                                         <state key="normal" title="Начать пользоваться">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -240,7 +240,7 @@
                             <constraint firstItem="Rhm-OV-Bre" firstAttribute="top" secondItem="GgP-TO-Pmg" secondAttribute="bottom" id="BGc-DJ-4tM"/>
                             <constraint firstItem="GgP-TO-Pmg" firstAttribute="leading" secondItem="92Q-BE-Prh" secondAttribute="leading" id="BsX-qS-TfA"/>
                             <constraint firstItem="tOR-B3-pGA" firstAttribute="top" secondItem="EC2-47-ryh" secondAttribute="bottom" id="Olk-L0-gUG"/>
-                            <constraint firstItem="tOR-B3-pGA" firstAttribute="height" secondItem="GgP-TO-Pmg" secondAttribute="height" multiplier="3/5" id="PEE-41-2Mx"/>
+                            <constraint firstItem="tOR-B3-pGA" firstAttribute="height" secondItem="GgP-TO-Pmg" secondAttribute="height" multiplier="3/7" id="PEE-41-2Mx"/>
                             <constraint firstItem="4UM-Ye-fH5" firstAttribute="leading" secondItem="92Q-BE-Prh" secondAttribute="leadingMargin" id="PTY-0i-4oj"/>
                             <constraint firstItem="4UM-Ye-fH5" firstAttribute="trailing" secondItem="92Q-BE-Prh" secondAttribute="trailingMargin" id="W8k-o4-lXl"/>
                             <constraint firstItem="4UM-Ye-fH5" firstAttribute="height" secondItem="GgP-TO-Pmg" secondAttribute="height" multiplier="1/4" id="bfN-G1-aKM"/>
