@@ -18,6 +18,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
         addBackgroundView()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
