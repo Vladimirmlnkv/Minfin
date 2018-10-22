@@ -126,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2B-wG-ebk">
-                                <rect key="frame" x="20" y="20" width="728" height="1004"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0C-he-mFl">
                                 <rect key="frame" x="28" y="960" width="80" height="44"/>
@@ -158,12 +158,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="u2B-wG-ebk" secondAttribute="trailing" id="9EZ-lN-U3g"/>
                             <constraint firstItem="o0C-he-mFl" firstAttribute="leading" secondItem="xPq-3i-QQq" secondAttribute="leadingMargin" constant="8" id="AV4-zH-s9t"/>
+                            <constraint firstItem="u2B-wG-ebk" firstAttribute="top" secondItem="xPq-3i-QQq" secondAttribute="top" id="AiX-aY-lnO"/>
+                            <constraint firstItem="u2B-wG-ebk" firstAttribute="leading" secondItem="xPq-3i-QQq" secondAttribute="leading" id="HdA-Fc-Q8b"/>
                             <constraint firstItem="xRk-FW-fWE" firstAttribute="top" secondItem="o0C-he-mFl" secondAttribute="bottom" constant="20" id="KDP-FE-sLu"/>
-                            <constraint firstItem="u2B-wG-ebk" firstAttribute="trailing" secondItem="xPq-3i-QQq" secondAttribute="trailingMargin" id="cov-ws-o3p"/>
                             <constraint firstItem="RC7-dn-Btj" firstAttribute="height" secondItem="o0C-he-mFl" secondAttribute="height" id="gEZ-WT-f7J"/>
-                            <constraint firstItem="u2B-wG-ebk" firstAttribute="leading" secondItem="xPq-3i-QQq" secondAttribute="leadingMargin" id="kfX-ov-ubg"/>
-                            <constraint firstItem="u2B-wG-ebk" firstAttribute="top" secondItem="ZXR-WG-7Gq" secondAttribute="bottom" id="nxA-96-6i9"/>
                             <constraint firstItem="RC7-dn-Btj" firstAttribute="leading" secondItem="o0C-he-mFl" secondAttribute="trailing" constant="20" id="sSe-Xk-Iuy"/>
                             <constraint firstItem="xRk-FW-fWE" firstAttribute="top" secondItem="u2B-wG-ebk" secondAttribute="bottom" id="tP4-c5-Dc6"/>
                             <constraint firstItem="RC7-dn-Btj" firstAttribute="centerY" secondItem="o0C-he-mFl" secondAttribute="centerY" id="wLb-Pk-60q"/>
@@ -192,21 +192,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GgP-TO-Pmg">
-                                <rect key="frame" x="20" y="20" width="728" height="1004"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOR-B3-pGA">
-                                <rect key="frame" x="20" y="20" width="728" height="602.5"/>
+                                <rect key="frame" x="20" y="20" width="728" height="614.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Ye-fH5">
-                                <rect key="frame" x="20" y="823" width="728" height="201"/>
+                                <rect key="frame" x="20" y="768" width="728" height="256"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UG1-oA-64Q">
-                                <rect key="frame" x="20" y="622.5" width="728" height="200.5"/>
+                                <rect key="frame" x="20" y="634.5" width="728" height="133.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmh-I7-FRv">
-                                        <rect key="frame" x="269.5" y="78.5" width="189" height="44"/>
+                                        <rect key="frame" x="269.5" y="44.5" width="189" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="7Mn-8f-PMi"/>
@@ -223,26 +223,28 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gmh-I7-FRv" secondAttribute="bottom" id="3w6-28-O81"/>
                                     <constraint firstItem="gmh-I7-FRv" firstAttribute="centerY" secondItem="UG1-oA-64Q" secondAttribute="centerY" id="HFL-R9-AdW"/>
                                     <constraint firstItem="gmh-I7-FRv" firstAttribute="centerX" secondItem="UG1-oA-64Q" secondAttribute="centerX" id="WnP-Yv-vfK"/>
+                                    <constraint firstItem="gmh-I7-FRv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UG1-oA-64Q" secondAttribute="top" id="t4O-3J-o56"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GgP-TO-Pmg" firstAttribute="top" secondItem="92Q-BE-Prh" secondAttribute="top" id="2Rf-FK-zF0"/>
                             <constraint firstItem="4UM-Ye-fH5" firstAttribute="top" secondItem="UG1-oA-64Q" secondAttribute="bottom" id="2UT-vY-yn7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GgP-TO-Pmg" secondAttribute="trailing" id="62u-YS-sgW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UG1-oA-64Q" secondAttribute="trailing" id="83A-9n-6NN"/>
                             <constraint firstItem="tOR-B3-pGA" firstAttribute="leading" secondItem="92Q-BE-Prh" secondAttribute="leadingMargin" id="AXW-bF-Bzq"/>
                             <constraint firstItem="Rhm-OV-Bre" firstAttribute="top" secondItem="4UM-Ye-fH5" secondAttribute="bottom" id="Al2-Wx-BXQ"/>
                             <constraint firstItem="Rhm-OV-Bre" firstAttribute="top" secondItem="GgP-TO-Pmg" secondAttribute="bottom" id="BGc-DJ-4tM"/>
+                            <constraint firstItem="GgP-TO-Pmg" firstAttribute="leading" secondItem="92Q-BE-Prh" secondAttribute="leading" id="BsX-qS-TfA"/>
                             <constraint firstItem="tOR-B3-pGA" firstAttribute="top" secondItem="EC2-47-ryh" secondAttribute="bottom" id="Olk-L0-gUG"/>
                             <constraint firstItem="tOR-B3-pGA" firstAttribute="height" secondItem="GgP-TO-Pmg" secondAttribute="height" multiplier="3/5" id="PEE-41-2Mx"/>
                             <constraint firstItem="4UM-Ye-fH5" firstAttribute="leading" secondItem="92Q-BE-Prh" secondAttribute="leadingMargin" id="PTY-0i-4oj"/>
-                            <constraint firstItem="GgP-TO-Pmg" firstAttribute="leading" secondItem="92Q-BE-Prh" secondAttribute="leadingMargin" id="S56-LR-nP6"/>
                             <constraint firstItem="4UM-Ye-fH5" firstAttribute="trailing" secondItem="92Q-BE-Prh" secondAttribute="trailingMargin" id="W8k-o4-lXl"/>
-                            <constraint firstItem="4UM-Ye-fH5" firstAttribute="height" secondItem="GgP-TO-Pmg" secondAttribute="height" multiplier="1/5" id="bfN-G1-aKM"/>
-                            <constraint firstItem="GgP-TO-Pmg" firstAttribute="top" secondItem="EC2-47-ryh" secondAttribute="bottom" id="e1k-hD-zub"/>
+                            <constraint firstItem="4UM-Ye-fH5" firstAttribute="height" secondItem="GgP-TO-Pmg" secondAttribute="height" multiplier="1/4" id="bfN-G1-aKM"/>
+                            <constraint firstAttribute="trailing" secondItem="GgP-TO-Pmg" secondAttribute="trailing" id="dbE-dq-nSy"/>
                             <constraint firstItem="tOR-B3-pGA" firstAttribute="trailing" secondItem="92Q-BE-Prh" secondAttribute="trailingMargin" id="nrO-qE-7Cn"/>
                             <constraint firstItem="UG1-oA-64Q" firstAttribute="top" secondItem="tOR-B3-pGA" secondAttribute="bottom" id="paK-hF-VI9"/>
                             <constraint firstItem="UG1-oA-64Q" firstAttribute="leading" secondItem="92Q-BE-Prh" secondAttribute="leadingMargin" id="zfI-VA-nVC"/>

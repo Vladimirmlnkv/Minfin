@@ -18,14 +18,16 @@ class FinalOnboardingViewController: UIViewController {
     
     @IBOutlet var startButton: UIButton!
     var delegate: FinalOnboardingViewControllerDelegate!
+    var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.layer.cornerRadius = 10.0
+        imageView.image = image
     }
     
     @IBAction func startButtonAction(_ sender: Any) {
-        
+        delegate.didPressStart()
     }
     
 }

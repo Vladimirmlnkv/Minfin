@@ -24,6 +24,7 @@ class OnboardingInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = image
         continueButton.layer.cornerRadius = 10.0
         skipButton.layer.cornerRadius = 10.0
     }

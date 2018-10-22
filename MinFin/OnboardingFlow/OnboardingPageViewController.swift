@@ -18,15 +18,25 @@ class OnboardingPageViewController: UIPageViewController {
         
         let secondVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
         secondVC.delegate = self
+        secondVC.image = UIImage(named: "t1")
+        
         let thirdVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
-        secondVC.delegate = self
-        let fourthVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
         thirdVC.delegate = self
+        thirdVC.image = UIImage(named: "t2")
+        
+        let fourthVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        fourthVC.delegate = self
+        fourthVC.image = UIImage(named: "t3")
+        
+        let fifthVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        fifthVC.delegate = self
+        fifthVC.image = UIImage(named: "t4")
         
         let finalVC = sb.instantiateViewController(withIdentifier: "FinalOnboardingViewController") as! FinalOnboardingViewController
+        finalVC.image = UIImage(named: "tfinal")
         finalVC.delegate = self
         
-        return [firstVC, secondVC, thirdVC, fourthVC, finalVC]
+        return [firstVC, secondVC, thirdVC, fourthVC, fifthVC, finalVC]
     }()
     var currentIndex: Int?
     
@@ -82,7 +92,7 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
 extension OnboardingPageViewController: FinalOnboardingViewControllerDelegate {
     
     func didPressStart() {
-        
+        endOnboarding()
     }
     
 }
