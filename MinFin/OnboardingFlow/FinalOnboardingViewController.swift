@@ -23,7 +23,6 @@ class FinalOnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.layer.cornerRadius = 10.0
-        imageView.image = image
     }
     
     @IBAction func startButtonAction(_ sender: Any) {

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AboutTableViewCellDelegate {
-    func didPressLinkButton()
+    func didPressLinkButton(in cell: AboutTableViewCell)
 }
 
 class AboutTableViewCell: UITableViewCell {
@@ -28,7 +28,7 @@ class AboutTableViewCell: UITableViewCell {
     }
     
     @IBAction func linkButtonAction(_ sender: Any) {
-        delegate.didPressLinkButton()
+        delegate.didPressLinkButton(in: self)
     }
     
 

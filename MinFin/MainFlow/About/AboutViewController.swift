@@ -104,8 +104,9 @@ extension AboutViewController: UITableViewDataSource {
 }
 
 extension AboutViewController: AboutTableViewCellDelegate {
-    func didPressLinkButton() {
-        let urlString = "https://www.minfin.ru"
+    func didPressLinkButton(in cell: AboutTableViewCell) {
+        let indexPath = tableView.indexPathForRow(at: cell.center)
+        let urlString = indexPath?.row == 0 ? "https://www.minfin.ru" : "https://www.minfin.ru/ru/ministry/museum/library/"
         if let url = URL(string: urlString) {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.openURL(url)

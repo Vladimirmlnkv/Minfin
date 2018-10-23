@@ -33,7 +33,6 @@ class OnboardingPageViewController: UIPageViewController {
         fifthVC.image = UIImage(named: "t4")
         
         let finalVC = sb.instantiateViewController(withIdentifier: "FinalOnboardingViewController") as! FinalOnboardingViewController
-        finalVC.image = UIImage(named: "tfinal")
         finalVC.delegate = self
         
         return [firstVC, secondVC, thirdVC, fourthVC, fifthVC, finalVC]
