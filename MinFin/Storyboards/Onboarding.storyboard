@@ -129,7 +129,7 @@
         <!--Onboarding Info View Controller-->
         <scene sceneID="Lnc-M0-ZmA">
             <objects>
-                <viewController storyboardIdentifier="OnboardingInfoViewController" id="NWE-4m-hGO" customClass="OnboardingInfoViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingInfoViewController1" id="NWE-4m-hGO" customClass="OnboardingInfoViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZXR-WG-7Gq"/>
                         <viewControllerLayoutGuide type="bottom" id="xRk-FW-fWE"/>
@@ -171,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lF2-2h-Dbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-131.25" y="426.5625"/>
+            <point key="canvasLocation" x="-131" y="427"/>
         </scene>
         <!--Final Onboarding View Controller-->
         <scene sceneID="Bn1-7R-1Yh">
@@ -251,12 +251,156 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ER-Zb-BRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533.59375" y="426.5625"/>
+            <point key="canvasLocation" x="2515" y="427"/>
+        </scene>
+        <!--Onboarding Info View Controller-->
+        <scene sceneID="vaa-L6-md0">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingInfoViewController2" id="Qwl-9X-IJu" customClass="OnboardingInfoViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m7j-v0-yuL"/>
+                        <viewControllerLayoutGuide type="bottom" id="BN7-r3-Sd6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qhN-hg-SZz">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t2" translatesAutoresizingMaskIntoConstraints="NO" id="fhQ-CK-NZu">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rio-KR-nF3">
+                                <rect key="frame" x="344" y="960" width="80" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dOY-gy-gKw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                <state key="normal" title="Далее">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonAction:" destination="Qwl-9X-IJu" eventType="touchUpInside" id="sHd-0w-aUY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BN7-r3-Sd6" firstAttribute="top" secondItem="rio-KR-nF3" secondAttribute="bottom" constant="20" id="6hr-fr-lLQ"/>
+                            <constraint firstItem="rio-KR-nF3" firstAttribute="centerX" secondItem="qhN-hg-SZz" secondAttribute="centerX" id="TfN-W1-hzf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="rio-KR-nF3" id="OCx-tX-Md8"/>
+                        <outlet property="imageView" destination="fhQ-CK-NZu" id="jyy-ZU-vMf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bk-BG-IRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="427"/>
+        </scene>
+        <!--Onboarding Info View Controller-->
+        <scene sceneID="17z-Um-ebf">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingInfoViewController3" id="1Nb-mz-j6j" customClass="OnboardingInfoViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7A8-KG-cOo"/>
+                        <viewControllerLayoutGuide type="bottom" id="7l0-FQ-URG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o0X-xJ-wu6">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t3" translatesAutoresizingMaskIntoConstraints="NO" id="pOK-7a-Xgg">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epC-ji-TGL">
+                                <rect key="frame" x="344" y="960" width="80" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XQw-3B-83L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                <state key="normal" title="Далее">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonAction:" destination="1Nb-mz-j6j" eventType="touchUpInside" id="mVZ-Uj-yjI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="epC-ji-TGL" firstAttribute="centerX" secondItem="o0X-xJ-wu6" secondAttribute="centerX" id="4lN-5N-1RN"/>
+                            <constraint firstItem="7l0-FQ-URG" firstAttribute="top" secondItem="epC-ji-TGL" secondAttribute="bottom" constant="20" id="vBs-vR-j9V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="epC-ji-TGL" id="DoD-tP-kYc"/>
+                        <outlet property="imageView" destination="pOK-7a-Xgg" id="2aL-GO-Dmh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jj8-h0-j1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1163" y="427"/>
+        </scene>
+        <!--Onboarding Info View Controller-->
+        <scene sceneID="gLd-3g-bcJ">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingInfoViewController4" id="BvP-e7-Cp5" customClass="OnboardingInfoViewController" customModule="MinFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OY0-rl-eix"/>
+                        <viewControllerLayoutGuide type="bottom" id="E8B-Oe-RTZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XXS-gb-xQS">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t4" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-s2-gbc">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv9-El-qM3">
+                                <rect key="frame" x="344" y="960" width="80" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3hl-ci-b5K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                <state key="normal" title="Далее">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonAction:" destination="BvP-e7-Cp5" eventType="touchUpInside" id="7BS-Ai-0vy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E8B-Oe-RTZ" firstAttribute="top" secondItem="qv9-El-qM3" secondAttribute="bottom" constant="20" id="rDu-XF-VlK"/>
+                            <constraint firstItem="qv9-El-qM3" firstAttribute="centerX" secondItem="XXS-gb-xQS" secondAttribute="centerX" id="wSM-dM-jUF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="qv9-El-qM3" id="idV-ya-Xsz"/>
+                        <outlet property="imageView" destination="SFC-s2-gbc" id="Udr-M3-4SO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xl7-tK-XzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="427"/>
         </scene>
     </scenes>
     <resources>
         <image name="gerbMinfinRu" width="110" height="121"/>
         <image name="t1" width="1558" height="2000"/>
+        <image name="t2" width="1500" height="2000"/>
+        <image name="t3" width="1500" height="2000"/>
+        <image name="t4" width="1500" height="2000"/>
         <image name="tfinal" width="1500" height="2000"/>
     </resources>
 </document>

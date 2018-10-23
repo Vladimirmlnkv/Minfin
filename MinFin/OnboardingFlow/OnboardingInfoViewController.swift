@@ -17,13 +17,11 @@ class OnboardingInfoViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     
-    var image: UIImage!
     var delegate: OnboardingViewControllerDelegate!
     @IBOutlet var continueButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = image
         continueButton.layer.cornerRadius = 10.0
     }
     

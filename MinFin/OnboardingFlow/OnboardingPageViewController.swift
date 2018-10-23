@@ -16,21 +16,17 @@ class OnboardingPageViewController: UIPageViewController {
         let firstVC = sb.instantiateViewController(withIdentifier: "FirstOnboardingViewController") as! FirstOnboardingViewController
         firstVC.delegate = self
         
-        let secondVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        let secondVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController1") as! OnboardingInfoViewController
         secondVC.delegate = self
-        secondVC.image = UIImage(named: "t1")
         
-        let thirdVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        let thirdVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController2") as! OnboardingInfoViewController
         thirdVC.delegate = self
-        thirdVC.image = UIImage(named: "t2")
         
-        let fourthVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        let fourthVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController3") as! OnboardingInfoViewController
         fourthVC.delegate = self
-        fourthVC.image = UIImage(named: "t3")
         
-        let fifthVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController") as! OnboardingInfoViewController
+        let fifthVC = sb.instantiateViewController(withIdentifier: "OnboardingInfoViewController4") as! OnboardingInfoViewController
         fifthVC.delegate = self
-        fifthVC.image = UIImage(named: "t4")
         
         let finalVC = sb.instantiateViewController(withIdentifier: "FinalOnboardingViewController") as! FinalOnboardingViewController
         finalVC.delegate = self
