@@ -1163,7 +1163,7 @@
     </scenes>
     <resources>
         <image name="background" width="384" height="513"/>
-        <image name="background2" width="2175" height="512"/>
+        <image name="background2" width="1463" height="512"/>
         <image name="book" width="141" height="193"/>
         <image name="cross" width="128" height="128"/>
         <image name="gerbMinfinRu" width="110" height="121"/>
