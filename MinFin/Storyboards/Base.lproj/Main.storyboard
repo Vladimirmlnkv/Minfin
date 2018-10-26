@@ -659,23 +659,23 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="rK5-bY-5ha">
-                                        <rect key="frame" x="40" y="40" width="140" height="140"/>
+                                        <rect key="frame" x="40" y="40" width="300" height="300"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="WWd-Id-FlF"/>
-                                            <constraint firstAttribute="height" constant="140" id="p4P-qK-iaF"/>
+                                            <constraint firstAttribute="width" constant="300" id="WWd-Id-FlF"/>
+                                            <constraint firstAttribute="height" constant="300" id="p4P-qK-iaF"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21j-9P-PZe">
-                                        <rect key="frame" x="200" y="76" width="784" height="68"/>
+                                        <rect key="frame" x="360" y="156" width="624" height="68"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7V-hK-kNi">
-                                                <rect key="frame" x="0.0" y="0.0" width="784" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="624" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1802 - 1825 года" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZID-Nu-AyT">
-                                                <rect key="frame" x="0.0" y="44" width="784" height="24"/>
+                                                <rect key="frame" x="0.0" y="44" width="624" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -693,7 +693,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coA-fx-efD">
-                                        <rect key="frame" x="40" y="200" width="881.5" height="143.5"/>
+                                        <rect key="frame" x="40" y="360" width="881.5" height="143.5"/>
                                         <string key="text">История российского Министерства финансов начинается 8 сентебря 1802 года. В этот день император Александр I подписал манифест об учреждении министерств.
 
 «Общим учреждением министерств» предусматривалась группа министерств и ведомств под названием «Государственная экономия», в которую входили Министерство финансов, Государственное казначейство, Ревизия государственных счетов.</string>
@@ -702,20 +702,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha5-Ah-5kZ">
-                                        <rect key="frame" x="40" y="363.5" width="870" height="48"/>
+                                        <rect key="frame" x="40" y="523.5" width="870" height="48"/>
                                         <string key="text">«Управление частями, доставлящими Правительству доходу, должны быть основаны на таких правилах, чтобы, удаляя всякое отягощение народа, было столь же выгодно для казны.»</string>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                         <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-hd-scx">
-                                        <rect key="frame" x="866" y="431.5" width="118" height="24"/>
+                                        <rect key="frame" x="866" y="591.5" width="118" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" red="0.21176470589999999" green="0.2784313725" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Из Манифеста императора Россйский империи." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55M-8L-XUR">
-                                        <rect key="frame" x="540" y="475.5" width="444" height="24"/>
+                                        <rect key="frame" x="540" y="635.5" width="444" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
