@@ -263,8 +263,13 @@ class TimeLineContentView: UIView {
     
     private func handleClusterTapGesture(for clusterView: ClusterView, shouldOpenDetails: Bool) {
         if let detailsView = clusterView.detailsClusterView {
-            detailsView.removeFromSuperview()
-            clusterView.detailsClusterView = nil
+            UIView.animate(withDuration: 0.3, animations: {
+                detailsView.center = CGPoint(x: detailsView.center.x, y: clusterView.frame.minY + detailsView.frame.height / 2)
+                detailsView.alpha = 0
+            }) { _ in
+                detailsView.removeFromSuperview()
+                clusterView.detailsClusterView = nil
+            }
         } else {
             var width: CGFloat
             var height: CGFloat
@@ -276,14 +281,20 @@ class TimeLineContentView: UIView {
                 height = CGFloat(55 * multiplier)
                 width = 9 * spaceBetweenDateLines
             }
-            let detailsRect = CGRect(x: clusterView.frame.midX - width / 2, y: clusterView.frame.maxY + verticalOffset, width: width, height: height + 20)
+            let detailsRect = CGRect(x: clusterView.frame.midX - width / 2, y: clusterView.frame.minY, width: width, height: height + 20)
+            let finalYCoordinate = clusterView.frame.maxY + verticalOffset
             let clusterDetailsView = ClusterDetailsContainerView(frame: detailsRect)
             clusterDetailsView.allowsSelection = shouldOpenDetails
             if shouldOpenDetails {
                 clusterDetailsView.delegate = self
             }
             clusterDetailsView.cluster = clusterView.cluster
+            clusterDetailsView.alpha = 0
             addSubview(clusterDetailsView)
+            UIView.animate(withDuration: 0.3) {
+                clusterDetailsView.alpha = 1.0
+                clusterDetailsView.center = CGPoint(x: clusterDetailsView.center.x, y: finalYCoordinate + (height + 20) / 2)
+            }
             clusterView.detailsClusterView = clusterDetailsView
         }
     }
