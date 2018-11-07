@@ -163,9 +163,9 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qap-b8-2Om">
-                                                                <rect key="frame" x="10" y="145" width="98" height="44"/>
+                                                                <rect key="frame" x="10" y="139" width="98" height="50"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="44" id="pTy-3i-11m"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="pTy-3i-11m"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="tintColor" red="0.0078431372550000003" green="0.41176470590000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1012,7 +1012,8 @@
                                                         <constraint firstAttribute="width" constant="44" id="Iix-B3-h7t"/>
                                                         <constraint firstAttribute="height" constant="44" id="Jgx-fo-prJ"/>
                                                     </constraints>
-                                                    <state key="normal" image="cross"/>
+                                                    <color key="tintColor" red="0.21176470588235294" green="0.27843137254901962" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" image="icons8-trash-50"/>
                                                     <connections>
                                                         <action selector="crossButtonAction:" destination="tn2-NP-ab1" eventType="touchUpInside" id="nms-kg-Qyl"/>
                                                     </connections>
@@ -1165,9 +1166,9 @@
         <image name="background" width="384" height="513"/>
         <image name="background2" width="1463" height="512"/>
         <image name="book" width="141" height="193"/>
-        <image name="cross" width="128" height="128"/>
         <image name="gerbMinfinRu" width="110" height="121"/>
         <image name="gerbMinfinRuBig" width="295" height="323"/>
+        <image name="icons8-trash-50" width="25" height="25"/>
         <image name="mask" width="50" height="50"/>
         <image name="rybrikCopy" width="12" height="12"/>
     </resources>
