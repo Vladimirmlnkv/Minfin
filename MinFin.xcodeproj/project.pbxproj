@@ -33,6 +33,7 @@
 		7E374F94212C1D0A007ACD98 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F93212C1D0A007ACD98 /* BookDetailsViewController.swift */; };
 		7E374F98212C244C007ACD98 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F97212C244C007ACD98 /* UIColorExtension.swift */; };
 		7E374F9A212C26F6007ACD98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E374F99212C26F6007ACD98 /* Color.swift */; };
+		7E463D9321B91C5C00EE15F1 /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E463D9221B91C5C00EE15F1 /* minfin.json */; };
 		7E4A04EE212D4CF60065FD7A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04ED212D4CF60065FD7A /* HistoryViewController.swift */; };
 		7E4A04F1212D52570065FD7A /* TimeLineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A04F0212D52570065FD7A /* TimeLineContentView.swift */; };
 		7E4A04F4212D9FC80065FD7A /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4A04F3212D9FC80065FD7A /* PersonView.xib */; };
@@ -67,7 +68,6 @@
 		7EE497832137DF47000667B8 /* BookReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE497822137DF47000667B8 /* BookReaderViewController.swift */; };
 		7EEF409A2136A9FB0070981A /* LibraryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF40992136A9FB0070981A /* LibraryDataSource.swift */; };
 		7EEF409C2136AC480070981A /* CatalogsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF409B2136AC480070981A /* CatalogsData.swift */; };
-		7EF1C2F7216651AB0004F4BD /* minfin.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EF1C2F6216651AB0004F4BD /* minfin.json */; };
 		7EF94D8F213BCF4B0089372A /* OnboardingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF94D8E213BCF4B0089372A /* OnboardingInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +99,7 @@
 		7E374F93212C1D0A007ACD98 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		7E374F97212C244C007ACD98 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		7E374F99212C26F6007ACD98 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		7E463D9221B91C5C00EE15F1 /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minfin.json; sourceTree = SOURCE_ROOT; };
 		7E4A04ED212D4CF60065FD7A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		7E4A04F0212D52570065FD7A /* TimeLineContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineContentView.swift; sourceTree = "<group>"; };
 		7E4A04F3212D9FC80065FD7A /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		7EE497822137DF47000667B8 /* BookReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderViewController.swift; sourceTree = "<group>"; };
 		7EEF40992136A9FB0070981A /* LibraryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataSource.swift; sourceTree = "<group>"; };
 		7EEF409B2136AC480070981A /* CatalogsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsData.swift; sourceTree = "<group>"; };
-		7EF1C2F6216651AB0004F4BD /* minfin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = minfin.json; path = ../../../../../Downloads/minfin.json; sourceTree = "<group>"; };
 		7EF94D8E213BCF4B0089372A /* OnboardingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoViewController.swift; sourceTree = "<group>"; };
 		82DC40562B103256C0507218 /* Pods_MinFin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinFin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B156DB9131B34AB0433BEA60 /* Pods-MinFin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinFin.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinFin/Pods-MinFin.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		7E2799E4211C6D51003DE4FA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				7EF1C2F6216651AB0004F4BD /* minfin.json */,
+				7E463D9221B91C5C00EE15F1 /* minfin.json */,
 				7E2799D2211C6898003DE4FA /* Assets.xcassets */,
 				7E94F8EF2132C92E00F27804 /* Localizable.strings */,
 				7E94F8F52132CECB00F27804 /* AppLanguage.swift */,
@@ -478,7 +478,6 @@
 				7E2799C5211C6898003DE4FA /* Frameworks */,
 				7E2799C6211C6898003DE4FA /* Resources */,
 				DC26103E10F5C63AA4D8D51B /* [CP] Embed Pods Frameworks */,
-				C0057774AAA9C6C16F04C132 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -501,7 +500,7 @@
 				TargetAttributes = {
 					7E2799C7211C6898003DE4FA = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -541,7 +540,7 @@
 				7EA3820D2140235D00C1A640 /* LaunchScreen_Ru.storyboard in Resources */,
 				7E4A0520212EB2610065FD7A /* MainBackgroundView.xib in Resources */,
 				7E32D1CD21319E6800D38233 /* ClusterDetailsContainerView.xib in Resources */,
-				7EF1C2F7216651AB0004F4BD /* minfin.json in Resources */,
+				7E463D9321B91C5C00EE15F1 /* minfin.json in Resources */,
 				7E4A0507212E750D0065FD7A /* LeftEventView.xib in Resources */,
 				7E2799D3211C6898003DE4FA /* Assets.xcassets in Resources */,
 				7E94F8ED2132C92E00F27804 /* Localizable.strings in Resources */,
@@ -568,21 +567,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0057774AAA9C6C16F04C132 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinFin/Pods-MinFin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC26103E10F5C63AA4D8D51B /* [CP] Embed Pods Frameworks */ = {
@@ -811,15 +795,15 @@
 			baseConfigurationReference = DF5980AD6E6C2D74BFAC459C /* Pods-MinFin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V4W5E3TPK9;
 				INFOPLIST_FILE = MinFin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = minfin.vova.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = minfin.forministerprofile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -832,13 +816,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V4W5E3TPK9;
 				INFOPLIST_FILE = MinFin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = minfin.vova.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = minfin.forministerprofile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
