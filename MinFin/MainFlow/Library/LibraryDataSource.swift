@@ -27,11 +27,12 @@ struct Versions {
 
 class LibraryDataSource: BooksLoader {
     
-    private let booksEndpoint = "https://minfin.fox.wf/api/getExport"
-    private let versionEndpoit = "https://minfin.fox.wf/api/getVersion"
+
+    private let booksEndpoint = "https://history-app.minfin.ru/api/getExport"
+    private let versionEndpoit = "https://history-app.minfin.ru/api/getVersion"
     
     //book_id as param
-    private let getBookEndpoint = "https://minfin.fox.wf/api/book/%@/download"
+    private let getBookEndpoint = "https://history-app.minfin.ru/api/book/%@/download"
     private var bookRequest: DownloadRequest?
     private var sessionManager: Alamofire.SessionManager
     
